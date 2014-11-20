@@ -42,9 +42,3 @@ A list of all assets which have been uploaded to a specific directory. The data 
 - ContentHtml : String
 - Published : Boolean
 - DateCreated: Date
-
-## Globally used npm packages
-
-- mocha
-- should
-- q
