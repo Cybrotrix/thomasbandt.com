@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/aspnetde/node-simple-blog",
   "dependencies": {
+    "bcrypt": "^0.8.0",
     "express": "^4.10.2",
     "express-handlebars": "^1.1.0",
     "passport": "^0.2.1"
