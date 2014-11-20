@@ -1,0 +1,26 @@
+{
+  "name": "node-simple-blog",
+  "version": "0.0.1",
+  "description": "A simple blog built with the MEAN stack.",
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aspnetde/node-simple-blog.git"
+  },
+  "keywords": [
+    "Node.js",
+    "node",
+    "MongoDB",
+    "mongo",
+    "Angular",
+    "AngularJS",
+    "Express",
+    "ExpressJS"
+  ],
+  "author": "Thomas Bandt",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/aspnetde/node-simple-blog/issues"
+  },
+  "homepage": "https://github.com/aspnetde/node-simple-blog"
+}
