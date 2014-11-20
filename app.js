@@ -1,12 +1,12 @@
 (function() {
     "use strict";
 
-    var http = require("http");
+    var app = require("express")();
 
-    var server = http.createServer(function(request, response) {
-        response.end("Hello World!");
+    app.get("/", function(request, response) {
+        response.send("Hello World from Express");
     });
 
-    server.listen(6969);
+    app.listen(6969);
 }());
 console.log("Hello World");
