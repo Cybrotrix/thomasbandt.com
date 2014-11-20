@@ -1,7 +1,9 @@
 (function(loginController) {
-    loginController.init = function(app) {
+    loginController.init = function(app, renderAdminView) {
         app.get("/admin", function(request, response) {
-            response.send("Hello Admin");
+            renderAdminView(response, "login", {
+                message: "Hello Blogger!"
+            });
         });
     };
 }(module.exports));
