@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/aspnetde/node-simple-blog",
   "dependencies": {
-    "express": "^4.10.2"
+    "express": "^4.10.2",
+    "express-handlebars": "^1.1.0"
   }
 }

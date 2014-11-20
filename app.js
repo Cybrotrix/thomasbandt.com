@@ -3,6 +3,9 @@
 
     var app = require("express")();
 
+    app.engine('handlebars', require("express-handlebars")());
+    app.set('view engine', 'handlebars');
+
     var admin = require("./admin");
     admin.init(app);
 
