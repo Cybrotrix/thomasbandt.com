@@ -4,7 +4,7 @@
     var should = require("should");
 
     describe("UserRepository", function() {
-        describe("When calling getAdminUser()", function() {
+        describe("When calling getAdminUser with the correct credentials", function() {
             var _userRepository;
 
             before(function() {
