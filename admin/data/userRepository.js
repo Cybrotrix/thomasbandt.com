@@ -1,16 +1,18 @@
 (function(repository) {
     "use strict";
 
-    var _config = require("../config");
     var Q = require("q");
+    var User = require("../model/user");
+
+    var _config = require("../config");
 
     repository.getAdminUser = function() {
         var deferred = Q.defer();
 
-        deferred.resolve({
-            userName: _config.credentials.userName,
-            hashedPassword: _config.credentials.hashedPassword
-        });
+        deferred.resolve(new User(
+            _config.credentials.userName,
+            _config.credentials.hashedPassword
+        ));
 
         return deferred.promise;
     };
