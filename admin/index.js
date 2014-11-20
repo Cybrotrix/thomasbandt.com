@@ -1,7 +1,7 @@
 (function(admin) {
     "use strict";
 
-    var loginController = require("./controllers/loginController");
+    var _loginController = require("./controllers/loginController");
 
     var renderAdminView = function(response, viewName, model) {
         model = model ? model : {};
@@ -11,6 +11,6 @@
     };
 
     admin.init = function(app) {
-        loginController.init(app, renderAdminView);
+        _loginController.init(app, renderAdminView);
     };
 }(module.exports));
