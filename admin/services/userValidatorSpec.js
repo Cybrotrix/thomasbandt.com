@@ -1,31 +1,42 @@
 (function() {
     "use strict";
 
-    var should = require("should");
+    require("should");
+
+    var User = require("../model/user");
 
     describe("UserValidator", function() {
         describe("When calling validateLogin", function() {
             var _userValidator;
 
             before(function() {
-                _userValidator = require("./userValidator");
+                var mockAdminUser = new User("Max", "Foo");
 
-                var mockAdminUser = {
-                    userName: "Max",
-                    hashedPassword: "foo"
-                }
+                _userValidator = require("./userValidator");
+                _userValidator.init(mockAdminUser);
             });
 
             it("returns an error message, when the user name is incorrect", function() {
-                throw "not implemented";
+                _userValidator.validateLogin("Someone", "Bar").then(function(result) {
+                    (result.user == null).should.be.true;
+
+                    (result.errorMessage == null).should.not.be.true;
+                    result.errorMessage.should.contain("user name");
+                });
             });
 
             it("returns an error message, when the password is incorrect", function() {
-                throw "not implemented";
+                _userValidator.validateLogin("Someone", "Bar").then(function(result) {
+                    result.user.should.not.be.ok;
+                    result.errorMessage.should.contain("password");
+                });
             });
 
             it("returns the admin user, when the credentials are correct", function() {
-                throw "not implemented";
+                _userValidator.validateLogin("Max", "Foo").then(function(result) {
+                    result.user.should.be.ok;
+                    result.errorMessage.should.not.be.ok;
+                });
             });
         });
     });
