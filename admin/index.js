@@ -1,4 +1,6 @@
 (function(admin) {
+    "use strict";
+
     var loginController = require("./controllers/loginController");
 
     var renderAdminView = function(response, viewName, model) {
