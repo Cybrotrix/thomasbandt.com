@@ -1,7 +1,12 @@
 (function(repository) {
     "use strict";
 
-    repository.foo = function() {
-        console.log("hello data");
+    var _config = require("../config");
+
+    repository.getAdminUser = function() {
+        return {
+            userName: _config.credentials.userName,
+            hashedPassword: _config.credentials.hashedPassword
+        };
     }
 }(module.exports));
