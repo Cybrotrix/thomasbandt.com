@@ -7,7 +7,7 @@
 
     loginController.init = function(app) {
         app.get(routes.index, routeUtilities.authenticate, function(request, response) {
-            routeUtilities.renderAdminView(response, "index", {
+            routeUtilities.renderAdminView(response, "overview", {
                 userName: request.user.username
             });
         });
