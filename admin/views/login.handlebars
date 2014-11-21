@@ -1,1 +1,18 @@
-<h1>{{message}}</h1>
+<h1>Willkommen</h1>
+
+{{#if message}}
+<p><strong style="color: red">{{message}}</strong></p>
+{{/if}}
+<form action="/admin/login" method="post">
+    <div>
+        <label>Username:</label>
+        <input type="text" name="username"/>
+    </div>
+    <div>
+        <label>Password:</label>
+        <input type="password" name="password"/>
+    </div>
+    <div>
+        <input type="submit" value="Log In"/>
+    </div>
+</form>
