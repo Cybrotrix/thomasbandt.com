@@ -1,7 +1,7 @@
 (function() {
     "use strict";
 
-    require("should");
+    var expect = require("chai").expect;
 
     var User = require("../model/user");
 
@@ -16,27 +16,22 @@
                 _userValidator.init(mockAdminUser);
             });
 
-            it("returns an error message, when the user name is incorrect", function() {
-                _userValidator.validateLogin("Someone", "Bar").then(function(result) {
-                    (result.user == null).should.be.true;
-
-                    (result.errorMessage == null).should.not.be.true;
-                    result.errorMessage.should.contain("user name");
-                });
+            it("returns an error message, when the user name is incorrect", function(done) {
+                _userValidator.validateLogin("Someone", "Bar").done(function(result) {
+                    throw "not implemented";
+                }, done);
             });
 
-            it("returns an error message, when the password is incorrect", function() {
-                _userValidator.validateLogin("Someone", "Bar").then(function(result) {
-                    result.user.should.not.be.ok;
-                    result.errorMessage.should.contain("password");
-                });
+            it("returns an error message, when the password is incorrect", function(done) {
+                _userValidator.validateLogin("Someone", "Bar").done(function(result) {
+                    throw "not implemented";
+                }, done);
             });
 
-            it("returns the admin user, when the credentials are correct", function() {
-                _userValidator.validateLogin("Max", "Foo").then(function(result) {
-                    result.user.should.be.ok;
-                    result.errorMessage.should.not.be.ok;
-                });
+            it("returns the admin user, when the credentials are correct", function(done) {
+                _userValidator.validateLogin("Max", "Foo").done(function(result) {
+                    throw "not implemented";
+                }, done);
             });
         });
     });

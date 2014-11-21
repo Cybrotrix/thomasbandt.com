@@ -1,7 +1,7 @@
 (function() {
     "use strict";
 
-    require("should");
+    var expect = require("chai").expect;
 
     describe("UserRepository", function() {
         describe("When calling getAdminUser with the correct credentials", function() {
@@ -11,16 +11,18 @@
                 _userRepository = require("./userRepository");
             });
 
-            it("returns the admin user with its name", function() {
-                _userRepository.getAdminUser().then(function(user) {
-                    user.userName.should.equal("admin");
-                });
+            it("returns the admin user with its name", function(done) {
+                _userRepository.getAdminUser().done(function(user) {
+                    expect(user.userName).to.be.equal("admin");
+                    done();
+                }, done);
             });
 
-            it("returns the admin user with its hashed password", function() {
-                _userRepository.getAdminUser().then(function(user) {
-                    user.hashedPassword.length.should.be.greaterThan(0);
-                });
+            it("returns the admin user with its hashed password", function(done) {
+                _userRepository.getAdminUser().done(function(user) {
+                    expect(user.hashedPassword.length).to.be.greaterThan(0);
+                    done();
+                }, done);
             });
         });
     });
