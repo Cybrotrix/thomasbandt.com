@@ -1,10 +1,12 @@
 (function(module) {
+    var routes = require("../routes");
+
     module.authenticate = function(request, response, next) {
         if (request.isAuthenticated()) {
             next();
         }
         else {
-            response.redirect("/admin/login");
+            response.redirect(routes.login);
         }
     }
 
