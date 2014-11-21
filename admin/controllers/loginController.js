@@ -3,18 +3,10 @@
 
     var passport = require("passport");
     var routes = require("../routes");
-
-    function authenticate(request, response, next) {
-        if (request.isAuthenticated()) {
-            next();
-            return;
-        }
-
-        response.redirect("/admin/login");
-    }
+    var routeUtilities = require("../utilities/routeUtilities");
 
     loginController.init = function(app, renderAdminView) {
-        app.get(routes.index, authenticate, function(request, response) {
+        app.get(routes.index, routeUtilities.authenticate, function(request, response) {
             renderAdminView(response, "index", {
                 userName: request.user.username
             });
@@ -34,7 +26,7 @@
             })
         );
 
-        app.get(routes.logout, authenticate, function(request, response) {
+        app.get(routes.logout, routeUtilities.authenticate, function(request, response) {
             request.logout();
             response.redirect("/admin/login");
         });
