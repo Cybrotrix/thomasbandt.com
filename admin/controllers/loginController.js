@@ -3,10 +3,19 @@
 
     var passport = require("passport");
 
+    function authenticate(request, response, next) {
+        if (request.isAuthenticated()) {
+            next()
+            return;
+        }
+
+        response.redirect("/admin/login");
+    };
+
     loginController.init = function(app, renderAdminView) {
-        app.get("/admin", function(request, response) {
-            renderAdminView(response, "login", {
-                message: request.flash('error')
+        app.get("/admin", authenticate, function(request, response) {
+            renderAdminView(response, "index", {
+                userName: request.user.username
             });
         });
 
