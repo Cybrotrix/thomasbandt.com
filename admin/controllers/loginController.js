@@ -14,8 +14,8 @@
 
         app.post(routes.login,
             passport.authenticate('local', {
-                successRedirect: '/admin',
-                failureRedirect: '/admin',
+                successRedirect: routes.overview,
+                failureRedirect: routes.login,
                 failureFlash: true
             })
         );
