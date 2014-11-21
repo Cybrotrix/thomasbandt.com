@@ -27,14 +27,35 @@
 
     app.use(require('connect-flash')());
 
+    var admin = require("./admin");
+    admin.init(app);
+
+    // TODO: clean up and put that into admin
     passport.use(new LocalStrategy(
         function(username, password, done) {
-            return done(null, false, { message: "Keine Ahnung" });
+            admin.services.userValidator.init();
+            admin.services.userValidator.validateLogin(username, password).done(
+                function(result) {
+                    if (result.errorMessage) {
+                        done(null, false, { message: result.errorMessage });
+                    } else {
+                        done(null, result.user);
+                    }
+                },
+                function(error) {
+                    done(error)
+                }
+            );
         }
     ));
 
-    var admin = require("./admin");
-    admin.init(app);
+    passport.serializeUser(function(user, done) {
+        done(null, "admin");
+    });
+
+    passport.deserializeUser(function(user, done) {
+        done(null, "admin");
+    });
 
     app.listen(6969, function() {
         console.log("Server started listening at http://localhost:6969");

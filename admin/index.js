@@ -13,4 +13,8 @@
     admin.init = function(app) {
         _loginController.init(app, renderAdminView);
     };
+
+    admin.services = {
+        userValidator: require("./services/userValidator")
+    };
 }(module.exports));

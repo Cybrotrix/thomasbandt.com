@@ -2,6 +2,7 @@
     "use strict";
 
     var bcrypt = require("bcrypt");
+    var data = require("../data");
     var Q = require("q");
     var UserValidationResult = require("../model/userValidationResult");
 
@@ -9,6 +10,17 @@
 
     module.init = function(adminUser) {
         _adminUser = adminUser;
+    };
+
+    // TODO - refactor
+    module.init = function() {
+        var config = require("../config");
+        var User = require("../model/user");
+
+        _adminUser = new User(
+            config.credentials.userName,
+            config.credentials.hashedPassword
+        );
     };
 
     module.validateLogin = function(userName, password) {
