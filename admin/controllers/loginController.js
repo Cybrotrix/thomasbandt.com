@@ -25,10 +25,5 @@
                 failureFlash: true
             })
         );
-
-        app.get(routes.logout, routeUtilities.authenticate, function(request, response) {
-            request.logout();
-            response.redirect("/admin/login");
-        });
     };
 }(module.exports));

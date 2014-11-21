@@ -1,10 +1,12 @@
 (function(admin) {
     "use strict";
 
-    var _loginController = require("./controllers/loginController");
+    var loginController = require("./controllers/loginController");
+    var logoutController = require("./controllers/logoutController");
 
     admin.init = function(app) {
-        _loginController.init(app);
+        loginController.init(app);
+        logoutController.init(app);
     };
 
     admin.services = {
