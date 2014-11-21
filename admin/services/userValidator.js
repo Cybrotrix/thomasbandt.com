@@ -4,7 +4,6 @@
     var bcrypt = require("bcrypt");
     var data = require("../data");
     var Q = require("q");
-    var UserValidationResult = require("../model/userValidationResult");
 
     var _adminUser;
 
@@ -27,7 +26,7 @@
         var deferred = Q.defer();
 
         bcrypt.compare(password, _adminUser.hashedPassword, function(error, passwordIsvalid) {
-            var result = new UserValidationResult();
+            var result = {};
 
             if (!passwordIsvalid) {
                 result.errorMessage = "The password is not correct.";
