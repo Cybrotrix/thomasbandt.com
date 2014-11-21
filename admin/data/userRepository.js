@@ -1,13 +1,13 @@
 (function(repository) {
     "use strict";
 
-    var Q = require("q");
+    var q = require("q");
     var User = require("../model/user");
 
     var _config = require("../config");
 
     repository.getAdminUser = function() {
-        var deferred = Q.defer();
+        var deferred = q.defer();
 
         deferred.resolve(new User(
             _config.credentials.userName,

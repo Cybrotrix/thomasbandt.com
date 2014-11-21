@@ -3,7 +3,7 @@
 
     var bcrypt = require("bcrypt");
     var data = require("../data");
-    var Q = require("q");
+    var q = require("q");
 
     var _adminUser;
 
@@ -23,7 +23,7 @@
     };
 
     module.validateLogin = function(userName, password) {
-        var deferred = Q.defer();
+        var deferred = q.defer();
 
         bcrypt.compare(password, _adminUser.hashedPassword, function(error, passwordIsvalid) {
             var result = {};
