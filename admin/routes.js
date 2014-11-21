@@ -1,7 +1,7 @@
 var routes = {
     login: "/admin/login",
     logout: "/admin/logout",
-    index: "/admin"
+    overview: "/admin"
 };
 
 module.exports = routes;
