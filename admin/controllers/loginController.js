@@ -32,5 +32,10 @@
                 failureFlash: true
             })
         );
+
+        app.get("/admin/logout", authenticate, function(request, response) {
+            request.logout();
+            response.redirect("/admin/login");
+        });
     };
 }(module.exports));

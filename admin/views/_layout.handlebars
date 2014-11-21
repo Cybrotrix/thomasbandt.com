@@ -5,7 +5,12 @@
     <title>Simple Blog Admin</title>
 </head>
 <body>
-    Admin
+
+{{#if isAuthenticated}}
+    <p><a href="/admin/logout">log out</a></p>
+{{else}}
+    <p>Willkommen!</p>
+{{/if}}
     <hr>
     {{{body}}}
 </body>

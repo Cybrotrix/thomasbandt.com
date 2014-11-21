@@ -27,8 +27,10 @@
 
     app.use(require('connect-flash')());
 
+
+
     var admin = require("./admin");
-    admin.init(app);
+
 
     // TODO: clean up and put that into admin
     passport.use(new LocalStrategy(
@@ -56,6 +58,13 @@
     passport.deserializeUser(function(user, done) {
         done(null, "admin");
     });
+
+    app.use(function(request, response, next) {
+        request.app.locals.isAuthenticated = request.isAuthenticated();
+        next();
+    });
+
+    admin.init(app);
 
     app.listen(6969, function() {
         console.log("Server started listening at http://localhost:6969");
