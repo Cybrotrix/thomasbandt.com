@@ -1,7 +1,59 @@
 <div class="jumbotron">
     <div class="row">
         <div class="col-md-12">
-            Add Post
+            <h1>Add a new Blog Post</h1>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12 form-group">
+            <label for="username">Title</label>
+            <input type="text"
+                   class="form-control"
+                   id="title"
+                   name="title"
+                   placeholder="The title of your post (required)">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12 form-group">
+            <label for="abstract">Abstract</label>
+            <textarea class="form-control"
+                      rows="3"
+                      id="abstract"
+                      name="abstract"
+                      placeholder="A short abstract of your post (required)"></textarea>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6 form-group">
+            <label for="abstract">Content</label>
+            <textarea class="form-control"
+                      rows="20"
+                      id="content"
+                      name="content"
+                      placeholder="The content of your Post (required)"></textarea>
+        </div>
+        <div class="col-md-6 form-group">
+            <label>Preview</label>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12 form-group">
+            <input type="checkbox"
+                   id="published"
+                   name="published"
+                   checked="checked" />
+            <label for="published">Published</label>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <button type="submit" class="btn btn-lg btn-primary">Save this Blog Post</button>
         </div>
     </div>
 </div>
