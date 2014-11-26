@@ -1,6 +1,7 @@
 (function(admin) {
     "use strict";
 
+    var routes = require("../routes");
     var controllers = require("./controllers");
 
     admin.init = function(app) {
@@ -47,6 +48,7 @@
 
         app.use(function(request, response, next) {
             request.app.locals.isAuthenticated = request.isAuthenticated();
+            request.app.locals.routes = routes;
             next();
         });
     }

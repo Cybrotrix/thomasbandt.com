@@ -7,7 +7,7 @@
 <body>
 
 {{#if isAuthenticated}}
-    <p><a href="/admin/logout">log out</a></p>
+    <p><a href="{{routes.admin.logout}}">log out</a></p>
 {{else}}
     <p>Willkommen!</p>
 {{/if}}
