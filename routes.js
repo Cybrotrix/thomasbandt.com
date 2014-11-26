@@ -1,5 +1,6 @@
 var routes = {
     admin: {
+        addPost: "/admin/add-post",
         login: "/admin/login",
         logout: "/admin/logout",
         overview: "/admin"
