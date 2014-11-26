@@ -1,4 +1,7 @@
 var config = {
+    metadata: {
+        blogName: "Simpe Blog"
+    },
     admin: {
         credentials: {
             userName: "admin",
