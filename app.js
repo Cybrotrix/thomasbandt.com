@@ -1,6 +1,7 @@
 (function() {
     "use strict";
 
+    var config = require("./config");
     var app = require("express")();
 
     configureViewEngine(app);
@@ -24,11 +25,15 @@
 
     function configureSession(app) {
         var session = require("express-session");
+        var MongoStore = require('connect-mongo')(session);
 
         app.use(session({
             secret: "node-simple-blog",
             resave: false,
-            saveUninitialized: true
+            saveUninitialized: true,
+            store: new MongoStore({
+                db : config.database.databaseName
+            })
         }))
     }
 
