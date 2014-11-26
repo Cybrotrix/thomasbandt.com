@@ -1,7 +1,9 @@
-var routes = {
-    login: "/admin/login",
-    logout: "/admin/logout",
-    overview: "/admin"
-};
+(function(routes) {
+    "use strict";
 
-module.exports = routes;
+    routes = {
+        login: "/admin/login",
+        logout: "/admin/logout",
+        overview: "/admin"
+    };
+}(module.exports));
