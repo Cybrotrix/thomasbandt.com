@@ -31,7 +31,7 @@
                         }
                     },
                     function(error) {
-                        done(error)
+                        done(error);
                     }
                 );
             }
