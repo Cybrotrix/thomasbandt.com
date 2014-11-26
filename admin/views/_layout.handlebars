@@ -4,19 +4,39 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Simple Blog Admin</title>
+    <title>{{metadata.blogName}} Admin</title>
     <link href="/admin/client/libraries/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="/admin/client/libraries/flat-ui/dist/css/flat-ui.min.css" rel="stylesheet">
 </head>
 <body>
+    <div class="container">
+        <nav class="navbar navbar-default" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    {{#if isAuthenticated}}
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    {{/if}}
+                    <a class="navbar-brand" href="{{routes.blog.home}}">{{metadata.blogName}}</a>
+                </div>
+                {{#if isAuthenticated}}
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="{{routes.admin.overview}}">Blog Posts</a></li>
+                        <li><a href="{{routes.admin.logout}}">Log out</a></li>
+                    </ul>
+                </div>
+                {{/if}}
+            </div>
+        </nav>
 
-{{#if isAuthenticated}}
-    <p><a href="{{routes.admin.logout}}">log out</a></p>
-{{else}}
-    <p>Willkommen!</p>
-{{/if}}
-    <hr>
-    {{{body}}}
+        {{{body}}}
+    </div>
+
     <script src="/admin/client/libraries/jquery/dist/jquery.min.js"></script>
     <script src="/admin/client/libraries/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="/admin/client/libraries/flat-ui/dist/js/flat-ui.min.js"></script>
