@@ -25,11 +25,14 @@
                     <a class="navbar-brand" href="{{routes.blog.home}}">{{metadata.blogName}}</a>
                 </div>
                 {{#if isAuthenticated}}
+
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="{{routes.admin.overview}}">Blog Posts</a></li>
-                        <li><a href="{{routes.admin.logout}}">Log out</a></li>
                     </ul>
+                    <div class="navbar-text navbar-right">
+                        <a href="{{routes.admin.logout}}">Log out</a>
+                    </div>
                 </div>
                 {{/if}}
             </div>
