@@ -1,5 +1,5 @@
 (function(module) {
-    var routes = require("../routes");
+    var routes = require("../../routes");
 
     module.authenticate = function(request, response, next) {
         if (request.isAuthenticated()) {
