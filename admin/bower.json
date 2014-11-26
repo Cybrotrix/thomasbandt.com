@@ -1,0 +1,26 @@
+{
+  "name": "node-simple-blog-admin",
+  "main": "index.js",
+  "version": "0.0.0",
+  "homepage": "https://github.com/aspnetde/node-simple-blog",
+  "authors": [
+    "Thomas <bandt@69grad.de>"
+  ],
+  "moduleType": [
+    "node"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "client/libraries",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.1",
+    "flat-ui": "~2.2.2"
+  }
+}
