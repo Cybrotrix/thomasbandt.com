@@ -16,7 +16,19 @@
     startServer(app);
 
     function configureViewEngine(app) {
-        app.engine("handlebars", require("express-handlebars")());
+        var handlebars = require("express-handlebars");
+
+        var configuredHandlebars = handlebars.create({
+            helpers: {
+                activeMenuItem: function(route, activeRoute) {
+                    return route === activeRoute
+                        ? "class=\"active\""
+                        : "";
+                }
+            }
+        });
+
+        app.engine("handlebars", configuredHandlebars.engine);
         app.set("view engine", "handlebars");
     }
 

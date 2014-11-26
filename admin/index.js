@@ -55,6 +55,7 @@
         app.use(function(request, response, next) {
             request.app.locals.isAuthenticated = request.isAuthenticated();
             request.app.locals.routes = routes;
+            request.app.locals.activeRoute = request.originalUrl;
             request.app.locals.metadata = config.metadata;
             next();
         });
