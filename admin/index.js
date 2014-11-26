@@ -4,8 +4,9 @@
     var routes = require("../routes");
     var controllers = require("./controllers");
 
-    admin.init = function(app) {
-        setUpAuthentication(app);
+    admin.init = function(app, express) {
+        configureAuthentication(app);
+        configurePublicDirectories(app, express);
 
         controllers.init(app);
     };
@@ -14,7 +15,11 @@
         userValidator: require("./services/userValidator")
     };
 
-    function setUpAuthentication(app) {
+    function configurePublicDirectories(app, express) {
+        app.use("/admin/client", express.static(__dirname + "/admin/client"));
+    }
+
+    function configureAuthentication(app) {
         var passport = require("passport");
         var LocalStrategy = require("passport-local").Strategy;
 

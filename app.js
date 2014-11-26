@@ -2,7 +2,8 @@
     "use strict";
 
     var config = require("./config");
-    var app = require("express")();
+    var express = require("express");
+    var app = express();
 
     configureViewEngine(app);
     configureCookieParser(app);
@@ -10,7 +11,7 @@
     configureBodyParser(app);
     configureFlash(app);
 
-    setUpAdmin(app);
+    setUpAdmin(app, express);
 
     startServer(app);
 
@@ -48,8 +49,8 @@
         app.use(require('connect-flash')());
     }
 
-    function setUpAdmin(app) {
-        require("./admin").init(app);
+    function setUpAdmin(app, express) {
+        require("./admin").init(app, express);
     }
 
     function startServer(app) {
