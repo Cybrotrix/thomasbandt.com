@@ -16,7 +16,7 @@
     };
 
     function configurePublicDirectories(app, express) {
-        app.use("/admin/client", express.static(__dirname + "/admin/client"));
+        app.use("/admin/client", express.static(__dirname + "/client"));
     }
 
     function configureAuthentication(app) {
