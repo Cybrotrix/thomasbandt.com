@@ -8,7 +8,7 @@
         else {
             response.redirect(routes.login);
         }
-    }
+    };
 
     module.renderAdminView = function(response, viewName, model) {
         model = model ? model : {};
