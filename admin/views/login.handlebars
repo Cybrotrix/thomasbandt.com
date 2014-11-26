@@ -1,14 +1,16 @@
 <div class="jumbotron">
     <div class="row">
         <div class="col-md-12">
-            <h1>{{metadata.blogName}} Admin Login</h1>
+            <h1>Admin Login</h1>
 
             {{#if message}}
-                <p><strong style="color: red">{{message}}</strong></p>
+                <div class="alert alert-danger">
+                    <span class="glyphicon glyphicon-info-sign"></span> {{message}}
+                </div>
             {{/if}}
         </div>
 
-        <form action="{{routes.admin.login}}" method="post" class="col-md-6">
+        <form action="{{routes.admin.login}}" method="post" class="col-md-6 col-sm-6 col-xs-12">
             <div class="form-group">
                 <label for="exampleInputEmail1">User name</label>
                 <input type="email" class="form-control" name="username" placeholder="Enter your user name">
@@ -17,7 +19,7 @@
                 <label for="exampleInputPassword1">Password</label>
                 <input type="password" class="form-control" name="password" placeholder="Enter your password">
             </div>
-            <button type="submit" class="btn btn-lg btn-primary">Submit</button>
+            <button type="submit" class="btn btn-lg btn-primary">Log me in</button>
         </form>
     </div>
 </div>
