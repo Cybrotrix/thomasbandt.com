@@ -47,20 +47,17 @@
     </div>
 
     <div class="row">
-        <div class="col-md-6 form-group"
+        <div class="col-md-12 form-group"
              ng-class="{ 'has-error': form.$submitted && form.content.$invalid }">
             <label for="content">Content</label>
             <textarea ng-model="content"
+                      data-provide="markdown"
                       class="form-control"
                       rows="20"
                       id="content"
                       name="content"
                       placeholder="The content of your post (required)"
                       required></textarea>
-        </div>
-        <div class="col-md-6 form-group">
-            <label>Preview</label>
-            <h1 ng-bind="title"></h1>
         </div>
     </div>
 
@@ -82,6 +79,12 @@
     </div>
 </form>
 
+{{#section "pageStyles"}}
+<link href="/admin/client/libraries/bootstrap-markdown/css/bootstrap-markdown.min.css" rel="stylesheet">
+{{/section}}
+
 {{#section "pageScripts"}}
+<script src="/admin/client/libraries/markdown-js/dist/markdown.min.js"></script>
+<script src="/admin/client/libraries/bootstrap-markdown/js/bootstrap-markdown.js"></script>
 <script src="/admin/client/scripts/controllers/addPostController.js"></script>
 {{/section}}
