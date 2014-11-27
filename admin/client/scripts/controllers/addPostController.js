@@ -15,6 +15,8 @@
             published: true
         };
 
+        $scope.errors = [];
+
         $scope.submit = function() {
             if ($scope.form.$invalid) {
                 return;
