@@ -6,7 +6,7 @@
             next();
         }
         else {
-            response.redirect(routes.login);
+            response.redirect(routes.admin.login);
         }
     };
 

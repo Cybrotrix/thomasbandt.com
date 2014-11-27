@@ -5,7 +5,7 @@
     var routeUtilities = require("../utilities/routeUtilities");
 
     addPostController.init = function(app) {
-        app.get(routes.admin.addPost, function(request, response) {
+        app.get(routes.admin.addPost, routeUtilities.authenticate, function(request, response) {
             routeUtilities.renderAdminView(response, "addPost");
         });
     };
