@@ -13,6 +13,14 @@
             abstract: "",
             content: "",
             published: true
-        }
+        };
+
+        $scope.submit = function() {
+            if ($scope.form.$invalid) {
+                return;
+            }
+
+            alert("TODO: Submit");
+        };
     }
 }());
