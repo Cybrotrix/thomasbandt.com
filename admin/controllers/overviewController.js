@@ -6,7 +6,9 @@
 
     loginController.init = function(app) {
         app.get(routes.admin.overview, routeUtilities.authenticate, function(request, response) {
-            routeUtilities.renderAdminView(response, "overview");
+            routeUtilities.renderAdminView(response, "overview", {
+                message: request.flash("post-added")
+            });
         });
     };
 }(module.exports));
