@@ -1,4 +1,9 @@
-<form ng-controller="AddPostController as model" name="form" class="add-post jumbotron" novalidate>
+<form ng-controller="AddPostController as model"
+      action="{{routes.admin.addPost}}"
+      method="post"
+      name="form"
+      class="add-post jumbotron"
+      novalidate>
     <div class="row">
         <div class="col-md-12">
             <h1>Add a new Blog Post</h1>

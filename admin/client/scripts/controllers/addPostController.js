@@ -22,7 +22,7 @@
                 return;
             }
 
-            alert("TODO: Submit");
+            $scope.form.submit();
         };
     }
 }());
