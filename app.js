@@ -24,6 +24,15 @@
                     return route === activeRoute
                         ? "class=\"active\""
                         : "";
+                },
+                section: function(name, options){
+                    if(!this.sections) {
+                        this.sections = {};
+                    }
+
+                    this.sections[name] = options.fn(this);
+
+                    return null;
                 }
             }
         });
