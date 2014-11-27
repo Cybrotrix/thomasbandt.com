@@ -8,5 +8,11 @@
     AddPostController.$inject = ["$scope"];
 
     function AddPostController($scope) {
+        $scope.post = {
+            title: "",
+            abstract: "",
+            content: "",
+            published: true
+        }
     }
 }());
