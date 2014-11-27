@@ -21,9 +21,7 @@
         var configuredHandlebars = handlebars.create({
             helpers: {
                 activeMenuItem: function(route, activeRoute) {
-                    return route === activeRoute
-                        ? "class=\"active\""
-                        : "";
+                    return route === activeRoute ? "class=\"active\"" : "";
                 },
                 section: function(name, options){
                     if(!this.sections) {
