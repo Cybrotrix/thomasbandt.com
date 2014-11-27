@@ -16,4 +16,10 @@ h1 {
 .logout-button {
   color: #34495e; }
 
+.add-post .md-input,
+.add-post .md-preview {
+  padding: 15px; }
+.add-post .md-input {
+  font-size: 1em; }
+
 /*# sourceMappingURL=bundled.css.map */
