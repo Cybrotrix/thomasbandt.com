@@ -15,10 +15,13 @@
             published: true
         };
 
-        $scope.errors = [];
+        $scope.submitted = false;
 
-        $scope.submit = function() {
+        $scope.submit = function($event) {
+            $scope.submitted = true;
+
             if ($scope.form.$invalid) {
+                $event.preventDefault();
                 return;
             }
 

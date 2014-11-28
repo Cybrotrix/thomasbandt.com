@@ -7,7 +7,7 @@
     <div class="row">
         <div class="col-md-12">
             <h1>Add a new Blog Post</h1>
-            <div ng-show="form.$submitted && form.$invalid" class="alert alert-danger">
+            <div ng-show="submitted && form.$invalid" class="alert alert-danger">
                 <ul>
                     <li ng-if="form.title.$invalid" ng-messages="form.title.$error" >
                         Please fill in the title of your post.
@@ -25,7 +25,7 @@
 
     <div class="row">
         <div class="col-md-12 form-group"
-             ng-class="{ 'has-error': form.$submitted && form.title.$invalid }">
+             ng-class="{ 'has-error': submitted && form.title.$invalid }">
             <label for="username">Title</label>
             <input ng-model="title"
                    type="text"
@@ -39,7 +39,7 @@
 
     <div class="row">
         <div class="col-md-12 form-group"
-             ng-class="{ 'has-error': form.$submitted && form.abstract.$invalid }">
+             ng-class="{ 'has-error': submitted && form.abstract.$invalid }">
             <label for="abstract">Abstract</label>
             <textarea ng-model="abstract"
                       class="form-control"
@@ -53,7 +53,7 @@
 
     <div class="row">
         <div class="col-md-12 form-group"
-             ng-class="{ 'has-error': form.$submitted && form.content.$invalid }">
+             ng-class="{ 'has-error': submitted && form.content.$invalid }">
             <label for="content">Content</label>
             <textarea ng-model="content"
                       data-provide="markdown"
@@ -78,7 +78,7 @@
 
     <div class="row">
         <div class="col-md-12">
-            <button ng-click="submit()" class="btn btn-lg btn-primary">Save this Blog Post</button>
+            <button ng-click="submit($event)" class="btn btn-lg btn-primary">Save this Blog Post</button>
         </div>
     </div>
 </form>
