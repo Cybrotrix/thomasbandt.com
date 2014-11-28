@@ -1,9 +1,8 @@
 (function(repository) {
     "use strict";
 
-    var q = require("q");
-
-    var config = require("../../config");
+    var q = require("q"),
+        config = require("../../config");
 
     repository.getAdminUser = function() {
         var deferred = q.defer();

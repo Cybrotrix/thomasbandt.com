@@ -1,9 +1,9 @@
 (function() {
     "use strict";
 
-    var config = require("./config");
-    var express = require("express");
-    var app = express();
+    var config = require("./config"),
+        express = require("express"),
+        app = express();
 
     configureViewEngine(app);
     configureCookieParser(app);

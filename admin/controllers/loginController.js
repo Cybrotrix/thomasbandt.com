@@ -1,9 +1,9 @@
 (function(loginController) {
     "use strict";
 
-    var passport = require("passport");
-    var routes = require("../../routes");
-    var routeUtilities = require("../utilities/routeUtilities");
+    var passport = require("passport"),
+        routes = require("../../routes"),
+        routeUtilities = require("../utilities/routeUtilities");
 
     loginController.init = function(app) {
         app.get(routes.admin.login, function(request, response) {

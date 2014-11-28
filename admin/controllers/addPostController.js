@@ -1,8 +1,8 @@
 (function(addPostController) {
     "use strict";
 
-    var routes = require("../../routes");
-    var routeUtilities = require("../utilities/routeUtilities");
+    var routes = require("../../routes"),
+        routeUtilities = require("../utilities/routeUtilities");
 
     addPostController.init = function(app) {
         app.get(routes.admin.addPost, routeUtilities.authenticate, function(request, response) {

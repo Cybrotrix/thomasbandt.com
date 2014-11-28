@@ -1,8 +1,8 @@
 (function(loginController) {
     "use strict";
 
-    var routes = require("../../routes");
-    var routeUtilities = require("../utilities/routeUtilities");
+    var routes = require("../../routes"),
+        routeUtilities = require("../utilities/routeUtilities");
 
     loginController.init = function(app) {
         app.get(routes.admin.overview, routeUtilities.authenticate, function(request, response) {

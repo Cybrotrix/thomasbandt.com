@@ -1,9 +1,9 @@
 (function(module) {
     "use strict";
 
-    var bcrypt = require("bcrypt");
-    var data = require("../data");
-    var q = require("q");
+    var bcrypt = require("bcrypt"),
+        data = require("../data"),
+        q = require("q");
 
     module.validateLogin = function(userName, password) {
         var deferred = q.defer();

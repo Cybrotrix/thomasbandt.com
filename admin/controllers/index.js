@@ -1,10 +1,10 @@
 (function(controllers) {
     "use strict";
 
-    var addPostController = require("./addPostController");
-    var loginController = require("./loginController");
-    var logoutController = require("./logoutController");
-    var overViewController = require("./overViewController");
+    var addPostController = require("./addPostController"),
+        loginController = require("./loginController"),
+        logoutController = require("./logoutController"),
+        overViewController = require("./overViewController");
 
     controllers.init = function(app) {
         addPostController.init(app);
