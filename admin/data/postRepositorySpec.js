@@ -8,7 +8,7 @@
             var sut;
 
             before(function() {
-                sut = require("./userRepository");
+                sut = require("./postRepository");
             });
 
             it("it is stored to the database", function() {
@@ -18,6 +18,16 @@
             it("an id is assigned to it", function() {
                 throw "not implemented";
             });
+
+            function getDummyPost() {
+                return {
+                    title: "Dummy Post Title",
+                    abstract: "Abstract",
+                    content: "Content",
+                    contentHtml: "Html",
+                    published: true
+                }
+            }
         });
     });
 }());
