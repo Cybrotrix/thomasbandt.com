@@ -2,7 +2,8 @@
     "use strict";
 
     var routes = require("../../routes"),
-        routeUtilities = require("../utilities/routeUtilities");
+        routeUtilities = require("../utilities/routeUtilities"),
+        data = require("../../data");
 
     addPostController.init = function(app) {
         app.get(routes.admin.addPost, routeUtilities.authenticate, function(request, response) {
@@ -10,8 +11,18 @@
         });
 
         app.post(routes.admin.addPost, routeUtilities.authenticate, function(request, response) {
-            request.flash("post-added", "Blog Post successfully added.");
-            response.redirect(routes.admin.overview);
+            var post = {
+                title: request.body.title,
+                abstract: request.body.abstract,
+                content: request.body.content,
+                contentHtml: "foo",
+                published: request.body.published || false
+            };
+
+            data.posts.save(post).done(function() {
+                request.flash("post-added", "Blog Post successfully added.");
+                response.redirect(routes.admin.overview);
+            });
         });
     };
 }(module.exports));

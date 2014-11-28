@@ -11,7 +11,6 @@
             abstract: post.abstract,
             content: post.content,
             contentHtml: post.contentHtml,
-            date: post.date,
             published: post.published
         });
 
