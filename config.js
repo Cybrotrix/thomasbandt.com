@@ -9,7 +9,7 @@ var config = {
         }
     },
     database: {
-        connectionString: "",
+        connectionString: "mongodb://localhost:27017/node-simple-blog",
         databaseName: "node-simple-blog"
     }
 };
