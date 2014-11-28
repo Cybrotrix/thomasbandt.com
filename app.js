@@ -11,6 +11,7 @@
     configureBodyParser(app);
     configureFlash(app);
 
+    setUpDatabase();
     setUpAdmin(app, express);
 
     startServer(app);
@@ -66,6 +67,10 @@
 
     function configureFlash(app) {
         app.use(require('connect-flash')());
+    }
+
+    function setUpDatabase() {
+        require("./data");
     }
 
     function setUpAdmin(app, express) {

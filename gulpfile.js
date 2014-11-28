@@ -14,6 +14,7 @@ gulp.task("jshint", function() {
 gulp.task("mocha", function() {
     return gulp.src([
         "*Spec.js",
+        "data/**/*Spec.js",
         "admin/**/*Spec.js"])
         .pipe(mocha({reporter: "spec"}));
 });

@@ -1,6 +1,4 @@
-(function(data) {
-    "use strict";
+require("./database");
+require("./models");
 
-    data.posts = require("./postRepository");
-    data.users = require("./userRepository");
-}(module.exports));
+module.exports = require("./repositories");

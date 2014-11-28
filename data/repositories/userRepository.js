@@ -2,7 +2,7 @@
     "use strict";
 
     var q = require("q"),
-        config = require("../config");
+        config = require("../../config");
 
     repository.getAdminUser = function() {
         var deferred = q.defer();

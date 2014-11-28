@@ -2,21 +2,11 @@
     "use strict";
 
     var q = require("q"),
-        config = require("../config"),
         mongoose = require('mongoose'),
-        Schema = mongoose.Schema;
-
-    var BlogPost = mongoose.model('BlogPost', new Schema({
-        title: String,
-        abstract: String,
-        content: String,
-        contentHtml: String,
-        date: { type: Date, default: Date.now },
-        published: Boolean
-    }));
+        BlogPost = require("../models").BlogPost;
 
     repository.save = function(post) {
-        var dbBlogPost = new BlogPost({
+        var databasePost = new BlogPost({
             title: post.title,
             abstract: post.abstract,
             content: post.content,
@@ -27,21 +17,15 @@
 
         var deferred = q.defer();
 
-        var db = mongoose.connection;
-        db.on("error", deferred.reject);
-        db.on("open", function() {
-            dbBlogPost.save(function (error, result) {
-                if (error) {
-                    deferred.reject(error);
-                    return;
-                }
+        databasePost.save(function (error, result) {
+            if (error) {
+                deferred.reject(error);
+                return;
+            }
 
-                post.id = result.id;
-                deferred.resolve(post);
-            });
+            post.id = result.id;
+            deferred.resolve(post);
         });
-
-        mongoose.connect(config.database.connectionString);
 
         return deferred.promise;
     };
