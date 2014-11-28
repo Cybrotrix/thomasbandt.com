@@ -2,7 +2,7 @@
     "use strict";
 
     var bcrypt = require("bcrypt"),
-        data = require("../data"),
+        data = require("../../data"),
         q = require("q");
 
     module.validateLogin = function(userName, password) {
