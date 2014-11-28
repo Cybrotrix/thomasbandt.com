@@ -2,8 +2,8 @@
     "use strict";
 
     var q = require("q"),
-        mongoose = require('mongoose'),
-        BlogPost = require("../models").BlogPost;
+        mongoose = require("mongoose"),
+        BlogPost = require("../models/blogPost");
 
     repository.save = function(post) {
         var databasePost = new BlogPost({

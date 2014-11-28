@@ -9,30 +9,27 @@
 
             before(function() {
                 sut = require("./postRepository");
+                require("../database");
             });
 
             it("it is stored to the database", function(done) {
-                throw "foo 1";
-                /*
                 sut.save(getDummyPost())
                     .then(function(post) {
                         return post.id;
-                    }).done(function(id) {
+                    })
+                    .done(function(id) {
                         sut.find(id).done(function(post) {
-                            expect(post.id).to.be.ok("Missing id");
+                            expect(post.id).to.be.ok();
                             done();
                         }, done);
                     }, done);
-                    */
             });
 
             it("an id is assigned to it", function(done) {
-                throw "foo 2";
-                /*
                 sut.save(getDummyPost()).done(function(post) {
-                    expect(post.id).to.be.ok("Missing id");
+                    expect(post.id).to.be.ok();
                     done();
-                }, done);*/
+                }, done);
             });
 
             function getDummyPost() {
