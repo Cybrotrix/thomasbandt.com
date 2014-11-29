@@ -1,6 +1,6 @@
-var jshint = require("gulp-jshint");
-var gulp = require("gulp");
-var mocha = require('gulp-mocha');
+var jshint = require("gulp-jshint"),
+    gulp = require("gulp"),
+    mocha = require('gulp-mocha');
 
 gulp.task("jshint", function() {
     return gulp.src([

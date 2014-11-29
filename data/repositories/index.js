@@ -1,6 +1,6 @@
-(function(repositories) {
-    "use strict";
+var repositories = {
+    posts: require("./postRepository"),
+    users: require("./userRepository")
+};
 
-    repositories.posts = require("./postRepository");
-    repositories.users = require("./userRepository");
-}(module.exports));
+module.exports = repositories;

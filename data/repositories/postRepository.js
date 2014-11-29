@@ -1,55 +1,55 @@
-(function(repository) {
-    "use strict";
+var q = require("q"),
+    BlogPost = require("../models/blogPost");
 
-    var q = require("q"),
-        mongoose = require("mongoose"),
-        BlogPost = require("../models/blogPost");
+module.exports = {
+    find: findPost,
+    save: savePost
+};
 
-    repository.save = function(post) {
-        var databasePost = new BlogPost({
-            title: post.title,
-            abstract: post.abstract,
-            content: post.content,
-            contentHtml: post.contentHtml,
-            published: post.published
+function findPost(id) {
+    var deferred = q.defer();
+
+    BlogPost.find({id: id}, function (error, result) {
+        if (error) {
+            deferred.reject(error);
+            return;
+        }
+
+        // todo: refactor
+        deferred.resolve({
+            id: id,
+            title: result.title,
+            abstract: result.abstract,
+            content: result.content,
+            contentHtml: result.contentHtml,
+            date: result.date,
+            published: result.published
         });
+    })
 
-        var deferred = q.defer();
+    return deferred.promise;
+}
 
-        databasePost.save(function (error, result) {
-            if (error) {
-                deferred.reject(error);
-                return;
-            }
+function savePost(post) {
+    var databasePost = new BlogPost({
+        title: post.title,
+        abstract: post.abstract,
+        content: post.content,
+        contentHtml: post.contentHtml,
+        published: post.published
+    });
 
-            post.id = result.id;
-            deferred.resolve(post);
-        });
+    var deferred = q.defer();
 
-        return deferred.promise;
-    };
+    databasePost.save(function (error, result) {
+        if (error) {
+            deferred.reject(error);
+            return;
+        }
 
-    repository.find = function(id) {
-        var deferred = q.defer();
+        post.id = result.id;
+        deferred.resolve(post);
+    });
 
-        BlogPost.find({ id: id }, function (error, result) {
-            if (error) {
-                deferred.reject(error);
-                return;
-            }
-
-            // todo: refactor
-            deferred.resolve({
-                id: id,
-                title: result.title,
-                abstract: result.abstract,
-                content: result.content,
-                contentHtml: result.contentHtml,
-                date: result.date,
-                published: result.published
-            });
-        })
-
-        return deferred.promise;
-    }
-}(module.exports));
+    return deferred.promise;
+}

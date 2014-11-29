@@ -1,17 +1,17 @@
-(function(repository) {
-    "use strict";
+var q = require("q"),
+    config = require("../../config");
 
-    var q = require("q"),
-        config = require("../../config");
+module.exports = {
+    getAdminUser: getAdminUser
+};
 
-    repository.getAdminUser = function() {
-        var deferred = q.defer();
+function getAdminUser() {
+    var deferred = q.defer();
 
-        deferred.resolve({
-            userName: config.admin.credentials.userName,
-            hashedPassword: config.admin.credentials.hashedPassword
-        });
+    deferred.resolve({
+        userName: config.admin.credentials.userName,
+        hashedPassword: config.admin.credentials.hashedPassword
+    });
 
-        return deferred.promise;
-    };
-}(module.exports));
+    return deferred.promise;
+}

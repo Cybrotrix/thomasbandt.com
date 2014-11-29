@@ -1,23 +1,23 @@
-(function(loginController) {
-    "use strict";
+var passport = require("passport"),
+    routes = require("../../routes"),
+    routeUtilities = require("../utilities/routeUtilities");
 
-    var passport = require("passport"),
-        routes = require("../../routes"),
-        routeUtilities = require("../utilities/routeUtilities");
+module.exports = {
+    init: init
+};
 
-    loginController.init = function(app) {
-        app.get(routes.admin.login, function(request, response) {
-            routeUtilities.renderAdminView(response, "login", {
-                message: request.flash('error')
-            });
+function init(app) {
+    app.get(routes.admin.login, function(request, response) {
+        routeUtilities.renderAdminView(response, "login", {
+            message: request.flash('error')
         });
+    });
 
-        app.post(routes.admin.login,
-            passport.authenticate('local', {
-                successRedirect: routes.admin.overview,
-                failureRedirect: routes.admin.login,
-                failureFlash: true
-            })
-        );
-    };
-}(module.exports));
+    app.post(routes.admin.login,
+        passport.authenticate('local', {
+            successRedirect: routes.admin.overview,
+            failureRedirect: routes.admin.login,
+            failureFlash: true
+        })
+    );
+}

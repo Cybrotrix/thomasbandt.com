@@ -1,15 +1,15 @@
-(function(controllers) {
-    "use strict";
+var addPostController = require("./addPostController"),
+    loginController = require("./loginController"),
+    logoutController = require("./logoutController"),
+    overViewController = require("./overViewController");
 
-    var addPostController = require("./addPostController"),
-        loginController = require("./loginController"),
-        logoutController = require("./logoutController"),
-        overViewController = require("./overViewController");
+module.exports = {
+    init: init
+};
 
-    controllers.init = function(app) {
-        addPostController.init(app);
-        loginController.init(app);
-        logoutController.init(app);
-        overViewController.init(app);
-    };
-}(module.exports));
+function init(app) {
+    addPostController.init(app);
+    loginController.init(app);
+    logoutController.init(app);
+    overViewController.init(app);
+}
