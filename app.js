@@ -50,7 +50,9 @@ function configureSession(app) {
         resave: false,
         saveUninitialized: true,
         store: new MongoStore({
-            db : config.database.databaseName
+            db : config.debug.enabled ?
+                    config.debug.database.databaseName :
+                        config.database.databaseName
         })
     }));
 }

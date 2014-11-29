@@ -1,7 +1,9 @@
 var config = require("../config"),
     mongoose = require("mongoose");
 
-mongoose.connect(config.database.connectionString);
+mongoose.connect(config.debug.enabled ?
+    config.debug.database.connectionString :
+        config.database.connectionString);
 
 mongoose.connection.on("connected", function () {
     console.log("Connected to " + config.database.connectionString);
