@@ -1,6 +1,5 @@
 var config = {
     debug: {
-        enabled: true,
         database: {
             connectionString: "mongodb://localhost:27017/node-simple-blog-dev",
             databaseName: "node-simple-blog-dev"

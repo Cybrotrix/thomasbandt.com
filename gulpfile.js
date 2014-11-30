@@ -12,6 +12,8 @@ gulp.task("jshint", function() {
 });
 
 gulp.task("mocha", function() {
+    process.env.DEBUG = true;
+
     return gulp.src([
         "*Spec.js",
         "data/**/*Spec.js",

@@ -1,25 +1,27 @@
 var config = require("../config"),
     mongoose = require("mongoose");
 
-mongoose.connect(config.debug.enabled ?
-    config.debug.database.connectionString :
-        config.database.connectionString);
+var connectionString = process.env.DEBUG === "true" ?
+        config.debug.database.connectionString :
+            config.database.connectionString;
+
+mongoose.connect(connectionString);
 
 mongoose.connection.on("connected", function () {
-    console.log("Connected to " + config.database.connectionString);
+    console.log("Connected to " + connectionString);
 });
 
 mongoose.connection.on("error", function (error) {
-    console.log("Connection to " + config.database.connectionString + " failed:" + error);
+    console.log("Connection to " + connectionString + " failed:" + error);
 });
 
 mongoose.connection.on("disconnected", function () {
-    console.log("Disconnected from " + config.database.connectionString);
+    console.log("Disconnected from " + connectionString);
 });
 
 process.on("SIGINT", function() {
     mongoose.connection.close(function () {
-        console.log("Disconnected from " + config.database.connectionString + " through app termination");
+        console.log("Disconnected from " + connectionString + " through app termination");
         process.exit(0);
     });
 });

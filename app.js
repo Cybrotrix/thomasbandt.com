@@ -2,6 +2,8 @@ var config = require("./config"),
     express = require("express"),
     app = express();
 
+process.env.DEBUG = false;
+
 configureViewEngine(app);
 configureCookieParser(app);
 configureSession(app);
@@ -50,7 +52,7 @@ function configureSession(app) {
         resave: false,
         saveUninitialized: true,
         store: new MongoStore({
-            db : config.debug.enabled ?
+            db : process.env.DEBUG === "true" ?
                     config.debug.database.databaseName :
                         config.database.databaseName
         })
