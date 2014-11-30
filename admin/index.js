@@ -1,11 +1,12 @@
 var config = require("../config"),
     routes = require("../routes"),
-    controllers = require("./controllers");
+    controllers = require("./controllers"),
+    userValidator = require("./services/userValidator");
 
 module.exports = {
     init: init,
     services: {
-        userValidator: require("./services/userValidator")
+        userValidator: userValidator
     }
 };
 
@@ -29,7 +30,7 @@ function configureAuthentication(app) {
 
     passport.use(new LocalStrategy(
         function(username, password, done) {
-            admin.services.userValidator.validateLogin(username, password).done(
+            userValidator.validateLogin(username, password).done(
                 function(result) {
                     if (result.errorMessage) {
                         done(null, false, { message: result.errorMessage });

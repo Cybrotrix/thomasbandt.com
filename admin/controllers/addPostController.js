@@ -1,6 +1,7 @@
 var routes = require("../../routes"),
     routeUtilities = require("../utilities/routeUtilities"),
-    data = require("../../data");
+    data = require("../../data"),
+    markdown = require("markdown").markdown;
 
 module.exports = {
     init: init
@@ -16,7 +17,7 @@ function init(app) {
             title: request.body.title,
             abstract: request.body.abstract,
             content: request.body.content,
-            contentHtml: "foo",
+            contentHtml: markdown.toHTML(request.body.content),
             published: request.body.published || false
         };
 
