@@ -16,8 +16,8 @@
     {{else}}
     <tr class="warning">
     {{/if}}
-        <td style="width: 70%">{{this.title}}</td>
-        <td am-time-ago="'{{this.date}}'"></td>
+        <td style="width: 60%">{{this.title}}</td>
+        <td>\{{'{{this.date}}' | amDateFormat: 'lll'}}</td>
         <td>
             {{#if this.published}}
                 published
