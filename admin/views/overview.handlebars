@@ -3,3 +3,9 @@
         <span class="glyphicon glyphicon-thumbs-up"></span> {{message}}
     </div>
 {{/if}}
+
+<ul>
+{{#each posts}}
+    <li>{{this.title}}</li>
+{{/each}}
+</ul>

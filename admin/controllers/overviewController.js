@@ -1,5 +1,6 @@
 var routes = require("../../routes"),
-    routeUtilities = require("../utilities/routeUtilities");
+    routeUtilities = require("../utilities/routeUtilities"),
+    data = require("../../data");
 
 module.exports = {
     init: init
@@ -7,8 +8,11 @@ module.exports = {
 
 function init(app) {
     app.get(routes.admin.overview, function(request, response) {
-        routeUtilities.renderAdminView(response, "overview", {
-            message: request.flash("post-added")
+        data.posts.all().then(function(posts) {
+            routeUtilities.renderAdminView(response, "overview", {
+                message: request.flash("post-added"),
+                posts: posts
+            });
         });
     });
 }
