@@ -31,7 +31,7 @@ describe("PostRepository", function() {
     });
 
     describe("When looking for a blog post by its id", function() {
-        it("will the post", function() {
+        it("will return the post", function() {
             throw "not implemented";
         });
     });
