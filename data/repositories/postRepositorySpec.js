@@ -1,4 +1,5 @@
-var expect = require("chai").expect;
+var expect = require("chai").expect,
+    _ = require("underscore");
 
 describe("PostRepository", function() {
     var sut;
@@ -31,21 +32,40 @@ describe("PostRepository", function() {
     });
 
     describe("When looking for a blog post by its id", function() {
-        it("will return the post", function() {
-            throw "not implemented";
+        it("will return the post", function(done) {
+            sut.save(getDummyPost()).done(function(post) {
+                expect(post.id).to.be.ok();
+                done();
+            }, done);
         });
     });
 
     describe("When requesting all blog posts", function() {
-        it("will deliver all existing blog posts", function() {
-            throw "not implemented"
+        it("will deliver all existing blog posts", function(done) {
+            var dummyPost = getDummyPost();
+            dummyPost.title = Math.random().toString(36);
+
+            sut.save(dummyPost)
+                .then(function() {
+                    return sut.save(dummyPost);
+                })
+                .then(sut.all)
+                .done(function(posts) {
+                    var count = _.filter(posts, function(post) {
+                        return post.title === dummyPost.title;
+                    }).length;
+
+                    expect(count).to.equal(2);
+
+                    done();
+                }, done);
         })
     })
 });
 
 function getDummyPost() {
     return {
-        title: "Dummy Post Title" + Math.random().toString(36),
+        title: "Dummy Post Title",
         abstract: "Abstract",
         content: "Content",
         contentHtml: "Html",
