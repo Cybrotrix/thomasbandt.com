@@ -9,22 +9,12 @@ module.exports = {
 function findPost(id) {
     var deferred = q.defer();
 
-    BlogPost.find({id: id}, function (error, result) {
+    BlogPost.findById(id, function (error, post) {
         if (error) {
             deferred.reject(error);
-            return;
+        } else {
+            deferred.resolve(post);
         }
-
-        // todo: refactor
-        deferred.resolve({
-            id: id,
-            title: result.title,
-            abstract: result.abstract,
-            content: result.content,
-            contentHtml: result.contentHtml,
-            date: result.date,
-            published: result.published
-        });
     })
 
     return deferred.promise;
