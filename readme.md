@@ -21,13 +21,13 @@ Provides a feed containing the latest articles.
 
 ## Backend
 
-### Login
+### Login ✓
 The page everyone unauthorized accessing the backend is forwarded to. Provides a simple login form that matches a user name and a password with data from a local configuration source.
 
 ### Overview
 Once logged in, this is the central place of the backend where all posts are listed, sorted by creation date descending. By click one can access the edit form of a single post.
 
-### Create and Edit Form
+### Create ✓ and Edit Form
 A simple form for filling in the needed information of a blog post. The content is being formatted with Markdown, a live preview of the HTML result is provided instantly on the screen. By saving the HTML is stored next to the Markdown version, too.
 
 ### Assets
@@ -35,10 +35,10 @@ A list of all assets which have been uploaded to a specific directory. The data 
 
 ## Model
 
-### Post
+### Post ✓
 - Title : String
 - Abstract : String
 - Content : String
 - ContentHtml : String
 - Published : Boolean
-- DateCreated: Date
+- DateCreated : Date
