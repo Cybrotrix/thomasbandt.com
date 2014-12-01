@@ -1,14 +1,14 @@
 var expect = require("chai").expect;
 
 describe("PostRepository", function() {
+    var sut;
+
+    before(function() {
+        sut = require("./postRepository");
+        require("../database");
+    });
+
     describe("When saving a new blog post", function() {
-        var sut;
-
-        before(function() {
-            sut = require("./postRepository");
-            require("../database");
-        });
-
         it("it is stored to the database", function(done) {
             sut.save(getDummyPost())
                 .then(function(post) {
@@ -28,16 +28,28 @@ describe("PostRepository", function() {
                 done();
             }, done);
         });
-
-        function getDummyPost() {
-            return {
-                title: "Dummy Post Title" + Math.random().toString(36),
-                abstract: "Abstract",
-                content: "Content",
-                contentHtml: "Html",
-                date: new Date(),
-                published: true
-            }
-        }
     });
+
+    describe("When looking for a blog post by its id", function() {
+        it("will the post", function() {
+            throw "not implemented";
+        });
+    });
+
+    describe("When requesting all blog posts", function() {
+        it("will deliver all existing blog posts", function() {
+            throw "not implemented"
+        })
+    })
 });
+
+function getDummyPost() {
+    return {
+        title: "Dummy Post Title" + Math.random().toString(36),
+        abstract: "Abstract",
+        content: "Content",
+        contentHtml: "Html",
+        date: new Date(),
+        published: true
+    }
+}

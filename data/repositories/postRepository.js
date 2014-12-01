@@ -2,11 +2,19 @@ var q = require("q"),
     BlogPost = require("../models/blogPost");
 
 module.exports = {
-    find: findPost,
+    all: getAllPosts,
+    find: findPostById,
     save: savePost
 };
 
-function findPost(id) {
+function getAllPosts() {
+    var deferred = q.defer();
+
+
+    return deferred.promise;
+}
+
+function findPostById(id) {
     var deferred = q.defer();
 
     BlogPost.findById(id, function (error, post) {
