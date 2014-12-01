@@ -8,6 +8,11 @@ module.exports = {
 
 function init(app) {
     app.get(routes.admin.login, function(request, response) {
+        if (request.isAuthenticated()) {
+            response.redirect(routes.admin.overview);
+            return;
+        }
+
         routeUtilities.renderAdminView(response, "login", {
             message: request.flash('error')
         });

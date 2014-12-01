@@ -8,11 +8,11 @@ module.exports = {
 };
 
 function init(app) {
-    app.get(routes.admin.addPost, routeUtilities.authenticate, function(request, response) {
+    app.get(routes.admin.addPost, function(request, response) {
         routeUtilities.renderAdminView(response, "addPost");
     });
 
-    app.post(routes.admin.addPost, routeUtilities.authenticate, function(request, response) {
+    app.post(routes.admin.addPost, function(request, response) {
         var post = {
             title: request.body.title,
             abstract: request.body.abstract,

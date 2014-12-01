@@ -1,4 +1,5 @@
-var config = require("../config"),
+var _ = require("underscore"),
+    config = require("../config"),
     routes = require("../routes"),
     controllers = require("./controllers"),
     userValidator = require("./services/userValidator");
@@ -53,11 +54,30 @@ function configureAuthentication(app) {
         done(null, "admin");
     });
 
-    app.use(function(request, response, next) {
+    app.use("/admin", function(request, response, next) {
+        if (!authenticateAdminRequest(request)) {
+            response.redirect(routes.admin.login);
+            return;
+        };
+
         request.app.locals.isAuthenticated = request.isAuthenticated();
         request.app.locals.routes = routes;
         request.app.locals.activeRoute = request.originalUrl;
         request.app.locals.metadata = config.metadata;
         next();
     });
+
+    function authenticateAdminRequest(request) {
+        if (request.isAuthenticated())
+            return true;
+
+        var url = request.originalUrl;
+        var isClientAssetRequest = url.substring(0, 13) === "/admin/client";
+
+        if (isClientAssetRequest)
+            return true;
+
+        // Allow only login page to be accessed
+        return url == routes.admin.login;
+    }
 }

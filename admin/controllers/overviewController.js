@@ -6,7 +6,7 @@ module.exports = {
 };
 
 function init(app) {
-    app.get(routes.admin.overview, routeUtilities.authenticate, function(request, response) {
+    app.get(routes.admin.overview, function(request, response) {
         routeUtilities.renderAdminView(response, "overview", {
             message: request.flash("post-added")
         });
