@@ -3,6 +3,7 @@ var jshint = require("gulp-jshint"),
     mocha = require("gulp-mocha"),
     uglify = require("gulp-uglify"),
     concat = require("gulp-concat"),
+    gzip = require("gulp-gzip"),
     watch = require("gulp-watch");
 
 gulp.task("jshint", function() {
@@ -43,6 +44,7 @@ gulp.task("minify", function() {
             return files
                 .pipe(uglify())
                 .pipe(concat("all.min.js"))
+                .pipe(gzip({ append: false }))
                 .pipe(gulp.dest("admin/client/dist"));
         }));
 });
