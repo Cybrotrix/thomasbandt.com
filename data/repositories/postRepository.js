@@ -10,13 +10,16 @@ module.exports = {
 function getAllPosts() {
     var deferred = q.defer();
 
-    BlogPost.find({}, function (error, posts) {
-        if (error) {
-            deferred.reject(error);
-        } else {
-            deferred.resolve(posts);
-        }
-    })
+    BlogPost
+        .find({})
+        .sort("-date")
+        .exec(function(error, posts) {
+            if (error) {
+                deferred.reject(error);
+            } else {
+                deferred.resolve(posts);
+            }
+        });
 
     return deferred.promise;
 }
