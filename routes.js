@@ -1,9 +1,9 @@
 var routes = {
     admin: {
-        addPost: "/admin/add-post",
+        addPost: "/admin/posts/add",
         login: "/admin/login",
         logout: "/admin/logout",
-        overview: "/admin"
+        overview: "/admin/posts"
     },
     blog: {
         home: "/"
