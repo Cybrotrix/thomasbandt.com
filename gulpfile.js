@@ -37,13 +37,16 @@ gulp.task("minify", function() {
             "admin/client/libraries/underscore/underscore-min.js",
             "admin/client/libraries/markdown-js/dist/markdown.min.js",
             "admin/client/libraries/bootstrap-markdown/js/bootstrap-markdown.js",
+            "admin/client/libraries/moment/min/moment.min.js",
+            "admin/client/libraries/angular-moment/angular-moment.min.js",
+            "admin/client/scripts/*.js",
             "admin/client/scripts/**/*.js"
         ];
 
     gulp.src(scriptsToBeMinified)
         .pipe(watch(scriptsToBeMinified, function (files) {
             return files
-                .pipe(uglify())
+                .pipe(uglify({ mangle: false }))
                 .pipe(concat("all.min.js"))
                 .pipe(gulp.dest("admin/client/dist"));
         }));

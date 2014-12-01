@@ -8,7 +8,7 @@
 {{#each posts}}
     <tr>
         <td style="width: 70%">{{this.title}}</td>
-        <td>{{this.date}}</td>
+        <td><span am-time-ago="'{{this.date}}'"></span></td>
         <td>{{this.published}}</td>
     </tr>
 {{/each}}

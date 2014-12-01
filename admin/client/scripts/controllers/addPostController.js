@@ -2,7 +2,7 @@
     "use strict";
 
     angular
-        .module("admin", [])
+        .module("admin")
         .controller("AddPostController", AddPostController);
 
     AddPostController.$inject = ["$scope"];
