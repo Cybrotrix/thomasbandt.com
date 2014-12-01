@@ -5,11 +5,26 @@
 {{/if}}
 
 <table class="table table-hover">
-{{#each posts}}
     <tr>
+        <th>Title</th>
+        <th>Date</th>
+        <th>Status</th>
+    </tr>
+{{#each posts}}
+    {{#if this.published}}
+    <tr>
+    {{else}}
+    <tr class="warning">
+    {{/if}}
         <td style="width: 70%">{{this.title}}</td>
-        <td><span am-time-ago="'{{this.date}}'"></span></td>
-        <td>{{this.published}}</td>
+        <td am-time-ago="'{{this.date}}'"></td>
+        <td>
+            {{#if this.published}}
+                published
+            {{else}}
+                disabled
+            {{/if}}
+        </td>
     </tr>
 {{/each}}
 </table>
