@@ -1,5 +1,4 @@
-var _ = require("underscore"),
-    config = require("../config"),
+var config = require("../config"),
     routes = require("../routes"),
     controllers = require("./controllers"),
     userValidator = require("./services/userValidator");
@@ -58,7 +57,7 @@ function configureAuthentication(app) {
         if (!authenticateAdminRequest(request)) {
             response.redirect(routes.admin.login);
             return;
-        };
+        }
 
         request.app.locals.isAuthenticated = request.isAuthenticated();
         request.app.locals.routes = routes;
