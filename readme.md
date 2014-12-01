@@ -24,7 +24,7 @@ Provides a feed containing the latest articles.
 ### Login ✓
 The page everyone unauthorized accessing the backend is forwarded to. Provides a simple login form that matches a user name and a password with data from a local configuration source.
 
-### Overview
+### Overview ✓
 Once logged in, this is the central place of the backend where all posts are listed, sorted by creation date descending. By click one can access the edit form of a single post.
 
 ### Create ✓ and Edit Form
