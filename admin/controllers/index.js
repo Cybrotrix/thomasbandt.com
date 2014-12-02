@@ -3,7 +3,8 @@ var addPostController = require("./posts/addPostController"),
     deletePostController = require("./posts/deletePostController"),
     loginController = require("./authentication/loginController"),
     logoutController = require("./authentication/logoutController"),
-    overViewController = require("./overview/overviewController");
+    overViewController = require("./overview/overviewController"),
+    assetsController = require("./assets/assetsController");
 
 module.exports = {
     init: init
@@ -16,4 +17,5 @@ function init(app) {
     loginController.init(app);
     logoutController.init(app);
     overViewController.init(app);
+    assetsController.init(app);
 }

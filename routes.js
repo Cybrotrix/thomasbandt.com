@@ -5,7 +5,8 @@ var routes = {
         deletePost: "/admin/posts/delete/:id",
         login: "/admin/login",
         logout: "/admin/logout",
-        overview: "/admin/posts"
+        overview: "/admin/posts",
+        assets: "/admin/assets"
     },
     blog: {
         home: "/"
