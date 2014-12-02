@@ -1,1 +1,91 @@
-<h1>Edit: {{post.title}}</h1>
+<form ng-controller="EditPostController as model"
+      action="{{actionLink routes.admin.editPost ':id' post.id }}"
+      method="post"
+      name="form"
+      class="add-post jumbotron"
+      novalidate>
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Update Blog Post</h1>
+            <div ng-show="submitted && form.$invalid" class="alert alert-danger">
+                <ul>
+                    <li ng-if="form.title.$invalid" ng-messages="form.title.$error" >
+                        Please fill in the title of your post.
+                    </li>
+                    <li ng-if="form.abstract.$invalid" ng-messages="form.abstract.$error">
+                        Please fill in a short abstract of your post.
+                    </li>
+                    <li ng-if="form.content.$invalid" ng-messages="form.content.$error">
+                        Please fill in the content of your post.
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12 form-group"
+             ng-class="{ 'has-error': submitted && form.title.$invalid }">
+            <label for="title">Title</label>
+            <input ng-model="title"
+                   ng-init="title='{{post.title}}'"
+                   type="text"
+                   class="form-control"
+                   id="title"
+                   name="title"
+                   placeholder="The title of your post (required)"
+                   required>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12 form-group"
+             ng-class="{ 'has-error': submitted && form.abstract.$invalid }">
+            <label for="abstract">Abstract</label>
+            <textarea ng-model="abstract"
+                      ng-init="abstract='{{post.abstract}}'"
+                      class="form-control"
+                      rows="3"
+                      id="abstract"
+                      name="abstract"
+                      placeholder="A short abstract of your post (required)"
+                      required>{{{post.abstract}}}</textarea>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12 form-group"
+             ng-class="{ 'has-error': submitted && form.content.$invalid }">
+            <label for="content">Content</label>
+            <textarea ng-model="content"
+                      ng-init="content='{{post.content}}'"
+                      data-provide="markdown"
+                      class="form-control"
+                      rows="20"
+                      id="content"
+                      name="content"
+                      placeholder="The content of your post (required)"
+                      required>{{{post.content}}}</textarea>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12 form-group">
+            <input {{#if post.published}}checked="checked"{{else}}{{/if}}"
+                   type="checkbox"
+                   id="published"
+                   name="published" />
+            <label for="published">Published</label>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <button ng-click="submit($event)" class="btn btn-lg btn-primary">Save this Blog Post</button>
+        </div>
+    </div>
+</form>
+
+{{#section "pageStyles"}}
+    <link href="/admin/client/libraries/bootstrap-markdown/css/bootstrap-markdown.min.css" rel="stylesheet">
+{{/section}}

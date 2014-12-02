@@ -3,11 +3,11 @@
 
     angular
         .module("admin")
-        .controller("AddPostController", AddPostController);
+        .controller("EditPostController", EditPostController);
 
-    AddPostController.$inject = ["$scope"];
+    EditPostController.$inject = ["$scope"];
 
-    function AddPostController($scope) {
+    function EditPostController($scope) {
         $scope.submitted = false;
 
         $scope.submit = function($event) {
