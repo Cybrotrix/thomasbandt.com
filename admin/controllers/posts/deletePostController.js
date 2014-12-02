@@ -1,6 +1,5 @@
 var routes = require("../../../routes"),
-    data = require("../../../data/index"),
-    markdown = require("markdown").markdown;
+    data = require("../../../data/index");
 
 module.exports = {
     init: init
