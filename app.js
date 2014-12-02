@@ -23,7 +23,7 @@ function configureViewEngine(app) {
             activeMenuItem: function(route, activeRoute) {
                 return route === activeRoute ? "class=\"active\"" : "";
             },
-            paramLink: function(route, parameterName, parameterValue) {
+            actionLink: function(route, parameterName, parameterValue) {
                 return route.replace(parameterName, parameterValue);
             },
             section: function(name, options){
