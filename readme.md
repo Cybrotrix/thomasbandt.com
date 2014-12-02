@@ -1,7 +1,5 @@
 # Simple Blog Specification
 
-Simple Blog is a small side project which main purpose is to provide some Node.js insights to an ASP.NET developer ;-).
-
 ## Public Pages
 
 ### Index
