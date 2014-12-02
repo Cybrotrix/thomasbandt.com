@@ -30,3 +30,7 @@ node_modules
 
 # Bower
 admin/client/libraries
+
+# Upload
+upload
+!upload/dont-remove-me.txt
