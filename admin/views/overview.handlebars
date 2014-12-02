@@ -4,27 +4,34 @@
     </div>
 {{/if}}
 
-<table class="table table-hover">
-    <tr>
-        <th>Title</th>
-        <th>Date</th>
-        <th>Status</th>
-    </tr>
-{{#each posts}}
-    {{#if this.published}}
-    <tr>
-    {{else}}
-    <tr class="warning">
-    {{/if}}
-        <td style="width: 60%"><a href="/admin/posts/edit/{{this.id}}">{{this.title}}</a></td>
-        <td>\{{'{{this.date}}' | amDateFormat: 'lll'}}</td>
-        <td>
-            {{#if this.published}}
-                published
-            {{else}}
-                disabled
-            {{/if}}
-        </td>
-    </tr>
-{{/each}}
-</table>
+{{#if posts}}
+    <table class="table table-hover">
+        <tr>
+            <th>Title</th>
+            <th>Date</th>
+            <th>Status</th>
+        </tr>
+        {{#each posts}}
+        {{#if this.published}}
+        <tr>
+        {{else}}
+        <tr class="warning">
+        {{/if}}
+            <td style="width: 60%"><a href="/admin/posts/edit/{{this.id}}">{{this.title}}</a></td>
+            <td>\{{'{{this.date}}' | amDateFormat: 'lll'}}</td>
+            <td>
+                {{#if this.published}}
+                    published
+                {{else}}
+                    disabled
+                {{/if}}
+            </td>
+        </tr>
+        {{/each}}
+    </table>
+{{else}}
+    <div class="jumbotron">
+        <h1>Welcome!</h1>
+        <p>You have not added a blog post yet. <a href="{{routes.admin.addPost}}">Go and write one!</a></p>
+    </div>
+{{/if}}
