@@ -1,3 +1,4 @@
+<div class="assets">
 {{#if files}}
     <table class="table table-hover">
         <tr>
@@ -6,11 +7,16 @@
             <th>Size</th>
         </tr>
         {{#each files}}
-            <tr>
+        <tr data-toggle="collapse" data-target="#file_{{@index}}" class="file-row">
             <td style="width: 60%">{{this.name}}</td>
             <td>\{{'{{this.created}}' | amDateFormat: 'lll'}}</td>
             <td>
                 \{{({{this.size}} / 1024).format(0, '.')}} KB
+            </td>
+        </tr>
+        <tr class="collapse out" id="file_{{@index}}">
+            <td colspan="3">
+                <img src="{{../assets.webPath }}{{this.name}}">
             </td>
         </tr>
         {{/each}}
@@ -20,3 +26,4 @@
         <p>No file uploaded yet.</p>
     </div>
 {{/if}}
+</div>

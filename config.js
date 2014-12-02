@@ -6,7 +6,8 @@ var config = {
         }
     },
     assets: {
-        uploadFolder: __dirname + "/upload/"
+        uploadFolder: __dirname + "/upload/",
+        webPath: "/upload/"
     },
     database: {
         connectionString: "mongodb://localhost:27017/node-simple-blog",

@@ -5,13 +5,14 @@ var config = require("./config"),
 setEnvironmentVariables();
 
 configureViewEngine(app);
+configurePublicDirectories(app, express);
 configureCookieParser(app);
 configureSession(app);
 configureBodyParser(app);
 configureFlash(app);
 
 setUpDatabase();
-setUpAdmin(app, express);
+setUpAdmin(app);
 
 startServer(app);
 
@@ -44,6 +45,11 @@ function configureViewEngine(app) {
 
     app.engine("handlebars", configuredHandlebars.engine);
     app.set("view engine", "handlebars");
+}
+
+function configurePublicDirectories(app, express) {
+    app.use("/upload", express.static(__dirname + "/upload"));
+    app.use("/admin/client", express.static(__dirname + "/admin/client"));
 }
 
 function configureCookieParser(app) {
@@ -81,8 +87,8 @@ function setUpDatabase() {
     require("./data");
 }
 
-function setUpAdmin(app, express) {
-    require("./admin").init(app, express);
+function setUpAdmin(app) {
+    require("./admin").init(app);
 }
 
 function startServer(app) {

@@ -10,15 +10,10 @@ module.exports = {
     }
 };
 
-function init(app, express) {
+function init(app) {
     configureAuthentication(app);
-    configurePublicDirectories(app, express);
 
     controllers.init(app);
-}
-
-function configurePublicDirectories(app, express) {
-    app.use("/admin/client", express.static(__dirname + "/client"));
 }
 
 function configureAuthentication(app) {
@@ -63,6 +58,7 @@ function configureAuthentication(app) {
         request.app.locals.routes = routes;
         request.app.locals.activeRoute = request.originalUrl;
         request.app.locals.metadata = config.metadata;
+        request.app.locals.assets = config.assets;
         next();
     });
 
