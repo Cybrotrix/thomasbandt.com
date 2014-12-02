@@ -4,7 +4,7 @@ var q = require("q"),
 module.exports = {
     all: getAllPosts,
     find: findPostById,
-    save: savePost
+    add: savePost
 };
 
 function getAllPosts() {

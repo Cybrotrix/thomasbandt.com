@@ -10,7 +10,7 @@ function init(app) {
     app.get(routes.admin.overview, function(request, response) {
         data.posts.all().then(function(posts) {
             routeUtilities.renderAdminView(response, "overview", {
-                message: request.flash("post-added"),
+                message: request.flash("post-saved"),
                 posts: posts
             });
         });

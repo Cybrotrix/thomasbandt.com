@@ -21,8 +21,8 @@ function init(app) {
             published: request.body.published || false
         };
 
-        data.posts.save(post).done(function() {
-            request.flash("post-added", "Blog Post successfully added.");
+        data.posts.add(post).done(function() {
+            request.flash("post-saved", "Blog Post successfully added.");
             response.redirect(routes.admin.overview);
         });
     });

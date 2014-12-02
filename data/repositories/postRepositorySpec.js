@@ -11,7 +11,7 @@ describe("PostRepository", function() {
 
     describe("When saving a new blog post", function() {
         it("it is stored to the database", function(done) {
-            sut.save(getDummyPost())
+            sut.add(getDummyPost())
                 .then(function(post) {
                     return post.id;
                 })
@@ -24,7 +24,7 @@ describe("PostRepository", function() {
         });
 
         it("an id is assigned to it", function(done) {
-            sut.save(getDummyPost()).done(function(post) {
+            sut.add(getDummyPost()).done(function(post) {
                 expect(post.id).to.be.ok();
                 done();
             }, done);
@@ -33,7 +33,7 @@ describe("PostRepository", function() {
 
     describe("When looking for a blog post by its id", function() {
         it("will return the post", function(done) {
-            sut.save(getDummyPost()).done(function(post) {
+            sut.add(getDummyPost()).done(function(post) {
                 expect(post.id).to.be.ok();
                 done();
             }, done);
@@ -45,9 +45,9 @@ describe("PostRepository", function() {
             var dummyPost = getDummyPost();
             dummyPost.title = Math.random().toString(36);
 
-            sut.save(dummyPost)
+            sut.add(dummyPost)
                 .then(function() {
-                    return sut.save(dummyPost);
+                    return sut.add(dummyPost);
                 })
                 .then(sut.all)
                 .done(function(posts) {
