@@ -1,4 +1,7 @@
-var expect = require("chai").expect,
+var config = require("../../config"),
+    expect = require("chai").expect,
+    fs = require("fs"),
+    q = require("q"),
     _ = require("underscore");
 
 describe("AssetRepository", function() {
@@ -49,6 +52,27 @@ describe("AssetRepository", function() {
             }, done);
         })
     });
+
+    describe("When a file is being removed", function() {
+        it("gets deleted from the file system", function(done) {
+            var testFile = createTestFileSync();
+            expect(fs.existsSync(config.assets.uploadFolder + testFile)).to.be.true();
+
+            sut.remove(testFile).done(function() {
+                expect(fs.existsSync(config.assets.uploadFolder + testFile)).to.be.false();
+
+                done();
+            }, done);
+        });
+    })
+
+    function createTestFileSync() {
+        var fileName = Math.random().toString(36) + ".txt";
+
+        fs.writeFileSync(config.assets.uploadFolder + fileName, "Demo");
+
+        return fileName;
+    }
 
     function GetDontRemoveMeTxt(files) {
         var filteredFiles = _.filter(files, function(file) {

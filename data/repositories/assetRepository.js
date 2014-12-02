@@ -5,7 +5,8 @@ var _ = require("underscore"),
     fs = require("fs");
 
 module.exports = {
-    all: getAllFiles
+    all: getAllFiles,
+    remove: removeFile
 };
 
 function getAllFiles() {
@@ -27,6 +28,20 @@ function getAllFiles() {
 
             deferred.resolve(files);
         });
+    });
+
+    return deferred.promise;
+}
+
+function removeFile(fileName) {
+    var deferred = q.defer();
+
+    fs.unlink(config.assets.uploadFolder + fileName, function (error) {
+        if (error) {
+            deferred.reject(error);
+        } else {
+            deferred.resolve(true);
+        }
     });
 
     return deferred.promise;
