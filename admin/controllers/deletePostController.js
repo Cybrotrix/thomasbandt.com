@@ -11,6 +11,6 @@ function init(app) {
         data.posts.remove(request.params.id).then(function() {
             request.flash("post-saved", "Blog Post successfully deleted.");
             response.redirect(routes.admin.overview);
-        })
+        });
     });
 }
