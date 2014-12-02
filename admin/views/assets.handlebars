@@ -16,7 +16,22 @@
         </tr>
         <tr class="collapse out" id="file_{{@index}}">
             <td colspan="3">
-                <img src="{{../assets.webPath }}{{this.name}}">
+                <fieldset>
+                    <legend>Path</legend>
+                    <input type="url" class="copy-url" value="{{../assets.webPath }}{{this.name}}">
+                </fieldset>
+
+                <fieldset asset-preview="{{this.name}}">
+                    <legend>Preview</legend>
+                    <a href="{{../assets.webPath }}{{this.name}}" target="_blank">
+                        <img ng-src="{{../assets.webPath }}{{this.name}}">
+                    </a>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Actions</legend>
+                    <a href="#" class="btn btn-danger">Delete Asset</a>
+                </fieldset>
             </td>
         </tr>
         {{/each}}
