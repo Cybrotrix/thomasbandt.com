@@ -1,1 +1,22 @@
-Assets
+{{#if files}}
+    <table class="table table-hover">
+        <tr>
+            <th>Name</th>
+            <th>Uploaded</th>
+            <th>Size</th>
+        </tr>
+        {{#each files}}
+            <tr>
+            <td style="width: 60%">{{this.name}}</td>
+            <td>\{{'{{this.created}}' | amDateFormat: 'lll'}}</td>
+            <td>
+                {{this.size}} KB
+            </td>
+        </tr>
+        {{/each}}
+    </table>
+{{else}}
+    <div class="jumbotron">
+        <p>No file uploaded yet.</p>
+    </div>
+{{/if}}

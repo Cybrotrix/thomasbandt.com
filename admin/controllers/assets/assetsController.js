@@ -1,6 +1,7 @@
 var config = require("../../../config"),
     routes = require("../../../routes"),
-    routeUtilities = require("../../utilities/routeUtilities");
+    routeUtilities = require("../../utilities/routeUtilities"),
+    data = require("../../../data");
 
 module.exports = {
     init: init
@@ -8,8 +9,10 @@ module.exports = {
 
 function init(app) {
     app.get(routes.admin.assets, function(request, response) {
-        routeUtilities.renderAdminView(response, "assets", {
-            files: files
+        data.assets.all().done(function(files) {
+            routeUtilities.renderAdminView(response, "assets", {
+                files: files
+            });
         });
     });
 }

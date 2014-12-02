@@ -38,7 +38,7 @@ function getFileStats(filePath) {
     fs.stat(config.assets.uploadFolder + filePath, function(error, stats) {
         deferred.resolve({
             name: filePath,
-            size: stats.size,
+            size: Math.round(stats.size / 1024, 0),
             created: stats.ctime
         })
     });
