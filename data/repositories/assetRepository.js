@@ -1,6 +1,7 @@
 var _ = require("underscore"),
     q = require("q"),
     config = require("../../config"),
+    path = require("path"),
     fs = require("fs");
 
 module.exports = {
@@ -14,10 +15,12 @@ function getAllFiles() {
         var files = [];
 
         _.forEach(paths, function(path) {
-            //var stats = fs.statSync(path);
+            var stats = fs.statSync(config.assets.uploadFolder + path);
 
             files.push({
-                name: path
+                name: path.replace(/^.*[\\\/]/, ''),
+                size: stats.size,
+                created: stats.ctime
             })
         });
 

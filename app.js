@@ -2,7 +2,7 @@ var config = require("./config"),
     express = require("express"),
     app = express();
 
-process.env.DEBUG = false;
+setEnvironmentVariables();
 
 configureViewEngine(app);
 configureCookieParser(app);
@@ -14,6 +14,10 @@ setUpDatabase();
 setUpAdmin(app, express);
 
 startServer(app);
+
+function setEnvironmentVariables() {
+    process.env.DEBUG = false;
+}
 
 function configureViewEngine(app) {
     var handlebars = require("express-handlebars");
