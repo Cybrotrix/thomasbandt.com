@@ -1,6 +1,6 @@
 var routes = require("../../../routes"),
     routeUtilities = require("../../utilities/routeUtilities"),
-    data = require("../../../data/index");
+    data = require("../../../data");
 
 module.exports = {
     init: init
