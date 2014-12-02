@@ -1,9 +1,9 @@
-var addPostController = require("./addPostController"),
-    editPostController = require("./editPostController"),
-    deletePostController = require("./deletePostController"),
-    loginController = require("./loginController"),
-    logoutController = require("./logoutController"),
-    overViewController = require("./overViewController");
+var addPostController = require("./posts/addPostController"),
+    editPostController = require("./posts/editPostController"),
+    deletePostController = require("./posts/deletePostController"),
+    loginController = require("./authentication/loginController"),
+    logoutController = require("./authentication/logoutController"),
+    overViewController = require("./overview/overviewController");
 
 module.exports = {
     init: init

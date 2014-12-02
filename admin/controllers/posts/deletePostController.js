@@ -1,5 +1,5 @@
-var routes = require("../../routes"),
-    data = require("../../data"),
+var routes = require("../../../routes"),
+    data = require("../../../data/index"),
     markdown = require("markdown").markdown;
 
 module.exports = {
