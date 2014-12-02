@@ -24,3 +24,9 @@ build/Release
 
 # WebStorm Stuff
 .idea/
+
+# Node
+node_modules
+
+# Bower
+admin/client/libraries
