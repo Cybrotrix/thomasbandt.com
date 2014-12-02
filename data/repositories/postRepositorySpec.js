@@ -44,7 +44,26 @@ describe("PostRepository", function() {
                     done();
                 }, done);
         })
-    })
+    });
+
+    describe("When removing a blog post", function() {
+       it("gets deleted from the database", function(done) {
+           var postId;
+
+           sut.add(getDummyPost())
+               .then(function(post) {
+                   postId = post.id;
+                   return sut.remove(post.id);
+               })
+               .then(function() {
+                  return sut.find(postId);
+               })
+               .done(function(post) {
+                   expect(post).to.be.null();
+                   done();
+               }, done);
+       });
+    });
 
     describe("When updating a blog post", function() {
         it("updates the title", function(done) {
@@ -121,7 +140,7 @@ describe("PostRepository", function() {
                     expect(updatedPost.published).to.be.false();
                     done();
                 }, done);
-        })
+        });
     });
 });
 

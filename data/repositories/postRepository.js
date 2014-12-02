@@ -5,6 +5,7 @@ module.exports = {
     add: addPost,
     all: getAllPosts,
     find: findPostById,
+    remove: removePost,
     update: updatePost
 };
 
@@ -62,6 +63,24 @@ function addPost(post) {
 
     return deferred.promise;
 }
+
+function removePost(id) {
+    var deferred = q.defer();
+
+    var query = {
+        _id: id
+    };
+
+    BlogPost.remove(query, function (error, result) {
+        if (error) {
+            deferred.reject(error);
+        } else {
+            deferred.resolve(result);
+        }
+    });
+
+    return deferred.promise;
+};
 
 function updatePost(post) {
     var deferred = q.defer();
