@@ -9,7 +9,7 @@
         <tr>
             <th>Title</th>
             <th>Date</th>
-            <th>Status</th>
+            <th>Published</th>
         </tr>
         {{#each posts}}
         {{#if this.published}}
@@ -21,9 +21,9 @@
             <td>\{{'{{this.date}}' | amDateFormat: 'lll'}}</td>
             <td>
                 {{#if this.published}}
-                    published
+                    <span class="glyphicon glyphicon-ok"></span>
                 {{else}}
-                    disabled
+                    <span class="glyphicon glyphicon-remove"></span>
                 {{/if}}
             </td>
         </tr>
