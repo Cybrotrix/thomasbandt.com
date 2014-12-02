@@ -2,9 +2,10 @@ var q = require("q"),
     BlogPost = require("../models/blogPost");
 
 module.exports = {
+    add: addPost,
     all: getAllPosts,
     find: findPostById,
-    add: savePost
+    update: updatePost
 };
 
 function getAllPosts() {
@@ -38,7 +39,7 @@ function findPostById(id) {
     return deferred.promise;
 }
 
-function savePost(post) {
+function addPost(post) {
     var databasePost = new BlogPost({
         title: post.title,
         abstract: post.abstract,
@@ -57,6 +58,32 @@ function savePost(post) {
 
         post.id = result.id;
         deferred.resolve(post);
+    });
+
+    return deferred.promise;
+}
+
+function updatePost(post) {
+    var deferred = q.defer();
+
+    var query = {
+        _id: post.id
+    };
+
+    var update = {
+        title: post.title,
+        abstract: post.abstract,
+        content: post.content,
+        contentHtml: post.contentHtml,
+        published: post.published
+    };
+
+    BlogPost.findOneAndUpdate(query, update, function (error, post) {
+        if (error) {
+            deferred.reject(error);
+        } else {
+            deferred.resolve(post);
+        }
     });
 
     return deferred.promise;

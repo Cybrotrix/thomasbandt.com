@@ -15,4 +15,20 @@ function init(app) {
             });
         });
     });
+
+    app.post(routes.admin.editPost, function(request, response) {
+        var post = {
+            id: request.params.id,
+            title: request.body.title,
+            abstract: request.body.abstract,
+            content: request.body.content,
+            contentHtml: markdown.toHTML(request.body.content),
+            published: request.body.published === "on"
+        };
+
+        data.posts.update(post).done(function() {
+            request.flash("post-saved", "Blog Post successfully updated.");
+            response.redirect(routes.admin.overview);
+        });
+    });
 }

@@ -9,7 +9,7 @@ describe("PostRepository", function() {
         require("../database");
     });
 
-    describe("When saving a new blog post", function() {
+    describe("When adding a new blog post", function() {
         it("it is stored to the database", function(done) {
             sut.add(getDummyPost())
                 .then(function(post) {
@@ -21,22 +21,6 @@ describe("PostRepository", function() {
                         done();
                     }, done);
                 }, done);
-        });
-
-        it("an id is assigned to it", function(done) {
-            sut.add(getDummyPost()).done(function(post) {
-                expect(post.id).to.be.ok();
-                done();
-            }, done);
-        });
-    });
-
-    describe("When looking for a blog post by its id", function() {
-        it("will return the post", function(done) {
-            sut.add(getDummyPost()).done(function(post) {
-                expect(post.id).to.be.ok();
-                done();
-            }, done);
         });
     });
 
@@ -61,6 +45,84 @@ describe("PostRepository", function() {
                 }, done);
         })
     })
+
+    describe("When updating a blog post", function() {
+        it("updates the title", function(done) {
+            var randomTitle = Math.random().toString(36);
+
+            sut.add(getDummyPost())
+                .then(function(post) {
+                    post.title = randomTitle;
+
+                    return sut.update(post)
+                })
+                .done(function(updatedPost) {
+                    expect(updatedPost.title).to.be.equal(randomTitle);
+                    done();
+                }, done);
+        });
+
+        it("updates the abstract", function(done) {
+            var randomAbstract = Math.random().toString(36);
+
+            sut.add(getDummyPost())
+                .then(function(post) {
+                    post.abstract = randomAbstract;
+
+                    return sut.update(post)
+                })
+                .done(function(updatedPost) {
+                    expect(updatedPost.abstract).to.be.equal(randomAbstract);
+                    done();
+                }, done);
+        });
+
+        it("updates the content", function(done) {
+            var randomContent = Math.random().toString(36);
+
+            sut.add(getDummyPost())
+                .then(function(post) {
+                    post.content = randomContent;
+
+                    return sut.update(post)
+                })
+                .done(function(updatedPost) {
+                    expect(updatedPost.content).to.be.equal(randomContent);
+                    done();
+                }, done);
+        });
+
+        it("updates the content html", function(done) {
+            var randomHtml = Math.random().toString(36);
+
+            sut.add(getDummyPost())
+                .then(function(post) {
+                    post.contentHtml = randomHtml;
+
+                    return sut.update(post)
+                })
+                .done(function(updatedPost) {
+                    expect(updatedPost.contentHtml).to.be.equal(randomHtml);
+                    done();
+                }, done);
+        });
+
+        it("updates the publishing flag", function(done) {
+            var dummyPost = getDummyPost();
+            dummyPost.published = true;
+
+            sut.add(dummyPost)
+                .then(function(post) {
+                    post.published = false;
+
+                    return sut.update(post)
+                })
+                .done(function(updatedPost) {
+                    expect(updatedPost.published).to.be.false();
+                    done();
+                }, done);
+        })
+    });
 });
 
 function getDummyPost() {
