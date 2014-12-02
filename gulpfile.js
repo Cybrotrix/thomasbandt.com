@@ -49,8 +49,8 @@ gulp.task("minify", function() {
 
     var app =
         [
-            "admin/client/scripts/*.js",
-            "admin/client/scripts/**/*.js"
+            "admin/client/app/*.js",
+            "admin/client/app/**/*.js"
         ];
 
     gulp.src(app)
