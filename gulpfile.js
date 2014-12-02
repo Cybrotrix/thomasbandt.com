@@ -28,38 +28,47 @@ gulp.task("mocha", function() {
 });
 
 gulp.task("minify", function() {
-    var scriptsToBeMinified =
+    var libraries =
         [
-            "admin/client/libraries/jquery/dist/jquery.min.js",
-            "admin/client/libraries/bootstrap/dist/js/bootstrap.min.js",
-            "admin/client/libraries/flat-ui/dist/js/flat-ui.min.js",
-            "admin/client/libraries/angular/angular.min.js",
-            "admin/client/libraries/angular-messages/angular-messages.min.js",
-            "admin/client/libraries/underscore/underscore-min.js",
-            "admin/client/libraries/markdown-js/dist/markdown.min.js",
+            "admin/client/libraries/jquery/dist/jquery.js",
+            "admin/client/libraries/bootstrap/dist/js/bootstrap.js",
+            "admin/client/libraries/flat-ui/dist/js/flat-ui.js",
+            "admin/client/libraries/angular/angular.js",
+            "admin/client/libraries/angular-messages/angular-messages.js",
+            "admin/client/libraries/underscore/underscore.js",
+            "admin/client/libraries/markdown-js/dist/markdown.js",
             "admin/client/libraries/bootstrap-markdown/js/bootstrap-markdown.js",
-            "admin/client/libraries/moment/min/moment.min.js",
-            "admin/client/libraries/angular-moment/angular-moment.min.js",
+            "admin/client/libraries/moment/moment.js",
+            "admin/client/libraries/angular-moment/angular-moment.js",
+            "admin/client/libraries/sugarjs/release/sugar-full.development.js"
+        ];
+
+    gulp.src(libraries)
+        .pipe(concat("libs.min.js"))
+        .pipe(gulp.dest("admin/client/dist"));
+
+    var app =
+        [
             "admin/client/scripts/*.js",
             "admin/client/scripts/**/*.js"
         ];
 
-    gulp.src(scriptsToBeMinified)
-        .pipe(watch(scriptsToBeMinified, function (files) {
+    gulp.src(app)
+        .pipe(watch(app, function (files) {
             return files
                 .pipe(uglify({ mangle: false }))
-                .pipe(concat("all.min.js"))
+                .pipe(concat("app.min.js"))
                 .pipe(gulp.dest("admin/client/dist"));
         }));
 
-    var stylesToBeMinified =
+    var styles =
         [
             "admin/client/styles/**/*.scss",
             "admin/client/styles/*.scss"
         ];
 
-    gulp.src(stylesToBeMinified)
-        .pipe(watch(stylesToBeMinified, function(files) {
+    gulp.src(styles)
+        .pipe(watch(styles, function(files) {
             return files
                 .pipe(sass())
                 .pipe(concat("all.min.css"))
