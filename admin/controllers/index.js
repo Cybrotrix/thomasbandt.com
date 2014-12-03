@@ -6,7 +6,8 @@ var addPostController = require("./posts/addPostController"),
     overViewController = require("./overview/overviewController"),
     assetsController = require("./assets/assetsController"),
     deleteAssetController = require("./assets/deleteAssetController"),
-    uploadAssetController = require("./assets/uploadAssetController");
+    uploadAssetController = require("./assets/uploadAssetController"),
+    routes = require("../../routes");
 
 module.exports = {
     init: init
@@ -22,4 +23,8 @@ function init(app) {
     assetsController.init(app);
     deleteAssetController.init(app);
     uploadAssetController.init(app);
+
+    app.get(routes.admin.index, function(request, response) {
+        response.redirect(routes.admin.login);
+    });
 }

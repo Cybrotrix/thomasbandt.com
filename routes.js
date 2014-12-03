@@ -1,5 +1,6 @@
 var routes = {
     admin: {
+        index: "/admin",
         addPost: "/admin/posts/add",
         editPost: "/admin/posts/edit/:id",
         deletePost: "/admin/posts/delete/:id",
