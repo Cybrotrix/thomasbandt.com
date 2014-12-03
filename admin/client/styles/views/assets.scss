@@ -30,10 +30,14 @@
     max-height: 150px;
   }
 
+  form {
+    display: block;
+    margin-bottom: 30px;
+  }
+
   .btn-file {
     position: relative;
     overflow: hidden;
-    margin-bottom: 30px;
 
     input[type=file] {
       position: absolute;

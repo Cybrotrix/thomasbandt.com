@@ -1,18 +1,19 @@
 <div class="assets">
+    <form action="{{routes.admin.uploadAsset}}"
+          id="upload-form"
+          method="post"
+          style="clear: both; padding-bottom: 50px"
+          enctype="multipart/form-data">
+        <div class="btn btn-primary pull-right btn-lg btn-file">
+        Upload new Asset <input type="file" name="file" onchange="$('#upload-form').submit();">
+        </div>
+    </form>
+
 {{#if message}}
     <div class="alert alert-success">
         <span class="glyphicon glyphicon-thumbs-up"></span> {{message}}
     </div>
 {{/if}}
-
-<form action="{{routes.admin.uploadAsset}}"
-      id="upload-form"
-      method="post"
-      enctype="multipart/form-data">
-    <span class="btn btn-primary pull-right btn-lg btn-file">
-    Upload new Asset <input type="file" name="file" onchange="$('#upload-form').submit();">
-    </span>
-</form>
 
 {{#if files}}
     <table class="table table-hover">
@@ -54,8 +55,6 @@
         {{/each}}
     </table>
 {{else}}
-    <div class="jumbotron">
-        <p>No file uploaded yet.</p>
-    </div>
+    <p class="jumbotron">No file uploaded yet.</p>
 {{/if}}
 </div>
