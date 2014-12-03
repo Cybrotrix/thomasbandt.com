@@ -28,7 +28,7 @@ Once logged in, this is the central place of the backend where all posts are lis
 ### Create and Edit Form ✓
 A simple form for filling in the needed information of a blog post. The content is being formatted with Markdown, a live preview of the HTML result is provided instantly on the screen. By saving the HTML is stored next to the Markdown version, too.
 
-### Assets
+### Assets ✓
 A list of all assets which have been uploaded to a specific directory. The data source for this list is the collection of files in that directory, no database reference needed. New files can be uploaded, too.
 
 ## Model
