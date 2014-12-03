@@ -10,6 +10,7 @@ configureCookieParser(app);
 configureSession(app);
 configureBodyParser(app);
 configureFlash(app);
+configureBusboy(app);
 
 setUpDatabase();
 setUpAdmin(app);
@@ -81,6 +82,10 @@ function configureBodyParser(app) {
 
 function configureFlash(app) {
     app.use(require('connect-flash')());
+}
+
+function configureBusboy(app) {
+    app.use(require("connect-busboy")());
 }
 
 function setUpDatabase() {

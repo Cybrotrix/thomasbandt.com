@@ -7,7 +7,8 @@ var routes = {
         logout: "/admin/logout",
         overview: "/admin/posts",
         assets: "/admin/assets",
-        deleteAsset: "/admin/assets/delete/:id"
+        deleteAsset: "/admin/assets/delete/:id",
+        uploadAsset: "/admin/assets/upload"
     },
     blog: {
         home: "/"

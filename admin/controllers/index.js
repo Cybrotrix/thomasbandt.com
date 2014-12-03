@@ -5,7 +5,8 @@ var addPostController = require("./posts/addPostController"),
     logoutController = require("./authentication/logoutController"),
     overViewController = require("./overview/overviewController"),
     assetsController = require("./assets/assetsController"),
-    deleteAssetController = require("./assets/deleteAssetController");
+    deleteAssetController = require("./assets/deleteAssetController"),
+    uploadAssetController = require("./assets/uploadAssetController");
 
 module.exports = {
     init: init
@@ -20,4 +21,5 @@ function init(app) {
     overViewController.init(app);
     assetsController.init(app);
     deleteAssetController.init(app);
+    uploadAssetController.init(app);
 }
