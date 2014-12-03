@@ -1,6 +1,4 @@
-var config = require("../../../config"),
-    routes = require("../../../routes"),
-    routeUtilities = require("../../utilities/routeUtilities"),
+var routes = require("../../../routes"),
     data = require("../../../data");
 
 module.exports = {
