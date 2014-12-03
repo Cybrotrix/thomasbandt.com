@@ -8,7 +8,7 @@ describe("AssetRepository", function() {
     var sut;
 
     before(function() {
-        sut = require("./assetRepository");
+        sut = require("./assets");
     });
 
     describe("When requesting all files", function() {

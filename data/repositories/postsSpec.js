@@ -5,7 +5,7 @@ describe("PostRepository", function() {
     var sut;
 
     before(function() {
-        sut = require("./postRepository");
+        sut = require("./posts");
         require("../database");
     });
 

@@ -5,7 +5,7 @@ describe("UserRepository", function() {
         var sut;
 
         before(function() {
-            sut = require("./userRepository");
+            sut = require("./users");
         });
 
         it("returns the admin user with its name", function(done) {

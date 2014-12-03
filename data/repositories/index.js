@@ -1,7 +1,7 @@
 var repositories = {
-    assets: require("./assetRepository"),
-    posts: require("./postRepository"),
-    users: require("./userRepository")
+    assets: require("./assets"),
+    posts: require("./posts"),
+    users: require("./users")
 };
 
 module.exports = repositories;
