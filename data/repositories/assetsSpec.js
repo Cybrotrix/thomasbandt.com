@@ -68,7 +68,9 @@ describe("AssetRepository", function() {
             var testFile = createTestFileSync();
             expect(fs.existsSync(config.assets.uploadFolder + testFile)).to.be.true();
 
-            sut.remove(testFile).done(function() {
+            var base64name = new Buffer(testFile).toString("base64");
+
+            sut.remove(base64name).done(function() {
                 expect(fs.existsSync(config.assets.uploadFolder + testFile)).to.be.false();
 
                 done();

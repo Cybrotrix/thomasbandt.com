@@ -33,8 +33,10 @@ function getAllFiles() {
     return deferred.promise;
 }
 
-function removeFile(fileName) {
+function removeFile(base64Name) {
     var deferred = q.defer();
+
+    var fileName = new Buffer(base64Name, "base64").toString("utf8");
 
     fs.unlink(config.assets.uploadFolder + fileName, function (error) {
         if (error) {
