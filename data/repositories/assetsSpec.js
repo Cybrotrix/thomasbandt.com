@@ -25,16 +25,26 @@ describe("AssetRepository", function() {
     });
 
     describe("When a file is returned", function() {
-        it("its name is set", function(done) {
+        it("has a name", function(done) {
             sut.all().done(function(files) {
                 var dontRemoveMe = GetDontRemoveMeTxt(files);
 
                 expect(dontRemoveMe.name).to.be.ok();
                 done();
             }, done);
-        })
+        });
 
-        it("its creation date is set", function(done) {
+        it("has a base64 encoded version of the name", function(done) {
+            sut.all().done(function(files) {
+                var dontRemoveMe = GetDontRemoveMeTxt(files);
+                var base64name = new Buffer(dontRemoveMe.name).toString("base64");
+
+                expect(dontRemoveMe.base64name).to.be.equal(base64name);
+                done();
+            }, done);
+        });
+
+        it("has a creation date", function(done) {
             sut.all().done(function(files) {
                 var dontRemoveMe = GetDontRemoveMeTxt(files);
 
@@ -43,7 +53,7 @@ describe("AssetRepository", function() {
             }, done);
         })
 
-        it("its file size is set", function(done) {
+        it("has a file size", function(done) {
             sut.all().done(function(files) {
                 var dontRemoveMe = GetDontRemoveMeTxt(files);
 

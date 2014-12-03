@@ -47,12 +47,13 @@ function removeFile(fileName) {
     return deferred.promise;
 }
 
-function getFileStats(filePath) {
+function getFileStats(fileName) {
     var deferred = q.defer();
 
-    fs.stat(config.assets.uploadFolder + filePath, function(error, stats) {
+    fs.stat(config.assets.uploadFolder + fileName, function(error, stats) {
         deferred.resolve({
-            name: filePath,
+            name: fileName,
+            base64name: new Buffer(fileName).toString("base64"),
             size: stats.size,
             created: stats.ctime
         })
