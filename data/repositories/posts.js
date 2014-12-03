@@ -35,7 +35,7 @@ function findPostById(id) {
         } else {
             deferred.resolve(post);
         }
-    })
+    });
 
     return deferred.promise;
 }
@@ -80,7 +80,7 @@ function removePost(id) {
     });
 
     return deferred.promise;
-};
+}
 
 function updatePost(post) {
     var deferred = q.defer();

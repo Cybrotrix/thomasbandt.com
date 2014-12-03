@@ -56,7 +56,7 @@ function getFileStats(fileName) {
             base64name: new Buffer(fileName).toString("base64"),
             size: stats.size,
             created: stats.ctime
-        })
+        });
     });
 
     return deferred.promise;

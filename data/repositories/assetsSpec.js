@@ -51,7 +51,7 @@ describe("AssetRepository", function() {
                 expect(dontRemoveMe.created).to.be.ok();
                 done();
             }, done);
-        })
+        });
 
         it("has a file size", function(done) {
             sut.all().done(function(files) {
@@ -60,7 +60,7 @@ describe("AssetRepository", function() {
                 expect(dontRemoveMe.size).to.be.greaterThan(0);
                 done();
             }, done);
-        })
+        });
     });
 
     describe("When a file is being removed", function() {
@@ -74,7 +74,7 @@ describe("AssetRepository", function() {
                 done();
             }, done);
         });
-    })
+    });
 
     function createTestFileSync() {
         var fileName = Math.random().toString(36) + ".txt";
@@ -87,7 +87,7 @@ describe("AssetRepository", function() {
     function GetDontRemoveMeTxt(files) {
         var filteredFiles = _.filter(files, function(file) {
             return file.name === "dont-remove-me.txt";
-        })
+        });
 
         return filteredFiles[0];
     }

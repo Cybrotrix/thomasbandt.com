@@ -43,7 +43,7 @@ describe("PostRepository", function() {
 
                     done();
                 }, done);
-        })
+        });
     });
 
     describe("When removing a blog post", function() {
@@ -73,7 +73,7 @@ describe("PostRepository", function() {
                 .then(function(post) {
                     post.title = randomTitle;
 
-                    return sut.update(post)
+                    return sut.update(post);
                 })
                 .done(function(updatedPost) {
                     expect(updatedPost.title).to.be.equal(randomTitle);
@@ -88,7 +88,7 @@ describe("PostRepository", function() {
                 .then(function(post) {
                     post.abstract = randomAbstract;
 
-                    return sut.update(post)
+                    return sut.update(post);
                 })
                 .done(function(updatedPost) {
                     expect(updatedPost.abstract).to.be.equal(randomAbstract);
@@ -103,7 +103,7 @@ describe("PostRepository", function() {
                 .then(function(post) {
                     post.content = randomContent;
 
-                    return sut.update(post)
+                    return sut.update(post);
                 })
                 .done(function(updatedPost) {
                     expect(updatedPost.content).to.be.equal(randomContent);
@@ -118,7 +118,7 @@ describe("PostRepository", function() {
                 .then(function(post) {
                     post.contentHtml = randomHtml;
 
-                    return sut.update(post)
+                    return sut.update(post);
                 })
                 .done(function(updatedPost) {
                     expect(updatedPost.contentHtml).to.be.equal(randomHtml);
@@ -134,7 +134,7 @@ describe("PostRepository", function() {
                 .then(function(post) {
                     post.published = false;
 
-                    return sut.update(post)
+                    return sut.update(post);
                 })
                 .done(function(updatedPost) {
                     expect(updatedPost.published).to.be.false();
@@ -152,5 +152,5 @@ function getDummyPost() {
         contentHtml: "Html",
         date: new Date(),
         published: true
-    }
+    };
 }

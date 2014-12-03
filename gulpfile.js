@@ -11,6 +11,7 @@ gulp.task("jshint", function() {
     return gulp.src([
         "*.js",
         "admin/**/*.js",
+        "data/**/*.js",
         "!admin/client/dist/*.js",
         "!admin/client/libraries/**/*.js"])
         .pipe(jshint())
