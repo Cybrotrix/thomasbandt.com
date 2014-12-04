@@ -1,9 +1,9 @@
 var friendlyUrl = require("friendly-url");
 
-module.export = {
-    encodePostUrl : encodePostUrl
+module.exports = {
+    friendlyUrlFragment : getFriendlyUrlFragment
 };
 
-function encodePostUrl(post) {
-
+function getFriendlyUrlFragment(post) {
+    return "foo";
 }
