@@ -7,9 +7,9 @@ module.exports = {
 function getFriendlyUrlFragment(post) {
     var urlParts =
         [
-            post.created.getYear().toString(),
-            post.created.getMonth().toString(),
-            post.created.getDay().toString(),
+            post.created.getFullYear(),
+            post.created.getMonth() + 1,
+            post.created.getDate() ,
             friendlyUrl(post.title)
         ];
 
