@@ -4,6 +4,13 @@ module.exports = {
     friendlyUrlFragment : getFriendlyUrlFragment
 };
 
+slug.defaults.charmap['Ä'] = 'Ae';
+slug.defaults.charmap['Ö'] = 'Oe';
+slug.defaults.charmap['Ü'] = 'Ue';
+slug.defaults.charmap['ä'] = 'ae';
+slug.defaults.charmap['ö'] = 'oe';
+slug.defaults.charmap['ü'] = 'ue';
+
 function getFriendlyUrlFragment(post) {
     var urlParts =
         [

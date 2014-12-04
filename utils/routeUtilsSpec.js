@@ -16,8 +16,7 @@ describe("RouteUtils", function() {
 
             var result = sut.friendlyUrlFragment(post);
 
-            // TODO: Expect umlauts to be replaced correctly
-            expect(result).to.be.equal("2014/12/4/sie-lauft-in-einen-fluss-und-totet-alle-grunen-frosche-mit-sussem-zucker");
+            expect(result).to.be.equal("2014/12/4/sie-laeuft-in-einen-fluss-und-toetet-alle-gruenen-froesche-mit-suessem-zucker");
         });
     });
 });
