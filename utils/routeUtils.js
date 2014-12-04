@@ -5,5 +5,13 @@ module.exports = {
 };
 
 function getFriendlyUrlFragment(post) {
-    return "foo";
+    var urlParts =
+        [
+            post.created.getYear().toString(),
+            post.created.getMonth().toString(),
+            post.created.getDay().toString(),
+            friendlyUrl(post.title)
+        ];
+
+    return urlParts.join("/");
 }
