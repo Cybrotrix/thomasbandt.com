@@ -1,6 +1,5 @@
 var passport = require("passport"),
-    routes = require("../../../routes"),
-    routeUtilities = require("../../utilities/routeUtilities");
+    routes = require("../../../routes");
 
 module.exports = {
     init: init
@@ -13,7 +12,7 @@ function init(app) {
             return;
         }
 
-        routeUtilities.renderAdminView(response, "login", {
+        app.renderAdminView(response, "login", {
             message: request.flash('error')
         });
     });

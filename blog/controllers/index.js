@@ -5,7 +5,7 @@ module.exports = {
 };
 
 function init(app) {
-    app.renderView = renderView;
+    app.renderBlogView = renderView;
 
     require("./aboutController").init(app);
 }

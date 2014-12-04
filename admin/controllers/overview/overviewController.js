@@ -1,5 +1,4 @@
 var routes = require("../../../routes"),
-    routeUtilities = require("../../utilities/routeUtilities"),
     data = require("../../../data");
 
 module.exports = {
@@ -9,7 +8,7 @@ module.exports = {
 function init(app) {
     app.get(routes.admin.overview, function(request, response) {
         data.posts.all().then(function(posts) {
-            routeUtilities.renderAdminView(response, "overview", {
+            app.renderAdminView(response, "overview", {
                 message: request.flash("post-saved"),
                 posts: posts
             });

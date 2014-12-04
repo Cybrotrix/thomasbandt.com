@@ -1,6 +1,5 @@
 var config = require("../../../config"),
     routes = require("../../../routes"),
-    routeUtilities = require("../../utilities/routeUtilities"),
     data = require("../../../data")
     _ = require("underscore");
 
@@ -15,7 +14,7 @@ function init(app) {
                 return file.created * -1;
             });
 
-            routeUtilities.renderAdminView(response, "assets", {
+            app.renderAdminView(response, "assets", {
                 files: sortedFiles,
                 message: request.flash("asset-message")
             });

@@ -6,6 +6,6 @@ module.exports = {
 
 function init(app) {
     app.get(routes.blog.about, function(request, response) {
-        app.renderView(response, "about");
+        app.renderBlogView(response, "about");
     });
 }

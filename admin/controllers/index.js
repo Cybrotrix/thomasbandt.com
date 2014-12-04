@@ -5,6 +5,8 @@ module.exports = {
 };
 
 function init(app) {
+    app.renderAdminView = renderView;
+
     require("./posts/addPostController").init(app);
     require("./posts/editPostController").init(app);
     require("./posts/deletePostController").init(app);
@@ -18,4 +20,11 @@ function init(app) {
     app.get(routes.admin.index, function(request, response) {
         response.redirect(routes.admin.login);
     });
+}
+
+function renderView(response, viewName, model) {
+    model = model || {};
+    model.layout = "../../admin/views/_layout";
+
+    response.render("../admin/views/" + viewName, model);
 }

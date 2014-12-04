@@ -1,5 +1,4 @@
 var routes = require("../../../routes"),
-    routeUtilities = require("../../utilities/routeUtilities"),
     data = require("../../../data"),
     markdown = require("markdown").markdown;
 
@@ -9,7 +8,7 @@ module.exports = {
 
 function init(app) {
     app.get(routes.admin.addPost, function(request, response) {
-        routeUtilities.renderAdminView(response, "addPost");
+        app.renderAdminView(response, "addPost");
     });
 
     app.post(routes.admin.addPost, function(request, response) {

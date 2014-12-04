@@ -1,5 +1,4 @@
-var routes = require("../../../routes"),
-    routeUtilities = require("../../utilities/routeUtilities");
+var routes = require("../../../routes");
 
 module.exports = {
     init: init
