@@ -30,6 +30,7 @@ node_modules
 
 # Bower
 admin/client/libraries
+blog/client/libraries
 
 # Upload
 upload
