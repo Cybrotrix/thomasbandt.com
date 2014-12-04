@@ -13,7 +13,9 @@ configureFlash(app);
 configureBusboy(app);
 
 setUpDatabase();
+
 setUpAdmin(app);
+setUpBlog(app);
 
 startServer(app);
 
@@ -94,6 +96,10 @@ function setUpDatabase() {
 
 function setUpAdmin(app) {
     require("./admin").init(app);
+}
+
+function setUpBlog(app) {
+    require("./blog").init(app);
 }
 
 function startServer(app) {

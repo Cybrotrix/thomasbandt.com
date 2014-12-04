@@ -12,7 +12,8 @@ var routes = {
         uploadAsset: "/admin/assets/upload"
     },
     blog: {
-        home: "/"
+        home: "/",
+        about: "/about"
     }
 };
 
