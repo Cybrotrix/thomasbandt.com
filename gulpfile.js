@@ -24,6 +24,8 @@ gulp.task("mocha", function() {
     return gulp.src([
         "*Spec.js",
         "data/**/*Spec.js",
+        "blog/**/*Spec.js",
+        "utils/**/*Spec.js",
         "admin/**/*Spec.js"])
         .pipe(mocha({reporter: "spec"}));
 });
