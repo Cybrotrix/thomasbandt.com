@@ -13,7 +13,7 @@ function getFriendlyUrlFragment(post) {
         [
             post.created.getFullYear(),
             post.created.getMonth() + 1,
-            post.created.getDate() ,
+            post.created.getDate(),
             slug(post.title.toLowerCase())
         ];
 
