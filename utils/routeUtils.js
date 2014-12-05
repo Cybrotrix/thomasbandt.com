@@ -4,9 +4,6 @@ module.exports = {
     friendlyUrlFragment : getFriendlyUrlFragment
 };
 
-slug.defaults.charmap['Ä'] = 'Ae';
-slug.defaults.charmap['Ö'] = 'Oe';
-slug.defaults.charmap['Ü'] = 'Ue';
 slug.defaults.charmap['ä'] = 'ae';
 slug.defaults.charmap['ö'] = 'oe';
 slug.defaults.charmap['ü'] = 'ue';
@@ -17,7 +14,7 @@ function getFriendlyUrlFragment(post) {
             post.created.getFullYear(),
             post.created.getMonth() + 1,
             post.created.getDate() ,
-            slug(post.title).toLowerCase()
+            slug(post.title.toLowerCase())
         ];
 
     return urlParts.join("/");
