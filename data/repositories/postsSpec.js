@@ -10,35 +10,119 @@ describe("PostRepository", function() {
     });
 
     describe("When adding a new blog post", function() {
-        it("saves the title", function() {
-            throw "not implemented";
+        it("saves the title", function(done) {
+            var dummyPost = getDummyPost();
+            dummyPost.title = Math.random().toString(36);
+
+            sut.add(dummyPost)
+                .then(function(post) {
+                    return post.id;
+                })
+                .done(function(id) {
+                    sut.find(id).done(function(post) {
+                        expect(post.title).to.be.equal(dummyPost.title);
+                        done();
+                    }, done);
+                }, done);
         });
 
-        it("saves the abstract", function() {
-            throw "not implemented";
+        it("saves the abstract", function(done) {
+            var dummyPost = getDummyPost();
+            dummyPost.abstract = Math.random().toString(36);
+
+            sut.add(dummyPost)
+                .then(function(post) {
+                    return post.id;
+                })
+                .done(function(id) {
+                    sut.find(id).done(function(post) {
+                        expect(post.abstract).to.be.equal(dummyPost.abstract);
+                        done();
+                    }, done);
+                }, done);
         });
 
-        it("saves the content", function() {
-            throw "not implemented";
+        it("saves the content", function(done) {
+            var dummyPost = getDummyPost();
+            dummyPost.content = Math.random().toString(36);
+
+            sut.add(dummyPost)
+                .then(function(post) {
+                    return post.id;
+                })
+                .done(function(id) {
+                    sut.find(id).done(function(post) {
+                        expect(post.content).to.be.equal(dummyPost.content);
+                        done();
+                    }, done);
+                }, done);
         });
 
-        it("saves the content html", function() {
-            throw "not implemented";
+        it("saves the content html", function(done) {
+            var dummyPost = getDummyPost();
+            dummyPost.contentHtml = Math.random().toString(36);
+
+            sut.add(dummyPost)
+                .then(function(post) {
+                    return post.id;
+                })
+                .done(function(id) {
+                    sut.find(id).done(function(post) {
+                        expect(post.contentHtml).to.be.equal(dummyPost.contentHtml);
+                        done();
+                    }, done);
+                }, done);
         });
 
-        it("saves the slug", function() {
-            throw "not implemented";
+        it("saves the slug", function(done) {
+            var dummyPost = getDummyPost();
+            dummyPost.slug = Math.random().toString(36);
+
+            sut.add(dummyPost)
+                .then(function(post) {
+                    return post.id;
+                })
+                .done(function(id) {
+                    sut.find(id).done(function(post) {
+                        expect(post.slug).to.be.equal(dummyPost.slug);
+                        done();
+                    }, done);
+                }, done);
         });
 
-        it("saves the creation date", function() {
-            throw "not implemented";
+        it("saves the creation date", function(done) {
+            var dummyPost = getDummyPost();
+            dummyPost.date = new Date();
+
+            sut.add(dummyPost)
+                .then(function(post) {
+                    return post.id;
+                })
+                .done(function(id) {
+                    sut.find(id).done(function(post) {
+                        expect(post.date.getTime()).to.be.equal(dummyPost.date.getTime());
+                        done();
+                    }, done);
+                }, done);
         });
 
-        it("saves the publishing flag", function() {
-            throw "not implemented";
+        it("saves the publishing flag", function(done) {
+            var dummyPost = getDummyPost();
+            dummyPost.published = true;
+
+            sut.add(dummyPost)
+                .then(function(post) {
+                    return post.id;
+                })
+                .done(function(id) {
+                    sut.find(id).done(function(post) {
+                        expect(post.published).to.be.true();
+                        done();
+                    }, done);
+                }, done);
         });
 
-        it("it is stored to the database", function(done) {
+        it("assigns an id", function(done) {
             sut.add(getDummyPost())
                 .then(function(post) {
                     return post.id;
@@ -154,8 +238,19 @@ describe("PostRepository", function() {
                 }, done);
         });
 
-        it("updates the slug", function() {
-            throw "not implemented";
+        it("updates the slug", function(done) {
+            var newSlug = Math.random().toString(36);
+
+            sut.add(getDummyPost())
+                .then(function(post) {
+                    post.slug = newSlug;
+
+                    return sut.update(post);
+                })
+                .done(function(updatedPost) {
+                    expect(updatedPost.slug).to.be.equal(newSlug);
+                    done();
+                }, done);
         });
 
         it("updates the publishing flag", function(done) {

@@ -46,6 +46,7 @@ function addPost(post) {
         abstract: post.abstract,
         content: post.content,
         contentHtml: post.contentHtml,
+        slug: post.slug,
         published: post.published
     });
 
@@ -94,6 +95,7 @@ function updatePost(post) {
         abstract: post.abstract,
         content: post.content,
         contentHtml: post.contentHtml,
+        slug: post.slug,
         published: post.published
     };
 
