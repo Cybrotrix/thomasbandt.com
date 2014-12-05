@@ -11,6 +11,8 @@ gulp.task("jshint", function() {
     return gulp.src([
         "*.js",
         "admin/**/*.js",
+        "blog/**/*.js",
+        "!blog/client/libraries/**/*.js",
         "data/**/*.js",
         "!admin/client/dist/*.js",
         "!admin/client/libraries/**/*.js"])
@@ -25,7 +27,6 @@ gulp.task("mocha", function() {
         "*Spec.js",
         "data/**/*Spec.js",
         "blog/**/*Spec.js",
-        "utils/**/*Spec.js",
         "admin/**/*Spec.js"])
         .pipe(mocha({reporter: "spec"}));
 });
