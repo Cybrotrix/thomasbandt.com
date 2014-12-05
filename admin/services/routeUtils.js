@@ -1,14 +1,14 @@
 var slug = require("slug");
 
 module.exports = {
-    friendlyUrlFragment : getFriendlyUrlFragment
+    slug : getSlug
 };
 
 slug.defaults.charmap['ä'] = 'ae';
 slug.defaults.charmap['ö'] = 'oe';
 slug.defaults.charmap['ü'] = 'ue';
 
-function getFriendlyUrlFragment(post) {
+function getSlug(post) {
     var urlParts =
         [
             post.date.getFullYear(),
