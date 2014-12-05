@@ -92,7 +92,7 @@ describe("PostRepository", function() {
 
         it("saves the creation date", function(done) {
             var dummyPost = getDummyPost();
-            dummyPost.date = new Date();
+            dummyPost.date = new Date(2000, 11, 31);
 
             sut.add(dummyPost)
                 .then(function(post) {

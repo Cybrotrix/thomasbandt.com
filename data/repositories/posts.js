@@ -47,6 +47,7 @@ function addPost(post) {
         content: post.content,
         contentHtml: post.contentHtml,
         slug: post.slug,
+        date: post.date,
         published: post.published
     });
 

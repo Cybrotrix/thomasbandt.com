@@ -6,6 +6,6 @@ module.exports = mongoose.model("BlogPost", new mongoose.Schema({
     content: String,
     contentHtml: String,
     slug: { type: String, index: { unique: true } },
-    date: { type: Date, default: Date.now },
+    date: { type: Date },
     published: Boolean
 }));
