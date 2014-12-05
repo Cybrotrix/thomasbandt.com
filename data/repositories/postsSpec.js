@@ -10,6 +10,34 @@ describe("PostRepository", function() {
     });
 
     describe("When adding a new blog post", function() {
+        it("saves the title", function() {
+            throw "not implemented";
+        });
+
+        it("saves the abstract", function() {
+            throw "not implemented";
+        });
+
+        it("saves the content", function() {
+            throw "not implemented";
+        });
+
+        it("saves the content html", function() {
+            throw "not implemented";
+        });
+
+        it("saves the slug", function() {
+            throw "not implemented";
+        });
+
+        it("saves the creation date", function() {
+            throw "not implemented";
+        });
+
+        it("saves the publishing flag", function() {
+            throw "not implemented";
+        });
+
         it("it is stored to the database", function(done) {
             sut.add(getDummyPost())
                 .then(function(post) {
@@ -126,6 +154,10 @@ describe("PostRepository", function() {
                 }, done);
         });
 
+        it("updates the slug", function() {
+            throw "not implemented";
+        });
+
         it("updates the publishing flag", function(done) {
             var dummyPost = getDummyPost();
             dummyPost.published = true;
@@ -151,6 +183,7 @@ function getDummyPost() {
         content: "Content",
         contentHtml: "Html",
         date: new Date(),
+        slug: "Dummy-" + new Date(),
         published: true
     };
 }
