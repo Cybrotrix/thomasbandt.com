@@ -9,7 +9,7 @@ slug.defaults.charmap['ö'] = 'oe';
 slug.defaults.charmap['ü'] = 'ue';
 
 function getSlug(post) {
-    var urlParts =
+    var slugParts =
         [
             post.date.getFullYear(),
             post.date.getMonth() + 1,
@@ -17,5 +17,5 @@ function getSlug(post) {
             slug(post.title.toLowerCase())
         ];
 
-    return urlParts.join("/");
+    return slugParts.join("/");
 }
