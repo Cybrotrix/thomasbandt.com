@@ -11,9 +11,9 @@ slug.defaults.charmap['ü'] = 'ue';
 function getFriendlyUrlFragment(post) {
     var urlParts =
         [
-            post.created.getFullYear(),
-            post.created.getMonth() + 1,
-            post.created.getDate(),
+            post.date.getFullYear(),
+            post.date.getMonth() + 1,
+            post.date.getDate(),
             slug(post.title.toLowerCase())
         ];
 
