@@ -22,7 +22,7 @@ function init(app) {
             published: request.body.published || false
         };
 
-        post.slugFromPost = routeUtils.slugFromPost(post);
+        post.slug = routeUtils.slugFromPost(post);
 
         data.posts.add(post).done(function() {
             request.flash("post-saved", "Blog Post successfully added.");
