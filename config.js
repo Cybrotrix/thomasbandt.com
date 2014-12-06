@@ -10,7 +10,7 @@ var config = {
         webPath: "http://localhost:6969/upload/"
     },
     blog: {
-        postsPerPage: 2
+        postsPerPage: 10
     },
     database: {
         connectionString: "mongodb://localhost:27017/node-simple-blog",
