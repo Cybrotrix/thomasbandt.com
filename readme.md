@@ -40,3 +40,9 @@ A list of all assets which have been uploaded to a specific directory. The data 
 - ContentHtml : String
 - Published : Boolean
 - DateCreated : Date
+
+## Installation
+
+Node packages are used globally, so you can use `npm install` in the root directory.
+
+Bower packages however are installed seperately in both /admin and /blog. So you have to run `bower install` in both directories.
