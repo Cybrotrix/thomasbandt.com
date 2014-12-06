@@ -1,9 +1,11 @@
 var q = require("q"),
-    BlogPost = require("../models/blogPost");
+    mongoosePaginate = require("mongoose-paginate"),
+    BlogPost = require("../models/BlogPost");
 
 module.exports = {
     add: addPost,
     all: getAllPosts,
+    allPaged: getAllPostsPaged,
     findOneById: findOneById,
     findOneBySlug: findOneBySlug,
     remove: removePost,
@@ -23,6 +25,16 @@ function getAllPosts() {
                 deferred.resolve(posts);
             }
         });
+
+    return deferred.promise;
+}
+
+function getAllPostsPaged(page, postsPerPage) {
+    var deferred = q.defer();
+
+    //BlogPost.plugin(mongoosePaginate);
+
+    deferred.reject(false);
 
     return deferred.promise;
 }

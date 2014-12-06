@@ -173,6 +173,24 @@ describe("PostRepository", function() {
         });
     });
 
+    describe("When requesting all blog posts paged", function() {
+        it("will return the first 5 of 6 posts on page 1", function() {
+            throw "not implemented";
+        });
+
+        it("will return the 6th of 6 posts on page 2", function() {
+            throw "not implemented";
+        });
+
+        it("will return the total count of posts found", function() {
+            throw "not implemented";
+        });
+
+        it("will return the total number of pages", function() {
+            throw "not implemented";
+        });
+    });
+
     describe("When removing a blog post", function() {
        it("gets deleted from the database", function(done) {
            var postId;
