@@ -7,9 +7,10 @@ module.exports = {
 function init(app) {
     app.renderBlogView = renderView;
 
-    require("./aboutController").init(app);
-    require("./postDetailController").init(app);
     require("./postsController").init(app);
+    require("./postDetailController").init(app);
+    require("./aboutController").init(app);
+    require("./archiveController").init(app);
 }
 
 function renderView(response, viewName, model) {

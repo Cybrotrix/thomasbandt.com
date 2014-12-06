@@ -1,0 +1,10 @@
+<h1>Archive</h1>
+
+{{#each years}}
+    <h2>{{this.year}}</h2>
+    <ul>
+    {{#each this.posts}}
+        <li><a href="{{postLink this.slug}}">{{this.title}}</a></li>
+    {{/each}}
+    </ul>
+{{/each}}

@@ -2,13 +2,13 @@
 
 ## Public Pages
 
-### Index
+### Index ✓
 Lists all posts descending by date. Uses pagination to display a maximum of 10 posts at once on a page. Displays the title and the abstract for each post.
 
 ### Detail ✓
 Provides the title and the content of a post.
 
-### Archive
+### Archive ✓
 Displays a full overview of all posts ever published grouped by the years they have been created.
 
 ### About ✓
