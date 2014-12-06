@@ -12,4 +12,10 @@ function init(app) {
             app.renderBlogView(response, "posts", pagedPostsResult);
         });
     });
+
+    app.get(routes.blog.page, function(request, response) {
+        data.posts.allPublished(request.params.page, config.blog.postsPerPage).done(function(pagedPostsResult) {
+            app.renderBlogView(response, "posts", pagedPostsResult);
+        });
+    });
 }
