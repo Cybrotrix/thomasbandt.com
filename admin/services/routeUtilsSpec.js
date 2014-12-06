@@ -29,7 +29,7 @@ describe("RouteUtils", function() {
                 title: "hello-World-Foo"
             };
 
-            var result = sut.slugFromRouteParameters(params);
+            var result = sut.slugFromRouteParams(params);
 
             expect(result).to.be.equal("2014/12/6/hello-world-foo");
         });

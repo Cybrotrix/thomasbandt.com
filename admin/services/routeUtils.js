@@ -2,7 +2,7 @@ var slug = require("slug");
 
 module.exports = {
     slugFromPost : getSlugFromPost,
-    slugFromRouteParameters : slugFromRouteParameters
+    slugFromRouteParams : slugFromRouteParams
 };
 
 slug.defaults.charmap['ä'] = 'ae';
@@ -21,7 +21,7 @@ function getSlugFromPost(post) {
     return slugParts.join("/");
 }
 
-function slugFromRouteParameters(parameters) {
+function slugFromRouteParams(parameters) {
     var slugParts =
         [
             parameters.year,

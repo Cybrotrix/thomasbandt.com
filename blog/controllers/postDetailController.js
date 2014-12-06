@@ -8,7 +8,7 @@ module.exports = {
 
 function init(app) {
     app.get(routes.blog.postDetail, function(request, response) {
-        var slug = routeUtils.slugFromRouteParameters(request.params);
+        var slug = routeUtils.slugFromRouteParams(request.params);
 
         data.posts.findOneBySlug(slug).done(function(post) {
             app.renderBlogView(response, "postDetail", {
