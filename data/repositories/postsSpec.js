@@ -1,5 +1,8 @@
 var expect = require("chai").expect,
-    _ = require("underscore");
+    q = require("q"),
+    _ = require("underscore"),
+    mongoose = require("mongoose"),
+    BlogPost = require("../models/BlogPost");
 
 describe("PostRepository", function() {
     var sut;
@@ -153,17 +156,20 @@ describe("PostRepository", function() {
 
     describe("When requesting all blog posts", function() {
         it("will deliver all existing blog posts", function(done) {
-            var dummyPost = getDummyPost();
-            dummyPost.title = Math.random().toString(36);
+            var dummyPost1 = getDummyPost();
+            dummyPost1.title = Math.random().toString(36);
 
-            sut.add(dummyPost)
+            var dummyPost2 = getDummyPost();
+            dummyPost2.title = dummyPost1.title;
+
+            sut.add(dummyPost1)
                 .then(function() {
-                    return sut.add(dummyPost);
+                    return sut.add(dummyPost2);
                 })
                 .then(sut.all)
                 .done(function(posts) {
                     var count = _.filter(posts, function(post) {
-                        return post.title === dummyPost.title;
+                        return post.title === dummyPost1.title;
                     }).length;
 
                     expect(count).to.equal(2);
@@ -174,20 +180,48 @@ describe("PostRepository", function() {
     });
 
     describe("When requesting all blog posts paged", function() {
-        it("will return the first 5 of 6 posts on page 1", function() {
-            throw "not implemented";
+        it("will return the first 5 of 6 posts on page 1", function(done) {
+            removeAllExistingBlogPosts().done(function() {
+                addDummyPosts(sut, 6).done(function() {
+                    sut.allPaged(1, 5).done(function(result) {
+                        expect(result.posts.length).to.be.equal(5);
+                        done();
+                    }, done);
+                });
+            });
         });
 
-        it("will return the 6th of 6 posts on page 2", function() {
-            throw "not implemented";
+        it("will return the 6th of 6 posts on page 2", function(done) {
+            removeAllExistingBlogPosts().done(function() {
+                addDummyPosts(sut, 6).done(function() {
+                    sut.allPaged(2, 5).done(function(result) {
+                        expect(result.posts.length).to.be.equal(1);
+                        done();
+                    }, done)
+                });
+            });
         });
 
         it("will return the total count of posts found", function() {
-            throw "not implemented";
+            removeAllExistingBlogPosts().done(function() {
+                addDummyPosts(sut, 9).done(function() {
+                    sut.allPaged(1, 5).done(function(result) {
+                        expect(result.posts.postCount).to.be.equal(9);
+                        done();
+                    }, done);
+                });
+            });
         });
 
         it("will return the total number of pages", function() {
-            throw "not implemented";
+            removeAllExistingBlogPosts().done(function() {
+                addDummyPosts(sut, 9).done(function() {
+                    sut.allPaged(1, 5).done(function(result) {
+                        expect(result.posts.pageCount).to.be.equal(2);
+                        done();
+                    }, done);
+                });
+            });
         });
     });
 
@@ -304,6 +338,36 @@ describe("PostRepository", function() {
     });
 });
 
+function removeAllExistingBlogPosts() {
+    var deferred = q.defer();
+
+    BlogPost.remove({}, function (error) {
+        if (error) {
+            deferred.reject(error);
+        } else {
+            deferred.resolve(true);
+        }
+    });
+
+    return deferred.promise;
+}
+
+function addDummyPosts(sut, quantity) {
+    var deferred = q.defer();
+
+    var promises = [];
+
+    for(var i = 0; i < quantity; i++) {
+        promises.push(sut.add(getDummyPost()));
+    }
+
+    q.allSettled(promises).done(function() {
+        deferred.resolve(true);
+    });
+
+    return deferred.promise;
+}
+
 function getDummyPost() {
     return {
         title: "Dummy Post Title",
@@ -311,7 +375,7 @@ function getDummyPost() {
         content: "Content",
         contentHtml: "Html",
         date: new Date(),
-        slug: "Dummy-" + new Date(),
+        slug: "Dummy-" + Math.random().toString(36),
         published: true
     };
 }

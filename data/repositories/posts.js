@@ -1,5 +1,4 @@
 var q = require("q"),
-    mongoosePaginate = require("mongoose-paginate"),
     BlogPost = require("../models/BlogPost");
 
 module.exports = {
@@ -32,9 +31,25 @@ function getAllPosts() {
 function getAllPostsPaged(page, postsPerPage) {
     var deferred = q.defer();
 
-    //BlogPost.plugin(mongoosePaginate);
-
-    deferred.reject(false);
+    BlogPost.paginate(
+        {},
+        page,
+        postsPerPage,
+        function(error, pageCount, posts, postCount) {
+            if (error) {
+                deferred.reject(error);
+            } else {
+                deferred.resolve({
+                    posts: posts,
+                    pageCount: pageCount,
+                    postCount: postCount
+                });
+            }
+        },
+        {
+            sortBy: { date: -1}
+        }
+    );
 
     return deferred.promise;
 }
