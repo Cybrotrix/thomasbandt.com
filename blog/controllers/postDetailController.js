@@ -1,6 +1,6 @@
 var routes = require("../../routes"),
     data = require("../../data"),
-    routeUtils = require("../../admin/services/routeUtils"); // todo: move
+    routeUtils = require("../../utils/routeUtils"); // todo: move
 
 module.exports = {
     init: init
