@@ -19,7 +19,7 @@ function init(app) {
     function renderPagedPosts(response, page) {
         page = parseInt(page);
 
-        data.posts.allPublished(page, config.blog.postsPerPage).done(function(pagedPostsResult) {
+        data.posts.allPublishedPaged(page, config.blog.postsPerPage).done(function(pagedPostsResult) {
             pagedPostsResult.hasPreviousPage = page > 1;
             pagedPostsResult.hasNextPage = pagedPostsResult.pageCount > page;
 

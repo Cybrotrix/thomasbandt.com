@@ -183,7 +183,7 @@ describe("PostRepository", function() {
         it("will return the first 5 of 6 posts on page 1", function(done) {
             removeAllExistingBlogPosts().done(function() {
                 addDummyPosts(sut, 6).done(function() {
-                    sut.allPublished(1, 5).done(function(result) {
+                    sut.allPublishedPaged(1, 5).done(function(result) {
                         expect(result.posts.length).to.be.equal(5);
                         done();
                     }, done);
@@ -194,7 +194,7 @@ describe("PostRepository", function() {
         it("will return the 6th of 6 posts on page 2", function(done) {
             removeAllExistingBlogPosts().done(function() {
                 addDummyPosts(sut, 6).done(function() {
-                    sut.allPublished(2, 5).done(function(result) {
+                    sut.allPublishedPaged(2, 5).done(function(result) {
                         expect(result.posts.length).to.be.equal(1);
                         done();
                     }, done);
@@ -205,7 +205,7 @@ describe("PostRepository", function() {
         it("will return the total count of posts found", function(done) {
             removeAllExistingBlogPosts().done(function() {
                 addDummyPosts(sut, 9).done(function() {
-                    sut.allPublished(1, 5).done(function(result) {
+                    sut.allPublishedPaged(1, 5).done(function(result) {
                         expect(result.postCount).to.be.equal(9);
                         done();
                     }, done);
@@ -216,7 +216,7 @@ describe("PostRepository", function() {
         it("will return the total number of pages", function(done) {
             removeAllExistingBlogPosts().done(function() {
                 addDummyPosts(sut, 9).done(function() {
-                    sut.allPublished(1, 5).done(function(result) {
+                    sut.allPublishedPaged(1, 5).done(function(result) {
                         expect(result.pageCount).to.be.equal(2);
                         done();
                     }, done);
@@ -231,7 +231,7 @@ describe("PostRepository", function() {
                     unpublishedDummyPost.published = false;
 
                     sut.add(unpublishedDummyPost).done(function() {
-                        sut.allPublished(1, 5).done(function(result) {
+                        sut.allPublishedPaged(1, 5).done(function(result) {
                             expect(result.postCount).to.be.equal(9);
                             done();
                         }, done);

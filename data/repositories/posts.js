@@ -4,7 +4,7 @@ var q = require("q"),
 module.exports = {
     add: addPost,
     all: getAllPosts,
-    allPublished: getAllPublishedPosts,
+    allPublishedPaged: getAllPublishedPostsPaged,
     findOneById: findOneById,
     findOneBySlug: findOneBySlug,
     remove: removePost,
@@ -28,7 +28,7 @@ function getAllPosts() {
     return deferred.promise;
 }
 
-function getAllPublishedPosts(page, postsPerPage) {
+function getAllPublishedPostsPaged(page, postsPerPage) {
     var deferred = q.defer();
 
     BlogPost.paginate(
