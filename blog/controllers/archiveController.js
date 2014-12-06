@@ -9,7 +9,7 @@ module.exports = {
 function init(app) {
     app.get(routes.blog.archive, function(request, response) {
         data.posts.all().done(function(posts) {
-            var archivePosts = _.chain(posts)
+            var archive = _.chain(posts)
                 .filter(function(post) {
                     return post.published;
                 })
@@ -28,7 +28,7 @@ function init(app) {
                 .value();
 
             app.renderBlogView(response, "archive", {
-                years: archivePosts
+                archive: archive
             });
         });
     });
