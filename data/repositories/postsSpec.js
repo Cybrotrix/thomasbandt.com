@@ -321,21 +321,6 @@ describe("PostRepository", function() {
                 }, done);
         });
 
-        it("updates the slug", function(done) {
-            var newSlug = Math.random().toString(36);
-
-            sut.add(getDummyPost())
-                .then(function(post) {
-                    post.slug = newSlug;
-
-                    return sut.update(post);
-                })
-                .done(function(updatedPost) {
-                    expect(updatedPost.slug).to.be.equal(newSlug);
-                    done();
-                }, done);
-        });
-
         it("updates the publishing flag", function(done) {
             var dummyPost = getDummyPost();
             dummyPost.published = true;
