@@ -14,7 +14,8 @@ var routes = {
     blog: {
         home: "/",
         about: "/about",
-        postDetail: "/:year/:month/:day/:title"
+        postDetail: "/:year/:month/:day/:title",
+        page: "/latest/:page"
     }
 };
 

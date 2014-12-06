@@ -9,6 +9,7 @@ function init(app) {
 
     require("./aboutController").init(app);
     require("./postDetailController").init(app);
+    require("./postsController").init(app);
 }
 
 function renderView(response, viewName, model) {

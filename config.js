@@ -9,6 +9,9 @@ var config = {
         uploadFolder: __dirname + "/upload/",
         webPath: "http://localhost:6969/upload/"
     },
+    blog: {
+        postsPerPage: 10
+    },
     database: {
         connectionString: "mongodb://localhost:27017/node-simple-blog",
         databaseName: "node-simple-blog"
