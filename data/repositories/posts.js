@@ -5,6 +5,7 @@ module.exports = {
     add: addPost,
     all: getAllPosts,
     findById: findById,
+    findBySlug: findBySlug,
     remove: removePost,
     update: updatePost
 };
@@ -30,6 +31,20 @@ function findById(id) {
     var deferred = q.defer();
 
     BlogPost.findById(id, function (error, post) {
+        if (error) {
+            deferred.reject(error);
+        } else {
+            deferred.resolve(post);
+        }
+    });
+
+    return deferred.promise;
+}
+
+function findBySlug(slug) {
+    var deferred = q.defer();
+
+    BlogPost.findOne({ slug: slug }, function (error, post) {
         if (error) {
             deferred.reject(error);
         } else {

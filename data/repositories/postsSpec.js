@@ -136,6 +136,21 @@ describe("PostRepository", function() {
         });
     });
 
+    describe("When looking for a post by its slug", function() {
+        it("it is returned when found", function (done) {
+            var dummyPost = getDummyPost();
+            dummyPost.slug = Math.random().toString(36);
+
+            sut.add(dummyPost)
+                .done(function () {
+                    sut.findBySlug(dummyPost.slug).done(function (post) {
+                        expect(post.slug).to.be.equal(dummyPost.slug);
+                        done();
+                    }, done);
+                }, done);
+        });
+    });
+
     describe("When requesting all blog posts", function() {
         it("will deliver all existing blog posts", function(done) {
             var dummyPost = getDummyPost();
