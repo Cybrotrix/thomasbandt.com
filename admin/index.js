@@ -55,10 +55,6 @@ function configureAuthentication(app) {
         }
 
         request.app.locals.isAuthenticated = request.isAuthenticated();
-        request.app.locals.routes = routes;
-        request.app.locals.activeRoute = request.originalUrl;
-        request.app.locals.metadata = config.metadata;
-        request.app.locals.assets = config.assets;
         next();
     });
 

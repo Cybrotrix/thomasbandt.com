@@ -1,5 +1,6 @@
 var config = require("./config"),
     express = require("express"),
+    routes = require("./routes"),
     routeUtils = require("./utils/routeUtils"),
     app = express();
 
@@ -12,6 +13,7 @@ configureSession(app);
 configureBodyParser(app);
 configureFlash(app);
 configureBusboy(app);
+configureGlobalAppLocals(app);
 
 setUpDatabase();
 
@@ -87,6 +89,16 @@ function configureFlash(app) {
 
 function configureBusboy(app) {
     app.use(require("connect-busboy")());
+}
+
+function configureGlobalAppLocals(app) {
+    app.use(function(request, response, next) {
+        request.app.locals.routes = routes;
+        request.app.locals.activeRoute = request.originalUrl;
+        request.app.locals.metadata = config.metadata;
+        request.app.locals.assets = config.assets;
+        next();
+    });
 }
 
 function setUpDatabase() {
