@@ -1,6 +1,7 @@
 var slug = require("slug");
 
 module.exports = {
+    actionLink : getActionLink,
     slugFromPost : getSlugFromPost,
     slugFromRouteParams : slugFromRouteParams
 };
@@ -31,4 +32,8 @@ function slugFromRouteParams(parameters) {
         ];
 
     return slugParts.join("/").toLowerCase();
+}
+
+function getActionLink(route, parameterName, parameterValue) {
+    return route.replace(parameterName, parameterValue);
 }

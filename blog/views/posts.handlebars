@@ -5,3 +5,11 @@
     <p>{{this.abstract}}</p>
     <hr>
 {{/each}}
+
+<hr>
+{{#if hasPreviousPage}}
+<a href="{{previousPageUrl}}">Zurück</a>
+{{/if}}
+{{#if hasNextPage}}
+<a href="{{nextPageUrl}}">Weiter</a>
+{{/if}}

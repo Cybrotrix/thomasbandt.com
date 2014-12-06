@@ -1,5 +1,6 @@
 var config = require("./config"),
     express = require("express"),
+    routeUtils = require("./utils/routeUtils"),
     app = express();
 
 setEnvironmentVariables();
@@ -31,9 +32,7 @@ function configureViewEngine(app) {
             activeMenuItem: function(route, activeRoute) {
                 return route === activeRoute ? "class=\"active\"" : "";
             },
-            actionLink: function(route, parameterName, parameterValue) {
-                return route.replace(parameterName, parameterValue);
-            },
+            actionLink: routeUtils.actionLink,
             section: function(name, options){
                 if(!this.sections) {
                     this.sections = {};
