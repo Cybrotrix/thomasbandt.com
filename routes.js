@@ -1,22 +1,25 @@
+var blogRoot = "";
+var adminRoot = "/admin";
+
 var routes = {
     admin: {
-        index: "/admin",
-        addPost: "/admin/posts/add",
-        editPost: "/admin/posts/edit/:id",
-        deletePost: "/admin/posts/delete/:id",
-        login: "/admin/login",
-        logout: "/admin/logout",
-        overview: "/admin/posts",
-        assets: "/admin/assets",
-        deleteAsset: "/admin/assets/delete/:id",
-        uploadAsset: "/admin/assets/upload"
+        index:          adminRoot,
+        addPost:        adminRoot + "/posts/add",
+        editPost:       adminRoot + "/posts/edit/:id",
+        deletePost:     adminRoot + "/posts/delete/:id",
+        login:          adminRoot + "/login",
+        logout:         adminRoot + "/logout",
+        overview:       adminRoot + "/posts",
+        assets:         adminRoot + "/assets",
+        deleteAsset:    adminRoot + "/assets/delete/:id",
+        uploadAsset:    adminRoot + "/assets/upload"
     },
     blog: {
-        home: "/",
-        about: "/about",
-        archive: "/archive",
-        postDetail: "/:year/:month/:day/:title",
-        page: "/latest/:page"
+        home:           blogRoot + "/",
+        about:          blogRoot + "/about",
+        archive:        blogRoot + "/archive",
+        postDetail:     blogRoot + "/:year/:month/:day/:title",
+        page:           blogRoot + "/latest/:page"
     }
 };
 
