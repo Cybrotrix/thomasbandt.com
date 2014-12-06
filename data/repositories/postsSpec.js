@@ -19,7 +19,7 @@ describe("PostRepository", function() {
                     return post.id;
                 })
                 .done(function(id) {
-                    sut.find(id).done(function(post) {
+                    sut.findById(id).done(function(post) {
                         expect(post.title).to.be.equal(dummyPost.title);
                         done();
                     }, done);
@@ -35,7 +35,7 @@ describe("PostRepository", function() {
                     return post.id;
                 })
                 .done(function(id) {
-                    sut.find(id).done(function(post) {
+                    sut.findById(id).done(function(post) {
                         expect(post.abstract).to.be.equal(dummyPost.abstract);
                         done();
                     }, done);
@@ -51,7 +51,7 @@ describe("PostRepository", function() {
                     return post.id;
                 })
                 .done(function(id) {
-                    sut.find(id).done(function(post) {
+                    sut.findById(id).done(function(post) {
                         expect(post.content).to.be.equal(dummyPost.content);
                         done();
                     }, done);
@@ -67,7 +67,7 @@ describe("PostRepository", function() {
                     return post.id;
                 })
                 .done(function(id) {
-                    sut.find(id).done(function(post) {
+                    sut.findById(id).done(function(post) {
                         expect(post.contentHtml).to.be.equal(dummyPost.contentHtml);
                         done();
                     }, done);
@@ -83,7 +83,7 @@ describe("PostRepository", function() {
                     return post.id;
                 })
                 .done(function(id) {
-                    sut.find(id).done(function(post) {
+                    sut.findById(id).done(function(post) {
                         expect(post.slug).to.be.equal(dummyPost.slug);
                         done();
                     }, done);
@@ -99,7 +99,7 @@ describe("PostRepository", function() {
                     return post.id;
                 })
                 .done(function(id) {
-                    sut.find(id).done(function(post) {
+                    sut.findById(id).done(function(post) {
                         expect(post.date.getTime()).to.be.equal(dummyPost.date.getTime());
                         done();
                     }, done);
@@ -115,7 +115,7 @@ describe("PostRepository", function() {
                     return post.id;
                 })
                 .done(function(id) {
-                    sut.find(id).done(function(post) {
+                    sut.findById(id).done(function(post) {
                         expect(post.published).to.be.true();
                         done();
                     }, done);
@@ -128,7 +128,7 @@ describe("PostRepository", function() {
                     return post.id;
                 })
                 .done(function(id) {
-                    sut.find(id).done(function(post) {
+                    sut.findById(id).done(function(post) {
                         expect(post.id).to.be.ok();
                         done();
                     }, done);
@@ -168,7 +168,7 @@ describe("PostRepository", function() {
                    return sut.remove(post.id);
                })
                .then(function() {
-                  return sut.find(postId);
+                  return sut.findById(postId);
                })
                .done(function(post) {
                    expect(post).to.be.null();

@@ -4,7 +4,7 @@ var q = require("q"),
 module.exports = {
     add: addPost,
     all: getAllPosts,
-    find: findPostById,
+    findById: findById,
     remove: removePost,
     update: updatePost
 };
@@ -26,7 +26,7 @@ function getAllPosts() {
     return deferred.promise;
 }
 
-function findPostById(id) {
+function findById(id) {
     var deferred = q.defer();
 
     BlogPost.findById(id, function (error, post) {
