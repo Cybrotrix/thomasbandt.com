@@ -4,8 +4,8 @@ var q = require("q"),
 module.exports = {
     add: addPost,
     all: getAllPosts,
-    findById: findById,
-    findBySlug: findBySlug,
+    findOneById: findOneById,
+    findOneBySlug: findOneBySlug,
     remove: removePost,
     update: updatePost
 };
@@ -27,7 +27,7 @@ function getAllPosts() {
     return deferred.promise;
 }
 
-function findById(id) {
+function findOneById(id) {
     var deferred = q.defer();
 
     BlogPost.findById(id, function (error, post) {
@@ -41,7 +41,7 @@ function findById(id) {
     return deferred.promise;
 }
 
-function findBySlug(slug) {
+function findOneBySlug(slug) {
     var deferred = q.defer();
 
     BlogPost.findOne({ slug: slug }, function (error, post) {

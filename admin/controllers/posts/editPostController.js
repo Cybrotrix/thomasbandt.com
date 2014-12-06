@@ -8,7 +8,7 @@ module.exports = {
 
 function init(app) {
     app.get(routes.admin.editPost, function(request, response) {
-        data.posts.findById(request.params.id).then(function(post) {
+        data.posts.findOneById(request.params.id).then(function(post) {
             app.renderAdminView(response, "editPost", {
                 post: post
             });
