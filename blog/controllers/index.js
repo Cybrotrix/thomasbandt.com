@@ -8,6 +8,7 @@ function init(app) {
     app.renderBlogView = renderView;
 
     require("./aboutController").init(app);
+    require("./postDetailController").init(app);
 }
 
 function renderView(response, viewName, model) {

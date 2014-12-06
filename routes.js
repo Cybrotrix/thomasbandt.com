@@ -13,7 +13,8 @@ var routes = {
     },
     blog: {
         home: "/",
-        about: "/about"
+        about: "/about",
+        postDetail: "/:year/:month/:day/:title"
     }
 };
 
