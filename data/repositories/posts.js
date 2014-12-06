@@ -32,9 +32,7 @@ function getAllPublishedPosts(page, postsPerPage) {
     var deferred = q.defer();
 
     BlogPost.paginate(
-        {
-            published: true
-        },
+        { published: true },
         page,
         postsPerPage,
         function(error, pageCount, posts, postCount) {
@@ -48,9 +46,7 @@ function getAllPublishedPosts(page, postsPerPage) {
                 });
             }
         },
-        {
-            sortBy: { date: -1}
-        }
+        { sortBy: { date: -1} }
     );
 
     return deferred.promise;
@@ -113,11 +109,7 @@ function addPost(post) {
 function removePost(id) {
     var deferred = q.defer();
 
-    var query = {
-        _id: id
-    };
-
-    BlogPost.remove(query, function (error, result) {
+    BlogPost.remove({ _id: id }, function (error, result) {
         if (error) {
             deferred.reject(error);
         } else {
