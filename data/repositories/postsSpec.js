@@ -179,11 +179,11 @@ describe("PostRepository", function() {
         });
     });
 
-    describe("When requesting all blog posts paged", function() {
+    describe("When requesting published blog posts", function() {
         it("will return the first 5 of 6 posts on page 1", function(done) {
             removeAllExistingBlogPosts().done(function() {
                 addDummyPosts(sut, 6).done(function() {
-                    sut.allPaged(1, 5).done(function(result) {
+                    sut.allPublished(1, 5).done(function(result) {
                         expect(result.posts.length).to.be.equal(5);
                         done();
                     }, done);
@@ -194,7 +194,7 @@ describe("PostRepository", function() {
         it("will return the 6th of 6 posts on page 2", function(done) {
             removeAllExistingBlogPosts().done(function() {
                 addDummyPosts(sut, 6).done(function() {
-                    sut.allPaged(2, 5).done(function(result) {
+                    sut.allPublished(2, 5).done(function(result) {
                         expect(result.posts.length).to.be.equal(1);
                         done();
                     }, done)
@@ -202,27 +202,43 @@ describe("PostRepository", function() {
             });
         });
 
-        it("will return the total count of posts found", function() {
+        it("will return the total count of posts found", function(done) {
             removeAllExistingBlogPosts().done(function() {
                 addDummyPosts(sut, 9).done(function() {
-                    sut.allPaged(1, 5).done(function(result) {
-                        expect(result.posts.postCount).to.be.equal(9);
+                    sut.allPublished(1, 5).done(function(result) {
+                        expect(result.postCount).to.be.equal(9);
                         done();
                     }, done);
                 });
             });
         });
 
-        it("will return the total number of pages", function() {
+        it("will return the total number of pages", function(done) {
             removeAllExistingBlogPosts().done(function() {
                 addDummyPosts(sut, 9).done(function() {
-                    sut.allPaged(1, 5).done(function(result) {
-                        expect(result.posts.pageCount).to.be.equal(2);
+                    sut.allPublished(1, 5).done(function(result) {
+                        expect(result.pageCount).to.be.equal(2);
                         done();
                     }, done);
                 });
             });
         });
+
+        it("will not return unpublished posts", function(done) {
+            removeAllExistingBlogPosts().done(function() {
+                addDummyPosts(sut, 9).done(function() {
+                    var unpublishedDummyPost = getDummyPost();
+                    unpublishedDummyPost.published = false;
+
+                    sut.add(unpublishedDummyPost).done(function() {
+                        sut.allPublished(1, 5).done(function(result) {
+                            expect(result.postCount).to.be.equal(9);
+                            done();
+                        }, done);
+                    });
+                });
+            });
+        })
     });
 
     describe("When removing a blog post", function() {
