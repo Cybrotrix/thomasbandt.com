@@ -1,17 +1,17 @@
-# Simple Blog Specification
+# Simple Blog
 
 ## Public Pages
 
 ### Index
 Lists all posts descending by date. Uses pagination to display a maximum of 10 posts at once on a page. Displays the title and the abstract for each post.
 
-### Detail
+### Detail ✓
 Provides the title and the content of a post.
 
 ### Archive
 Displays a full overview of all posts ever published grouped by the years they have been created.
 
-### About
+### About ✓
 A static page with the bio of the author and contact information.
 
 ### RSS Feed
