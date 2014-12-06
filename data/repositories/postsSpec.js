@@ -197,7 +197,7 @@ describe("PostRepository", function() {
                     sut.allPublished(2, 5).done(function(result) {
                         expect(result.posts.length).to.be.equal(1);
                         done();
-                    }, done)
+                    }, done);
                 });
             });
         });
@@ -238,7 +238,7 @@ describe("PostRepository", function() {
                     });
                 });
             });
-        })
+        });
     });
 
     describe("When removing a blog post", function() {

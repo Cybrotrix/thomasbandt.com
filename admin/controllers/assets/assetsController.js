@@ -1,6 +1,6 @@
 var config = require("../../../config"),
     routes = require("../../../routes"),
-    data = require("../../../data")
+    data = require("../../../data"),
     _ = require("underscore");
 
 module.exports = {

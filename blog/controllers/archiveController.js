@@ -1,5 +1,5 @@
 var routes = require("../../routes"),
-    data = require("../../data")
+    data = require("../../data"),
     _ = require("underscore");
 
 module.exports = {
@@ -20,7 +20,7 @@ function init(app) {
                     return {
                         year: year,
                         posts: posts
-                    }
+                    };
                 })
                 .sortBy(function(year) {
                     return -year.year;

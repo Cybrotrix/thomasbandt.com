@@ -10,10 +10,9 @@ var jshint = require("gulp-jshint"),
 gulp.task("jshint", function() {
     return gulp.src([
         "*.js",
-        "admin/**/*.js",
-        "blog/**/*.js",
+        "**/*.js",
+        "!node_modules/**/*.js",
         "!blog/client/libraries/**/*.js",
-        "data/**/*.js",
         "!admin/client/dist/*.js",
         "!admin/client/libraries/**/*.js"])
         .pipe(jshint())
@@ -27,6 +26,7 @@ gulp.task("mocha", function() {
         "*Spec.js",
         "data/**/*Spec.js",
         "blog/**/*Spec.js",
+        "utils/*Spec.js",
         "admin/**/*Spec.js"])
         .pipe(mocha({reporter: "spec"}));
 });
