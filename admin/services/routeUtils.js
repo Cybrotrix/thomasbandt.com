@@ -30,5 +30,5 @@ function slugFromRouteParameters(parameters) {
             parameters.title
         ];
 
-    return slugParts.join("/");
+    return slugParts.join("/").toLowerCase();
 }
