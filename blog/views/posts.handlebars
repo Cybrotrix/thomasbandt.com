@@ -1,7 +1,7 @@
 <h1>Posts</h1>
 
 {{#each posts}}
-    <h2>{{this.title}}</h2>
+    <h2><a href="/{{this.slug}}">{{this.title}}</a></h2>
     <p>{{this.abstract}}</p>
     <hr>
 {{/each}}
