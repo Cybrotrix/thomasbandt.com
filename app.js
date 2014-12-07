@@ -96,7 +96,7 @@ function configureGlobalAppLocals(app) {
     app.use(function(request, response, next) {
         request.app.locals.routes = routes;
         request.app.locals.activeRoute = request.originalUrl;
-        request.app.locals.metadata = config.metadata;
+        request.app.locals.blog = config.blog;
         request.app.locals.assets = config.assets;
         next();
     });
