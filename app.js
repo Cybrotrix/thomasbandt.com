@@ -6,6 +6,7 @@ var config = require("./config"),
 
 setEnvironmentVariables();
 
+configureLogging();
 configureViewEngine(app);
 configurePublicDirectories(app, express);
 configureCookieParser(app);
@@ -24,6 +25,17 @@ startServer(app);
 
 function setEnvironmentVariables() {
     process.env.DEBUG = false;
+}
+
+function configureLogging() {
+    var winston = require("winston");
+    require("winston-mongodb").MongoDB;
+
+    winston.handleExceptions(new winston.transports.MongoDB({
+        db : process.env.DEBUG === "true" ?
+            config.debug.database.databaseName :
+            config.database.databaseName
+    }));
 }
 
 function configureViewEngine(app) {
