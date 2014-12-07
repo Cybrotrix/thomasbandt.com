@@ -11,6 +11,7 @@ var config = {
     },
     blog: {
         postsPerPage: 10,
+        postsInFeed: 10,
         siteRootUrl: "http://localhost:6969"
     },
     database: {

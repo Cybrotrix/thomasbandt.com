@@ -14,7 +14,7 @@ Displays a full overview of all posts ever published grouped by the years they h
 ### About ✓
 A static page with the bio of the author and contact information.
 
-### RSS Feed
+### RSS Feed ✓
 Provides a feed containing the latest articles.
 
 ## Backend

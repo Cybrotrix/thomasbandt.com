@@ -35,9 +35,7 @@ function configureViewEngine(app) {
                 return route === activeRoute ? "class=\"active\"" : "";
             },
             actionLink: routeUtils.actionLink,
-            postLink: function(slug) {
-                return routes.blog.home + slug;
-            },
+            postLink: routeUtils.postLink,
             section: function(name, options){
                 if(!this.sections) {
                     this.sections = {};
