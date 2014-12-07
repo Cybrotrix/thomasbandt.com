@@ -36,7 +36,7 @@ function configureViewEngine(app) {
             },
             actionLink: routeUtils.actionLink,
             postLink: function(slug) {
-                return "/" + slug;
+                return routes.blog.home + slug;
             },
             section: function(name, options){
                 if(!this.sections) {
