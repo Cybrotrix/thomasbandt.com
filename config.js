@@ -10,6 +10,8 @@ var config = {
         webPath: "http://localhost:6969/upload/"
     },
     blog: {
+        name: "Simpe Blog",
+        description: "A simple blog application running the MEAN stack.",
         postsPerPage: 10,
         postsInFeed: 10,
         siteRootUrl: "http://localhost:6969"
@@ -23,10 +25,6 @@ var config = {
             connectionString: "mongodb://localhost:27017/node-simple-blog-dev",
             databaseName: "node-simple-blog-dev"
         }
-    },
-    metadata: {
-        blogName: "Simpe Blog",
-        description: "A simple blog application running the MEAN stack."
     }
 };
 

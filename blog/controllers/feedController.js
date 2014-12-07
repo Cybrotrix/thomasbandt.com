@@ -12,7 +12,7 @@ function init(app) {
     app.get(routes.blog.feed, function(request, response) {
         data.posts.allPublishedLimited(config.blog.postsInFeed).done(function(posts) {
             var feed = new Feed({
-                title: config.metadata.blogName,
+                title: config.blog.name,
                 feed_url: config.blog.siteRootUrl + routes.blog.feed,
                 site_url: config.blog.siteRootUrl
             });
