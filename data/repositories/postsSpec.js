@@ -1,7 +1,6 @@
 var expect = require("chai").expect,
     q = require("q"),
     _ = require("underscore"),
-    mongoose = require("mongoose"),
     BlogPost = require("../models/BlogPost");
 
 describe("PostRepository", function() {
@@ -178,6 +177,36 @@ describe("PostRepository", function() {
                 }, done);
         });
     });
+
+    describe("When requesting all published blog posts limited", function() {
+        it("will only return posts within the limit", function(done) {
+            removeAllExistingBlogPosts().done(function() {
+                addDummyPosts(sut, 10).done(function() {
+                    sut.allPublishedLimited(5).done(function(posts) {
+                        expect(posts.length).to.be.equal(5);
+                        done();
+                    }, done);
+                });
+            });
+        });
+
+        it("will not return unpublished posts", function(done) {
+            removeAllExistingBlogPosts().done(function() {
+                addDummyPosts(sut, 4).done(function() {
+                    var unpublishedDummyPost = getDummyPost();
+                    unpublishedDummyPost.published = false;
+
+                    sut.add(unpublishedDummyPost).done(function() {
+                        sut.allPublishedLimited(5).done(function(posts) {
+                            expect(posts.length).to.be.equal(4);
+                            done();
+                        }, done);
+                    });
+                });
+            });
+        });
+    });
+
 
     describe("When requesting published blog posts", function() {
         it("will return the first 5 of 6 posts on page 1", function(done) {

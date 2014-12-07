@@ -4,6 +4,7 @@ var q = require("q"),
 module.exports = {
     add: addPost,
     all: getAllPosts,
+    allPublishedLimited: getAllPublishedPostsLimited,
     allPublishedPaged: getAllPublishedPostsPaged,
     findOneById: findOneById,
     findOneBySlug: findOneBySlug,
@@ -16,6 +17,24 @@ function getAllPosts() {
 
     BlogPost
         .find({})
+        .sort("-date")
+        .exec(function(error, posts) {
+            if (error) {
+                deferred.reject(error);
+            } else {
+                deferred.resolve(posts);
+            }
+        });
+
+    return deferred.promise;
+}
+
+function getAllPublishedPostsLimited(limit) {
+    var deferred = q.defer();
+
+    BlogPost
+        .find({ published: true })
+        .limit(limit)
         .sort("-date")
         .exec(function(error, posts) {
             if (error) {
