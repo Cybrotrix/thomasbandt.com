@@ -11,6 +11,7 @@ function init(app) {
     require("./postDetailController").init(app);
     require("./aboutController").init(app);
     require("./archiveController").init(app);
+    require("./feedController").init(app);
 }
 
 function renderView(response, viewName, model) {
