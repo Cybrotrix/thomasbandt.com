@@ -13,3 +13,6 @@
 {{#if hasNextPage}}
 <a href="{{nextPageUrl}}">Next Page</a>
 {{/if}}
+
+{{#section "pageTitle"}}{{metadata.blogName}}{{/section}}
+{{#section "metaTags"}}<meta name="description" content="{{metadata.description}}">{{/section}}

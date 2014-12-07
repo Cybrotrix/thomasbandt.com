@@ -25,7 +25,8 @@ var config = {
         }
     },
     metadata: {
-        blogName: "Simpe Blog"
+        blogName: "Simpe Blog",
+        description: "A simple blog application running the MEAN stack."
     }
 };
 

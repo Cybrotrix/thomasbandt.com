@@ -1,3 +1,6 @@
 <h1>{{post.title}}</h1>
 <p>{{post.abstract}}</p>
 {{{post.contentHtml}}}
+
+{{#section "pageTitle"}}{{post.title}}{{/section}}
+{{#section "metaTags"}}<meta name="description" content="{{post.abstract}}">{{/section}}
