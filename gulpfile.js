@@ -20,15 +20,17 @@ gulp.task("jshint", function() {
 });
 
 gulp.task("mocha", function() {
-    process.env.DEBUG = true;
+    require("./data/database").connect().then(function() {
+        process.env.DEBUG = true;
 
-    return gulp.src([
-        "*Spec.js",
-        "data/**/*Spec.js",
-        "blog/**/*Spec.js",
-        "utils/*Spec.js",
-        "admin/**/*Spec.js"])
-        .pipe(mocha({reporter: "spec"}));
+        return gulp.src([
+            "*Spec.js",
+            "data/**/*Spec.js",
+            "blog/**/*Spec.js",
+            "utils/*Spec.js",
+            "admin/**/*Spec.js"])
+            .pipe(mocha({reporter: "spec"}));
+    });
 });
 
 gulp.task("minify", function() {

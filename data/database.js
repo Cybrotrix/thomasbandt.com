@@ -1,19 +1,30 @@
 var config = require("../config"),
-    mongoose = require("mongoose");
+    mongoose = require("mongoose"),
+    q = require("q");
+
+module.exports = {
+    connect: connect
+}
 
 var connectionString = process.env.DEBUG === "true" ?
-        config.debug.database.connectionString :
-            config.database.connectionString;
+    config.debug.database.connectionString :
+    config.database.connectionString;
 
-mongoose.connect(connectionString);
+function connect() {
+    var deferred = q.defer();
 
-mongoose.connection.on("connected", function () {
-    console.log("Connected to " + connectionString);
-});
+    mongoose.connect(connectionString);
 
-mongoose.connection.on("error", function (error) {
-    console.log("Connection to " + connectionString + " failed:" + error);
-});
+    mongoose.connection.on("connected", function () {
+        deferred.resolve("Connected successfully.");
+    });
+
+    mongoose.connection.on("error", function (error) {
+        deferred.reject("Connection failed: " + error);
+    });
+
+    return deferred.promise;
+}
 
 mongoose.connection.on("disconnected", function () {
     console.log("Disconnected from " + connectionString);

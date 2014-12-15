@@ -17,13 +17,17 @@ var config = {
         siteRootUrl: "http://localhost:6969"
     },
     database: {
-        connectionString: "mongodb://localhost:27017/node-simple-blog",
-        databaseName: "node-simple-blog"
+        connectionString: "mongodb://127.0.0.1:27017/node-simple-blog",
+        databaseName: "node-simple-blog",
+        userName: null,
+        password: null
     },
     debug: {
         database: {
-            connectionString: "mongodb://localhost:27017/node-simple-blog-dev",
-            databaseName: "node-simple-blog-dev"
+            connectionString: "mongodb://127.0.0.1:27017/node-simple-blog-dev",
+            databaseName: "node-simple-blog-dev",
+            userName: null,
+            password: null
         }
     }
 };

@@ -2,26 +2,23 @@ var config = require("./config"),
     express = require("express"),
     routes = require("./routes"),
     routeUtils = require("./utils/routeUtils"),
+    database = require("./data/database"),
     app = express();
 
 setEnvironmentVariables();
 
-configureLogging();
-configureViewEngine(app);
-configurePublicDirectories(app, express);
-configureCookieParser(app);
-configureSession(app);
-configureBodyParser(app);
-configureFlash(app);
-configureBusboy(app);
-configureGlobalAppLocals(app);
+database.connect()
+    .then(function(message) {
+        console.log(message);
 
-setUpDatabase();
-
-setUpAdmin(app);
-setUpBlog(app);
-
-startServer(app);
+        configureLogging();
+        configureViewEngine(app);
+        configurePublicDirectories(app, express);
+        configureSession(app);
+    })
+    .catch(function(error) {
+        console.error(error);
+    });
 
 function setEnvironmentVariables() {
     process.env.DEBUG = false;
@@ -31,11 +28,24 @@ function configureLogging() {
     var winston = require("winston");
     require("winston-mongodb").MongoDB;
 
-    winston.handleExceptions(new winston.transports.MongoDB({
-        db : process.env.DEBUG === "true" ?
-            config.debug.database.databaseName :
-            config.database.databaseName
-    }));
+    var transport;
+
+    if (process.env.DEBUG === "true") {
+        transport = new winston.transports.MongoDB({
+            db: config.database.databaseName,
+            username: config.database.userName,
+            password: config.database.password
+        });
+    }
+    else {
+        transport = new winston.transports.MongoDB({
+            db: config.debug.database.databaseName,
+            username: config.debug.database.userName,
+            password: config.debug.database.password
+        });
+    }
+
+    winston.handleExceptions(transport);
 }
 
 function configureViewEngine(app) {
@@ -77,16 +87,30 @@ function configureSession(app) {
     var session = require("express-session");
     var MongoStore = require('connect-mongo')(session);
 
-    app.use(session({
-        secret: "node-simple-blog",
-        resave: false,
-        saveUninitialized: true,
-        store: new MongoStore({
-            db : process.env.DEBUG === "true" ?
-                    config.debug.database.databaseName :
-                        config.database.databaseName
-        })
-    }));
+    var connectionString = process.env.DEBUG !== "true" ?
+        config.database.connectionString :
+        config.debug.database.connectionString;
+
+    var sessionStore = new MongoStore({ url: connectionString }, function() {
+        configureCookieParser(app);
+
+        app.use(session({
+            secret: "node-simple-blog",
+            resave: false,
+            saveUninitialized: true,
+            store: sessionStore
+        }));
+
+        configureBodyParser(app);
+        configureFlash(app);
+        configureBusboy(app);
+        configureGlobalAppLocals(app);
+
+        setUpAdmin(app);
+        setUpBlog(app);
+
+        startServer(app);
+    });
 }
 
 function configureBodyParser(app) {
@@ -112,10 +136,6 @@ function configureGlobalAppLocals(app) {
         request.app.locals.assets = config.assets;
         next();
     });
-}
-
-function setUpDatabase() {
-    require("./data");
 }
 
 function setUpAdmin(app) {
