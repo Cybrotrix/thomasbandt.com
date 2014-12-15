@@ -5,7 +5,7 @@
   "main": "app.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/aspnetde/node-simple-blog.git"
+    "url": "https://github.com/69grad/node-simpleblog.git"
   },
   "keywords": [
     "Node.js",
@@ -20,9 +20,9 @@
   "author": "Thomas Bandt",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/aspnetde/node-simple-blog/issues"
+    "url": "https://github.com/69grad/node-simpleblog/issues"
   },
-  "homepage": "https://github.com/aspnetde/node-simple-blog",
+  "homepage": "https://github.com/69grad/node-simpleblog",
   "dependencies": {
     "bcrypt": "^0.8.0",
     "body-parser": "^1.9.2",
