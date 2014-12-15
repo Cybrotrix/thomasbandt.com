@@ -2,7 +2,7 @@
   "name": "node-simple-blog-admin",
   "main": "index.js",
   "version": "0.0.0",
-  "homepage": "https://github.com/aspnetde/node-simple-blog",
+  "homepage": "https://github.com/69grad/node-simpleblog",
   "authors": [
     "Thomas <bandt@69grad.de>"
   ],
