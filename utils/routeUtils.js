@@ -3,7 +3,7 @@ var slug = require("slug"),
 
 module.exports = {
     actionLink : getActionLink,
-    postLink: getpostLink,
+    postLink: getPostLink,
     slugFromPost : getSlugFromPost,
     slugFromRouteParams : slugFromRouteParams
 };
@@ -40,6 +40,6 @@ function getActionLink(route, parameterName, parameterValue) {
     return route.replace(parameterName, parameterValue);
 }
 
-function getpostLink(slug) {
+function getPostLink(slug) {
     return routes.blog.home + slug;
 }
