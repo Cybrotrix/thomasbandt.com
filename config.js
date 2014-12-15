@@ -10,7 +10,7 @@ var config = {
         webPath: "http://localhost:6969/upload/"
     },
     blog: {
-        name: "Simpe Blog",
+        name: "Simple Blog",
         description: "A simple blog application running the MEAN stack.",
         postsPerPage: 10,
         postsInFeed: 10,
