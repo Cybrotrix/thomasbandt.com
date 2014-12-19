@@ -6,12 +6,12 @@ module.exports = {
     connect: connect
 }
 
-var connectionString = process.env.DEBUG === "true" ?
-    config.debug.database.connectionString :
-    config.database.connectionString;
-
 function connect() {
     var deferred = q.defer();
+
+    var connectionString = process.env.DEBUG === "true" ?
+        config.debug.database.connectionString :
+        config.database.connectionString;
 
     mongoose.connect(connectionString);
 

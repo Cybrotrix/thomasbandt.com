@@ -20,9 +20,9 @@ gulp.task("jshint", function() {
 });
 
 gulp.task("mocha", function() {
-    require("./data/database").connect().then(function() {
-        process.env.DEBUG = true;
+    process.env.DEBUG = true;
 
+    require("./data/database").connect().then(function() {
         return gulp.src([
             "*Spec.js",
             "data/**/*Spec.js",
