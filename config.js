@@ -10,22 +10,23 @@ var config = {
         webPath: "http://localhost:6969/upload/"
     },
     blog: {
-        name: "Simple Blog",
-        description: "A simple blog application running the MEAN stack.",
+        name: "Thomas Bandt",
+        description: "The personal Blog of Thomas Bandt.",
         postsPerPage: 10,
         postsInFeed: 10,
-        siteRootUrl: "http://localhost:6969"
+        siteRootUrl: "http://localhost:7000",
+        sitePort: 7000
     },
     database: {
-        connectionString: "mongodb://127.0.0.1:27017/node-simple-blog",
-        databaseName: "node-simple-blog",
+        connectionString: "mongodb://127.0.0.1:27017/blog-thomasbandt-com",
+        databaseName: "blog-thomasbandt-com",
         userName: null,
         password: null
     },
     debug: {
         database: {
-            connectionString: "mongodb://127.0.0.1:27017/node-simple-blog-dev",
-            databaseName: "node-simple-blog-dev",
+            connectionString: "mongodb://127.0.0.1:27017/blog-thomasbandt-com-tests",
+            databaseName: "blog-thomasbandt-com-tests",
             userName: null,
             password: null
         }

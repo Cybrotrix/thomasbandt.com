@@ -147,7 +147,7 @@ function setUpBlog(app) {
 }
 
 function startServer(app) {
-    app.listen(6969, function () {
-        console.log("Server started listening at http://localhost:6969");
+    app.listen(config.blog.sitePort, function () {
+        console.log("Server started listening at " + config.blog.siteRootUrl);
     });
 }

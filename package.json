@@ -1,28 +1,23 @@
 {
-  "name": "node-simple-blog",
-  "version": "0.1.0",
-  "description": "A simple blog built with the MEAN stack.",
+  "name": "blog-thomasbandt-com",
+  "version": "0.9.0",
+  "description": "The personal Blog of Thomas Bandt.",
   "main": "app.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/69grad/node-simpleblog.git"
+    "url": "https://github.com/aspnetde/blog.thomasbandt.com.git"
   },
   "keywords": [
     "Node.js",
-    "node",
     "MongoDB",
-    "mongo",
-    "Angular",
-    "AngularJS",
-    "Express",
-    "ExpressJS"
+    "Blog"
   ],
   "author": "Thomas Bandt",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/69grad/node-simpleblog/issues"
+    "url": "https://github.com/aspnetde/blog.thomasbandt.com/issues"
   },
-  "homepage": "https://github.com/69grad/node-simpleblog",
+  "homepage": "https://github.com/aspnetde/blog.thomasbandt.com",
   "dependencies": {
     "bcrypt": "^0.8.0",
     "body-parser": "^1.9.2",
