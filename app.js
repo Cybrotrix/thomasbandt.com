@@ -77,6 +77,7 @@ function configureViewEngine(app) {
 function configurePublicDirectories(app, express) {
     app.use("/upload", express.static(__dirname + "/upload"));
     app.use("/admin/client", express.static(__dirname + "/admin/client"));
+    app.use("/blog/client", express.static(__dirname + "/blog/client"));
 }
 
 function configureCookieParser(app) {
