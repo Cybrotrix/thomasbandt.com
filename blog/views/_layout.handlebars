@@ -4,6 +4,7 @@
     <title>{{{sections.pageTitle}}}</title>
     {{{sections.metaTags}}}
     <link href="/blog/client/libraries/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/blog/client/styles/bundled.css" rel="stylesheet">
     {{{sections.pageStyles}}}
 </head>
 <body>
@@ -12,6 +13,8 @@
     <a href="{{routes.blog.about}}">About</a> |
     <a href="{{routes.blog.feed}}">RSS Feed</a>
     <hr>
+    <div class="container blog-container">
     {{{body}}}
+    </div>
 </body>
 </html>

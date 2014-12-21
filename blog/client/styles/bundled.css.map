@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,eAAgB;EACd,UAAU,EAAE,gBAAe",
+"sources": ["_layout.scss"],
+"names": [],
+"file": "bundled.css"
+}
