@@ -4,7 +4,7 @@ var config = {
     },
     assets: {
         uploadFolder: __dirname + "/upload/",
-        webPath: "http://localhost:6969/upload/"
+        webPath: "http://localhost:7000/upload/"
     },
     blog: {
         name: "Thomas Bandt",
