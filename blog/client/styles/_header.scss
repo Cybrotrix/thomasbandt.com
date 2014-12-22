@@ -49,4 +49,41 @@ header {
     top: 50px;
     right: 0;
   }
+
+  @media screen and (max-width: 767px) {
+    width: 100%;
+    height: 80px;
+    text-align: center;
+    display: table;
+    padding-top: 100px;
+    margin-bottom: -20px;
+
+    .header-content {
+      width: 100%;
+      height: 160px;
+
+      .title {
+        display: block;
+      }
+
+      .dash {
+        display: none;
+      }
+
+      .subtitle {
+        display: block;
+      }
+
+      a {
+        font-size: 16px;
+        font-weight: bold;
+      }
+    }
+
+    img {
+      top: 20px;
+      left: calc(50% - 50px);
+      right: calc(50% - 50px);
+    }
+  }
 }

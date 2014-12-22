@@ -45,6 +45,30 @@ header {
     position: absolute;
     top: 50px;
     right: 0; }
+  @media screen and (max-width: 767px) {
+    header {
+      width: 100%;
+      height: 80px;
+      text-align: center;
+      display: table;
+      padding-top: 100px;
+      margin-bottom: -20px; }
+      header .header-content {
+        width: 100%;
+        height: 160px; }
+        header .header-content .title {
+          display: block; }
+        header .header-content .dash {
+          display: none; }
+        header .header-content .subtitle {
+          display: block; }
+        header .header-content a {
+          font-size: 16px;
+          font-weight: bold; }
+      header img {
+        top: 20px;
+        left: calc(50% - 50px);
+        right: calc(50% - 50px); } }
 
 .preview {
   margin-bottom: 50px; }
