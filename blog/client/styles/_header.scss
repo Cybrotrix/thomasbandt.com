@@ -33,6 +33,10 @@ header {
       &:last-of-type {
         margin-right: 0;
       }
+
+      &.active {
+        text-decoration: underline;
+      }
     }
   }
 

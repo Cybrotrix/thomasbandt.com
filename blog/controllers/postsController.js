@@ -13,6 +13,9 @@ function init(app) {
     });
 
     app.get(routes.blog.page, function(request, response) {
+        // To make sure the home navigation item is marked active
+        request.app.locals.activeRoute = routes.blog.home;
+
         renderPagedPosts(response, request.params.page);
     });
 

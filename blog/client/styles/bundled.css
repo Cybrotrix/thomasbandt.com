@@ -37,6 +37,8 @@ header {
       padding: 0; }
       header .header-content a:last-of-type {
         margin-right: 0; }
+      header .header-content a.active {
+        text-decoration: underline; }
   header img {
     position: absolute;
     top: 50px;
