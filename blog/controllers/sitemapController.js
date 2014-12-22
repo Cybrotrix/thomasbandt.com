@@ -18,7 +18,15 @@ function init(app) {
         addStaticRoute(stream, routes.blog.home);
         addStaticRoute(stream, routes.blog.archive);
 
-        stream.end();
+        data.posts.all().done(function(posts) {
+            posts.forEach(function(post) {
+                if (post.published) {
+                    stream.write({ loc: config.blog.siteRootUrl + routeUtils.postLink(post.slug) });
+                }
+            });
+
+            stream.end();
+        });
     });
 
     function addStaticRoute(stream, route) {
