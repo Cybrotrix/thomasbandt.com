@@ -157,6 +157,7 @@ function configureGlobalAppLocals(app) {
         request.app.locals.activeRoute = request.originalUrl;
         request.app.locals.blog = config.blog;
         request.app.locals.assets = config.assets;
+        request.app.locals.currentYear = new Date().getFullYear();
         next();
     });
 }
