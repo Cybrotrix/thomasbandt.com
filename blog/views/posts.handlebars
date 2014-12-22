@@ -5,12 +5,14 @@
 </article>
 {{/each}}
 
-{{#if hasPreviousPage}}
-<a href="{{previousPageUrl}}">Previous Page</a>
-{{/if}}
-{{#if hasNextPage}}
-<a href="{{nextPageUrl}}">Next Page</a>
-{{/if}}
+{{#ifCond hasPreviousPage '||' hasNextPage}}
+    {{#if hasPreviousPage}}
+    <a href="{{previousPageUrl}}">&laquo; Previous Page</a>
+    {{/if}}
+    {{#if hasNextPage}}
+    <a href="{{nextPageUrl}}">Next Page &raquo;</a>
+    {{/if}}
+{{/ifCond}}
 
 {{#section "pageTitle"}}{{blog.name}}{{/section}}
 {{#section "metaTags"}}<meta name="description" content="{{blog.description}}">{{/section}}
