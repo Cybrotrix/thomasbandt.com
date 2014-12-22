@@ -14,6 +14,7 @@ function init(app) {
     require("./archiveController").init(app);
     require("./contactController").init(app);
     require("./feedController").init(app);
+    require("./sitemapController").init(app);
 
     // Must be registered last
     require("./pageNotFoundController").init(app);

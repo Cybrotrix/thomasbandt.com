@@ -22,7 +22,8 @@ var routes = {
         feed:           blogRoot + "feed",
         page:           blogRoot + "latest/:page",
         pageNotFound:   blogRoot + "*",
-        postDetail:     blogRoot + ":year/:month/:day/:title"
+        postDetail:     blogRoot + ":year/:month/:day/:title",
+        sitemap:        blogRoot + "sitemap.xml"
     }
 };
 
