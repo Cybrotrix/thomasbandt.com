@@ -21,6 +21,7 @@ var routes = {
         contact:        blogRoot + "contact",
         feed:           blogRoot + "feed",
         page:           blogRoot + "latest/:page",
+        pageNotFound:   blogRoot + "*",
         postDetail:     blogRoot + ":year/:month/:day/:title"
     }
 };

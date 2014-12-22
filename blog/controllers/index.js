@@ -13,6 +13,9 @@ function init(app) {
     require("./archiveController").init(app);
     require("./contactController").init(app);
     require("./feedController").init(app);
+
+    // Must be registered last
+    require("./pageNotFoundController").init(app);
 }
 
 function renderView(response, viewName, model) {
