@@ -32,6 +32,16 @@ body {
     font-style: italic;
   }
 
+  code {
+    display: block;
+    border: solid $fontColor 1px;
+    border-radius: 0;
+    padding: 15px;
+    overflow: scroll;
+    color: $fontColor;
+    background: white;
+  }
+
   @media screen and (max-width: 767px) {
     .lead {
       font-size: 21px;

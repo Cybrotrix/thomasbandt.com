@@ -84,6 +84,12 @@ header {
     display: inline-block;
     margin: 0 10px 0 10px; }
 
+.post-detail a {
+  color: #333333;
+  text-decoration: underline; }
+.post-detail img {
+  max-width: 100%; }
+
 .archive a {
   color: #333333; }
 .archive .date {
@@ -114,6 +120,14 @@ body {
     font-weight: 600; }
   .blog-container .published {
     font-style: italic; }
+  .blog-container code {
+    display: block;
+    border: solid #333333 1px;
+    border-radius: 0;
+    padding: 15px;
+    overflow: scroll;
+    color: #333333;
+    background: white; }
   @media screen and (max-width: 767px) {
     .blog-container .lead {
       font-size: 21px; } }
