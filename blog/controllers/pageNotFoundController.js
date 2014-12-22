@@ -6,6 +6,6 @@ module.exports = {
 
 function init(app) {
     app.get(routes.blog.pageNotFound, function(request, response) {
-        app.renderBlogView(response, "404");
+        app.render404(response);
     });
 }

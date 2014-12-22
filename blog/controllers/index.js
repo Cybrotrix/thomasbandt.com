@@ -6,6 +6,7 @@ module.exports = {
 
 function init(app) {
     app.renderBlogView = renderView;
+    app.render404 = render404;
 
     require("./postsController").init(app);
     require("./postDetailController").init(app);
@@ -16,6 +17,12 @@ function init(app) {
 
     // Must be registered last
     require("./pageNotFoundController").init(app);
+}
+
+function render404(response) {
+    response.status(404);
+
+    renderView(response, "404");
 }
 
 function renderView(response, viewName, model) {
