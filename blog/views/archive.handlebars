@@ -1,13 +1,15 @@
-<h1>Archive</h1>
+<div class="archive">
+    <h1>Archive</h1>
 
-{{#each archive}}
-    <h2>{{this.year}}</h2>
-    <ul>
-    {{#each this.posts}}
-        <li><a href="{{postLink this.slug}}">{{this.title}}</a></li>
+    {{#each archive}}
+        <h2>{{this.year}}</h2>
+        <ul>
+        {{#each this.posts}}
+            <li><a href="{{postLink this.slug}}">{{this.title}}</a> <span class="date">({{this.dateFormatted}})</span></li>
+        {{/each}}
+        </ul>
     {{/each}}
-    </ul>
-{{/each}}
+</div>
 
 {{#section "pageTitle"}}Archive{{/section}}
 {{#section "metaTags"}}<meta name="description" content="{{blog.description}}">{{/section}}

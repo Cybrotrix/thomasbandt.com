@@ -1,5 +1,6 @@
 var routes = require("../../routes"),
     data = require("../../data"),
+    moment = require("moment"),
     _ = require("underscore");
 
 module.exports = {
@@ -10,6 +11,9 @@ function init(app) {
     app.get(routes.blog.archive, function(request, response) {
         data.posts.all().done(function(posts) {
             var archive = _.chain(posts)
+                .each(function(post) {
+                    post.dateFormatted = moment(post.date).format("MMM Do YYYY");
+                })
                 .filter(function(post) {
                     return post.published;
                 })

@@ -1,7 +1,7 @@
 footer {
   text-align: center;
   font-style: italic;
-  font-size: 18px;
+  font-size: 14px;
   margin: 50px 0 50px; }
   footer hr {
     border-bottom: solid 2px #888888;
@@ -47,6 +47,12 @@ header {
     color: #333333; }
   .preview:last-of-type {
     margin-bottom: 0; }
+
+.archive a {
+  color: #333333; }
+.archive .date {
+  font-style: italic;
+  font-size: 14px; }
 
 body {
   background: rgba(0, 0, 0, 0.03); }
