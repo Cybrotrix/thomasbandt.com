@@ -89,6 +89,21 @@ header {
   text-decoration: underline; }
 .post-detail img {
   max-width: 100%; }
+.post-detail pre {
+  border: none;
+  border-radius: 0;
+  padding: 0; }
+.post-detail code {
+  display: block;
+  border-radius: 0;
+  padding: 15px;
+  font-size: 16px;
+  overflow: scroll;
+  color: #f1f1f1;
+  background-color: #1a1a1a;
+  overflow: auto;
+  word-wrap: normal;
+  white-space: pre; }
 
 .archive a {
   color: #333333; }
@@ -120,14 +135,6 @@ body {
     font-weight: 600; }
   .blog-container .published {
     font-style: italic; }
-  .blog-container code {
-    display: block;
-    border: solid #333333 1px;
-    border-radius: 0;
-    padding: 15px;
-    overflow: scroll;
-    color: #333333;
-    background: white; }
   @media screen and (max-width: 767px) {
     .blog-container .lead {
       font-size: 21px; } }
