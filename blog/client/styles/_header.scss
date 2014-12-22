@@ -1,9 +1,5 @@
 @import "_colors.scss";
 
-body {
-  background: rgba(0, 0, 0, 0.03);
-}
-
 header {
   position: relative;
   height: 200px;
@@ -44,34 +40,5 @@ header {
     position: absolute;
     top: 50px;
     right: 0;
-  }
-}
-
-.blog-container {
-  max-width: 720px;
-  font-size: 20px;
-  line-height: 30px;
-  font-family: Georgia, Cambria, 'Times New Roman', Times, serif;
-
-  h1, h2 {
-    font-family: "Open Sans";
-    font-size: 27px;
-    font-weight: bold;
-
-    &:a {
-      color: black;
-    }
-  }
-
-  h1 {
-    font-size: 36px;
-  }
-
-  .lead {
-    font-weight: 600;
-  }
-
-  .published {
-    font-style: italic;
   }
 }
