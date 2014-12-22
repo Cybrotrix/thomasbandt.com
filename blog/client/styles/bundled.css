@@ -31,7 +31,8 @@ header {
       color: #565656; }
     header .header-content a {
       color: #888888;
-      font-size: 12px;
+      font-size: 16px;
+      font-weight: bold;
       display: inline-block;
       margin: 0 5px 0 0;
       padding: 0; }
@@ -62,9 +63,6 @@ header {
           display: none; }
         header .header-content .subtitle {
           display: block; }
-        header .header-content a {
-          font-size: 16px;
-          font-weight: bold; }
       header img {
         top: 20px;
         left: calc(50% - 50px);
@@ -91,6 +89,10 @@ header {
 .archive .date {
   font-style: italic;
   font-size: 14px; }
+.archive .jumbotron {
+  padding: 25px 25px 10px 25px; }
+  .archive .jumbotron a {
+    text-decoration: underline; }
 
 body {
   background: rgba(0, 0, 0, 0.03); }

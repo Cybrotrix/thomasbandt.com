@@ -25,7 +25,8 @@ header {
 
     a {
       color: $foreColor;
-      font-size: 12px;
+      font-size: 16px;
+      font-weight: bold;
       display: inline-block;
       margin: 0 5px 0 0;
       padding: 0;
@@ -72,11 +73,6 @@ header {
 
       .subtitle {
         display: block;
-      }
-
-      a {
-        font-size: 16px;
-        font-weight: bold;
       }
     }
 
