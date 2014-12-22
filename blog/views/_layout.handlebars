@@ -14,22 +14,18 @@
     <div class="container blog-container">
         <header>
             <img src="/blog/client/images/profile-picture.png">
-
-            <div class="header-content">
+            <nav class="header-content">
                 <div class="title">
                     <strong>Thomas Bandt <span class="dash">&dash;</span></strong>
                     <span class="subtitle">Developer &amp; Entrepreneur with Passion.</span>
                 </div>
-
                 <br>
-
                 <a href="{{routes.blog.home}}" {{{activeMenuItem routes.blog.home activeRoute}}}>Home</a>
                 <a href="{{routes.blog.about}}" {{{activeMenuItem routes.blog.about activeRoute}}}>About</a>
                 <a href="{{routes.blog.contact}}" {{{activeMenuItem routes.blog.contact activeRoute}}}>Contact</a>
                 <a href="{{routes.blog.archive}}" {{{activeMenuItem routes.blog.archive activeRoute}}}>Archive</a>
                 <a href="{{routes.blog.feed}}" target="_blank"><i class="fa fa-rss"></i></a>
-            </div>
-
+            </nav>
         </header>
 
         {{{body}}}
