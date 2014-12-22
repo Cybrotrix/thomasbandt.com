@@ -41,6 +41,13 @@ header {
     top: 50px;
     right: 0; }
 
+.preview {
+  margin-bottom: 50px; }
+  .preview a {
+    color: #333333; }
+  .preview:last-of-type {
+    margin-bottom: 0; }
+
 body {
   background: rgba(0, 0, 0, 0.03); }
 

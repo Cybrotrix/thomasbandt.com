@@ -1,0 +1,13 @@
+@import "_colors.scss";
+
+.preview {
+  a {
+    color: $fontColor;
+  }
+
+  margin-bottom: 50px;
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+}
