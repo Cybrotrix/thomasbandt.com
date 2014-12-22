@@ -6,12 +6,19 @@
 {{/each}}
 
 {{#ifCond hasPreviousPage '||' hasNextPage}}
+<div class="pager">
     {{#if hasPreviousPage}}
-    <a href="{{previousPageUrl}}">&laquo; Previous Page</a>
+    <a href="{{previousPageUrl}}">&laquo; Newer Articles</a>
     {{/if}}
+
+    {{#ifCond hasPreviousPage '&&' hasNextPage}}
+    <span class="pipe">|</span>
+    {{/ifCond}}
+
     {{#if hasNextPage}}
-    <a href="{{nextPageUrl}}">Next Page &raquo;</a>
+    <a href="{{nextPageUrl}}">Older Articles &raquo;</a>
     {{/if}}
+</div>
 {{/ifCond}}
 
 {{#section "pageTitle"}}{{blog.name}}{{/section}}

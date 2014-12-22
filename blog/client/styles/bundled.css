@@ -2,6 +2,7 @@ footer {
   text-align: center;
   font-style: italic;
   font-size: 14px;
+  color: #888888;
   margin: 50px 0 50px; }
   footer hr {
     border-bottom: solid 2px #888888;
@@ -9,7 +10,7 @@ footer {
     padding: 0;
     margin-bottom: 5px; }
   footer a {
-    color: #333333; }
+    color: #888888; }
 
 header {
   position: relative;
@@ -47,6 +48,15 @@ header {
     color: #333333; }
   .preview:last-of-type {
     margin-bottom: 0; }
+
+.pager {
+  margin: 50px 0 50px;
+  color: #888888; }
+  .pager a {
+    color: #333333; }
+  .pager .pipe {
+    display: inline-block;
+    margin: 0 10px 0 10px; }
 
 .archive a {
   color: #333333; }

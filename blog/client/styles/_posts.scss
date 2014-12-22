@@ -11,3 +11,17 @@
     margin-bottom: 0;
   }
 }
+
+.pager {
+  margin: 50px 0 50px;
+  color: $foreColor;
+
+  a {
+    color: $fontColor;
+  }
+
+  .pipe {
+    display: inline-block;
+    margin: 0 10px 0 10px;
+  }
+}
