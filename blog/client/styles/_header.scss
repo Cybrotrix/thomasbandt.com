@@ -6,6 +6,7 @@ header {
   font-family: "Open Sans";
   color: $foreColor;
   line-height: 22px;
+  margin-bottom: -15px;
 
   .header-content {
     display: table-cell;
@@ -36,7 +37,7 @@ header {
       }
 
       &.active {
-        text-decoration: underline;
+        color: black;
       }
 
       &:hover {
