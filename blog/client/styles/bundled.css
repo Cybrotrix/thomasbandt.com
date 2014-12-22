@@ -46,7 +46,7 @@ header {
     position: absolute;
     top: 50px;
     right: 0; }
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: 567px) {
     header {
       width: 100%;
       height: 80px;
@@ -114,5 +114,8 @@ body {
     font-weight: 600; }
   .blog-container .published {
     font-style: italic; }
+  @media screen and (max-width: 767px) {
+    .blog-container .lead {
+      font-size: 21px; } }
 
 /*# sourceMappingURL=bundled.css.map */
