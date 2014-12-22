@@ -1,16 +1,10 @@
 <article>
     <h1>{{post.title}}</h1>
     <p class="lead">{{post.abstract}}</p>
+    <p class="published">Published on {{post.dateFormatted}}.</p>
 
     {{{post.contentHtml}}}
-
-    <aside>
-        Published on {{post.date}}
-    </aside>
 </article>
-
-
-
 
 {{#section "pageTitle"}}{{post.title}}{{/section}}
 {{#section "metaTags"}}<meta name="description" content="{{post.abstract}}">{{/section}}

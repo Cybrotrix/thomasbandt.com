@@ -46,5 +46,17 @@ header {
     font-size: 36px; }
   .blog-container .lead {
     font-weight: 600; }
+  .blog-container .published {
+    font-style: italic; }
+  .blog-container footer {
+    text-align: center;
+    font-style: italic;
+    font-size: 18px;
+    margin: 50px 0 50px; }
+    .blog-container footer hr {
+      border-bottom: solid 2px #888888;
+      width: 30px;
+      padding: 0;
+      margin-bottom: 5px; }
 
 /*# sourceMappingURL=bundled.css.map */

@@ -1,5 +1,6 @@
 var routes = require("../../routes"),
     data = require("../../data"),
+    moment = require("moment"),
     routeUtils = require("../../utils/routeUtils");
 
 module.exports = {
@@ -11,6 +12,8 @@ function init(app) {
         var slug = routeUtils.slugFromRouteParams(request.params);
 
         data.posts.findOneBySlug(slug).done(function(post) {
+            post.dateFormatted = moment(post.date).format("MMMM Do YYYY");
+
             app.renderBlogView(response, "postDetail", {
                 post: post
             });

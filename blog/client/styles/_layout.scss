@@ -70,4 +70,23 @@ header {
   .lead {
     font-weight: 600;
   }
+
+  .published {
+    font-style: italic;
+  }
+
+  footer {
+    hr {
+      border-bottom: solid 2px $foreColor;
+      width: 30px;
+      padding: 0;
+      margin-bottom: 5px;
+    }
+
+    text-align: center;
+    font-style: italic;
+    font-size: 18px;
+
+    margin: 50px 0 50px;
+  }
 }
