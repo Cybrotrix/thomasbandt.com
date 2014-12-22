@@ -37,6 +37,10 @@ header {
       &.active {
         text-decoration: underline;
       }
+
+      &:hover {
+        color: black;
+      }
     }
   }
 

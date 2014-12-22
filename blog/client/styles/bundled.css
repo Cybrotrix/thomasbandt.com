@@ -39,6 +39,8 @@ header {
         margin-right: 0; }
       header .header-content a.active {
         text-decoration: underline; }
+      header .header-content a:hover {
+        color: black; }
   header img {
     position: absolute;
     top: 50px;
@@ -68,36 +70,6 @@ header {
 
 body {
   background: rgba(0, 0, 0, 0.03); }
-
-header {
-  position: relative;
-  height: 200px;
-  font-family: "Open Sans";
-  color: #888888;
-  line-height: 22px; }
-  header .header-content {
-    display: table-cell;
-    vertical-align: middle;
-    height: 200px; }
-    header .header-content .title {
-      font-size: 14px;
-      padding: 0;
-      margin: 0;
-      display: inline-block; }
-    header .header-content strong {
-      color: #565656; }
-    header .header-content a {
-      color: #888888;
-      font-size: 12px;
-      display: inline-block;
-      margin: 0 5px 0 0;
-      padding: 0; }
-      header .header-content a:last-of-type {
-        margin-right: 0; }
-  header img {
-    position: absolute;
-    top: 50px;
-    right: 0; }
 
 .blog-container {
   max-width: 720px;
