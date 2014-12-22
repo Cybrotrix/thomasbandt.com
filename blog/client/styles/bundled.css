@@ -32,7 +32,7 @@ header {
     header .header-content a {
       color: #888888;
       font-size: 16px;
-      font-weight: bold;
+      text-transform: uppercase;
       display: inline-block;
       margin: 0 5px 0 0;
       padding: 0; }
@@ -59,7 +59,7 @@ header {
         height: 160px; }
         header .header-content .title {
           display: block; }
-        header .header-content .dash {
+        header .header-content .hide-on-mobile {
           display: none; }
         header .header-content .subtitle {
           display: block; }
