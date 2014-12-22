@@ -118,6 +118,11 @@ header {
   .archive .jumbotron a {
     text-decoration: underline; }
 
+.page-not-found img {
+  max-width: 100%; }
+.page-not-found .jumbotron {
+  text-align: center; }
+
 body {
   background: rgba(0, 0, 0, 0.03); }
 
