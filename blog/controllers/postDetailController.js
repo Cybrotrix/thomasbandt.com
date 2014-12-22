@@ -12,11 +12,15 @@ function init(app) {
         var slug = routeUtils.slugFromRouteParams(request.params);
 
         data.posts.findOneBySlug(slug).done(function(post) {
-            post.dateFormatted = moment(post.date).format("MMMM Do YYYY");
+            if (post.published) {
+                post.dateFormatted = moment(post.date).format("MMMM Do YYYY");
 
-            app.renderBlogView(response, "postDetail", {
-                post: post
-            });
+                app.renderBlogView(response, "postDetail", {
+                    post: post
+                });
+            } else {
+                app.renderBlogView(response, "404");
+            }
         });
     });
 }
