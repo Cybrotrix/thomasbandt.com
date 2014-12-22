@@ -18,6 +18,7 @@ var routes = {
         home:           blogRoot,
         about:          blogRoot + "about",
         archive:        blogRoot + "archive",
+        contact:        blogRoot + "contact",
         feed:           blogRoot + "feed",
         page:           blogRoot + "latest/:page",
         postDetail:     blogRoot + ":year/:month/:day/:title"
