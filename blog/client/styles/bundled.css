@@ -77,6 +77,9 @@ header {
   margin-bottom: 50px; }
   .preview a {
     color: #333333; }
+  @media screen and (max-width: 767px) {
+    .preview {
+      margin-bottom: 25px; } }
   .preview:last-of-type {
     margin-bottom: 0; }
 
@@ -88,6 +91,11 @@ header {
   .pager .pipe {
     display: inline-block;
     margin: 0 10px 0 10px; }
+  @media screen and (max-width: 320px) {
+    .pager a {
+      font-size: 16px; }
+    .pager .pipe {
+      margin: 0 5px 0 5px; } }
 
 .post-detail a {
   color: #333333;
@@ -111,6 +119,9 @@ header {
   white-space: pre; }
 .post-detail .comments {
   margin-top: 50px; }
+@media screen and (max-width: 767px) {
+  .post-detail .comments {
+    margin-top: 25px; } }
 
 .archive a {
   color: #333333; }
@@ -143,12 +154,22 @@ body {
       color: black; }
   .blog-container h1 {
     font-size: 36px; }
+  .blog-container h2 {
+    line-height: 20px; }
   .blog-container .lead {
     font-weight: 600; }
   .blog-container .published {
     font-style: italic; }
   @media screen and (max-width: 767px) {
-    .blog-container .lead {
-      font-size: 21px; } }
+    .blog-container {
+      font-size: 18px;
+      line-height: 25px; }
+      .blog-container .lead {
+        font-size: 18px; }
+      .blog-container h1 {
+        font-size: 24px; }
+      .blog-container h2 {
+        font-size: 22px;
+        line-height: 12px; } }
 
 /*# sourceMappingURL=bundled.css.map */

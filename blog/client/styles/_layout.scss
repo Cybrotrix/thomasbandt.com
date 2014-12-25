@@ -24,6 +24,10 @@ body {
     font-size: 36px;
   }
 
+  h2 {
+    line-height: 20px;
+  }
+
   .lead {
     font-weight: 600;
   }
@@ -34,7 +38,19 @@ body {
 
   @media screen and (max-width: 767px) {
     .lead {
-      font-size: 21px;
+      font-size: 18px;
     }
+
+    h1 {
+      font-size: 24px;
+    }
+
+    h2 {
+      font-size: 22px;
+      line-height: 12px;
+    }
+
+    font-size: 18px;
+    line-height: 25px;
   }
 }

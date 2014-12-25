@@ -32,4 +32,10 @@
   .comments {
     margin-top: 50px;
   }
+
+  @media screen and (max-width: 767px) {
+    .comments {
+      margin-top: 25px;
+    }
+  }
 }
