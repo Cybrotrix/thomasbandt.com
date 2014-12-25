@@ -9,7 +9,7 @@ var config = {
     blog: {
         name: "Thomas Bandt",
         description: "The personal Blog of Thomas Bandt.",
-        postsPerPage: 10,
+        postsPerPage: 3,
         postsInFeed: 10,
         siteRootUrl: "http://localhost:7000",
         sitePort: 7000

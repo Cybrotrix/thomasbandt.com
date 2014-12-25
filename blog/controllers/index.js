@@ -8,16 +8,15 @@ function init(app) {
     app.renderBlogView = renderView;
     app.render404 = render404;
 
-    require("./postsController").init(app);
-    require("./postDetailController").init(app);
     require("./aboutController").init(app);
     require("./archiveController").init(app);
     require("./contactController").init(app);
     require("./feedController").init(app);
     require("./sitemapController").init(app);
+    require("./postsController").init(app);
 
     // Must be registered last
-    require("./pageNotFoundController").init(app);
+    require("./postDetailController").init(app);
 }
 
 function render404(response) {
