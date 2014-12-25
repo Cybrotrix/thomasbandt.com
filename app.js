@@ -154,6 +154,7 @@ function configureBusboy(app) {
 
 function configureGlobalAppLocals(app) {
     app.use(function(request, response, next) {
+        request.app.locals.hideProfilePicture = false;
         request.app.locals.routes = routes;
         request.app.locals.activeRoute = request.originalUrl;
         request.app.locals.blog = config.blog;
