@@ -1,7 +1,6 @@
 var routes = require("../../routes"),
     data = require("../../data"),
-    moment = require("moment"),
-    routeUtils = require("../../utils/routeUtils");
+    moment = require("moment")
 
 module.exports = {
     init: init
