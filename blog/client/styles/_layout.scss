@@ -10,6 +10,15 @@ body {
   line-height: 30px;
   font-family: Georgia, Cambria, 'Times New Roman', Times, serif;
 
+  .jumbotron {
+    padding: 25px 25px 10px 25px;
+
+    a {
+      text-decoration: underline;
+      color: $fontColor;
+    }
+  }
+
   h1, h2 {
     font-family: "Open Sans";
     font-size: 27px;

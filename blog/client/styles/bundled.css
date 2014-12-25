@@ -128,10 +128,6 @@ header {
 .archive .date {
   font-style: italic;
   font-size: 14px; }
-.archive .jumbotron {
-  padding: 25px 25px 10px 25px; }
-  .archive .jumbotron a {
-    text-decoration: underline; }
 
 .page-not-found img {
   max-width: 100%; }
@@ -146,6 +142,11 @@ body {
   font-size: 20px;
   line-height: 30px;
   font-family: Georgia, Cambria, 'Times New Roman', Times, serif; }
+  .blog-container .jumbotron {
+    padding: 25px 25px 10px 25px; }
+    .blog-container .jumbotron a {
+      text-decoration: underline;
+      color: #333333; }
   .blog-container h1, .blog-container h2 {
     font-family: "Open Sans";
     font-size: 27px;

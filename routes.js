@@ -20,8 +20,10 @@ var routes = {
         archive:        blogRoot + "archive",
         contact:        blogRoot + "contact",
         feed:           blogRoot + "feed",
+        imprint:        blogRoot + "imprint",
         page:           blogRoot + "latest/:page",
         postDetail:     blogRoot + "*",
+        privacy:        blogRoot + "privacy",
         sitemap:        blogRoot + "sitemap.xml"
     }
 };

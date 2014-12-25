@@ -1,4 +1,6 @@
 User-agent: *
 Disallow: /admin
 Disallow: /blog/client
+Disallow: /imprint
+Disallow: /privacy
 Allow: /
