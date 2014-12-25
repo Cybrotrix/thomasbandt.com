@@ -17,7 +17,7 @@ var routes = {
     blog: {
         home:           blogRoot,
         about:          blogRoot + "about",
-        archive:        blogRoot + "archive",
+        archives:       blogRoot + "archives",
         contact:        blogRoot + "contact",
         feed:           blogRoot + "feed",
         imprint:        blogRoot + "imprint",

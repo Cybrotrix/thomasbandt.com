@@ -8,7 +8,7 @@ module.exports = {
 };
 
 function init(app) {
-    app.get(routes.blog.archive, function(request, response) {
+    app.get(routes.blog.archives, function(request, response) {
         data.posts.all().done(function(posts) {
             var archive = _.chain(posts)
                 .each(function(post) {
@@ -31,7 +31,7 @@ function init(app) {
                 })
                 .value();
 
-            app.renderBlogView(response, "archive", {
+            app.renderBlogView(response, "archives", {
                 archive: archive
             });
         });

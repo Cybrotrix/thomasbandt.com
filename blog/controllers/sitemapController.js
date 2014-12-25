@@ -16,7 +16,7 @@ function init(app) {
         addStaticRoute(stream, routes.blog.about);
         addStaticRoute(stream, routes.blog.contact);
         addStaticRoute(stream, routes.blog.home);
-        addStaticRoute(stream, routes.blog.archive);
+        addStaticRoute(stream, routes.blog.archives);
 
         data.posts.all().done(function(posts) {
             posts.forEach(function(post) {

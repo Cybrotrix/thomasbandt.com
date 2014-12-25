@@ -9,7 +9,7 @@ function init(app) {
     app.render404 = render404;
 
     require("./aboutController").init(app);
-    require("./archiveController").init(app);
+    require("./archivesController").init(app);
     require("./contactController").init(app);
     require("./feedController").init(app);
     require("./sitemapController").init(app);
