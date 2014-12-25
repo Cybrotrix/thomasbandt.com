@@ -42,7 +42,8 @@ header {
       header .header-content a.active {
         color: black; }
       header .header-content a:hover {
-        color: black; }
+        color: black;
+        text-decoration: none; }
   header img {
     position: absolute;
     top: 50px;
