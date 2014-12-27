@@ -131,6 +131,8 @@ header {
   font-style: italic;
   font-size: 14px; }
 
+.contact .col-xs-6 {
+  text-align: center; }
 .contact img {
   max-width: 100%; }
 .contact .caption {

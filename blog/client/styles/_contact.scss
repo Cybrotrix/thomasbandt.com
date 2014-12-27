@@ -1,6 +1,10 @@
 @import "_colors.scss";
 
 .contact {
+  .col-xs-6 {
+    text-align: center;
+  }
+
   img {
     max-width: 100%;
   }
