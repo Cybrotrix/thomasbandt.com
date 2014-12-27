@@ -2,6 +2,7 @@
   text-align: center;
   font-style: italic;
   font-size: 14px;
+  line-height: 20px;
   color: #888888;
   margin: 50px 0 50px; }
   .page-footer hr {
@@ -129,6 +130,17 @@ header {
 .archive .date {
   font-style: italic;
   font-size: 14px; }
+
+.contact a.fa {
+  font-size: 179px;
+  display: inline-block;
+  margin-right: 20px;
+  color: #333333;
+  text-decoration: none; }
+  .contact a.fa:last-of-type {
+    margin-right: 0; }
+  .contact a.fa:hover {
+    color: #888888; }
 
 .page-not-found img {
   max-width: 100%; }

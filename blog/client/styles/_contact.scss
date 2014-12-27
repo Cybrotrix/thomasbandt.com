@@ -1,0 +1,19 @@
+@import "_colors.scss";
+
+.contact {
+  a.fa {
+    font-size: 179px;
+    display: inline-block;
+    margin-right: 20px;
+    color: $fontColor;
+    text-decoration: none;
+
+    &:last-of-type {
+      margin-right: 0;
+    }
+
+    &:hover {
+      color: $foreColor;
+    }
+  }
+}
