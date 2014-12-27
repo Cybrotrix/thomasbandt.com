@@ -1,19 +1,20 @@
 @import "_colors.scss";
 
 .contact {
-  a.fa {
-    font-size: 179px;
-    display: inline-block;
-    margin-right: 20px;
-    color: $fontColor;
-    text-decoration: none;
+  img {
+    max-width: 100%;
+  }
 
-    &:last-of-type {
-      margin-right: 0;
-    }
+  .caption {
+    display: block;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+    margin: 15px 0 25px 0;
+  }
 
-    &:hover {
-      color: $foreColor;
-    }
+  .row {
+    margin-top: 25px;
+    margin-bottom: 15px;
   }
 }
