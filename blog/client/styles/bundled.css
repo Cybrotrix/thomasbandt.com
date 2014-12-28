@@ -134,7 +134,11 @@ header {
 .contact .col-xs-6 {
   text-align: center; }
 .contact img {
-  max-width: 100%; }
+  max-width: 100%;
+  opacity: 0.85; }
+@media screen and (min-width: 768px) {
+  .contact a:hover img {
+    opacity: 1; } }
 .contact .caption {
   display: block;
   font-size: 16px;
