@@ -75,6 +75,56 @@ header {
       font-size: 15px;
       margin: 0 3px 0 0; } }
 
+body {
+  background: rgba(0, 0, 0, 0.03); }
+
+.hidden-on-desktop {
+  display: block; }
+
+@media screen and (min-width: 567px) {
+  .hidden-on-desktop {
+    display: none; } }
+.content a {
+  color: #333333;
+  text-decoration: underline; }
+.content img {
+  max-width: 100%; }
+
+.blog-container {
+  max-width: 720px;
+  font-size: 20px;
+  line-height: 30px;
+  font-family: Georgia, Cambria, 'Times New Roman', Times, serif; }
+  .blog-container .jumbotron {
+    padding: 25px 25px 10px 25px; }
+    .blog-container .jumbotron a {
+      text-decoration: underline;
+      color: #333333; }
+  .blog-container h1, .blog-container h2 {
+    font-family: "Open Sans";
+    font-size: 27px;
+    font-weight: bold; }
+    .blog-container h1:a, .blog-container h2:a {
+      color: black; }
+  .blog-container h1 {
+    font-size: 36px; }
+  .blog-container .lead {
+    font-weight: 600; }
+  .blog-container .published {
+    font-style: italic; }
+  @media screen and (max-width: 767px) {
+    .blog-container {
+      font-size: 18px;
+      line-height: 25px; }
+      .blog-container .lead {
+        font-size: 18px; }
+      .blog-container h1 {
+        font-size: 24px; }
+      .blog-container h2 {
+        font-size: 22px; }
+      .blog-container .jumbotron p {
+        font-size: 18px; } }
+
 .preview {
   margin-bottom: 50px; }
   .preview a {
@@ -153,55 +203,5 @@ header {
   max-width: 100%; }
 .page-not-found .jumbotron {
   text-align: center; }
-
-body {
-  background: rgba(0, 0, 0, 0.03); }
-
-.hidden-on-desktop {
-  display: block; }
-
-@media screen and (min-width: 567px) {
-  .hidden-on-desktop {
-    display: none; } }
-.content a {
-  color: #333333;
-  text-decoration: underline; }
-.content img {
-  max-width: 100%; }
-
-.blog-container {
-  max-width: 720px;
-  font-size: 20px;
-  line-height: 30px;
-  font-family: Georgia, Cambria, 'Times New Roman', Times, serif; }
-  .blog-container .jumbotron {
-    padding: 25px 25px 10px 25px; }
-    .blog-container .jumbotron a {
-      text-decoration: underline;
-      color: #333333; }
-  .blog-container h1, .blog-container h2 {
-    font-family: "Open Sans";
-    font-size: 27px;
-    font-weight: bold; }
-    .blog-container h1:a, .blog-container h2:a {
-      color: black; }
-  .blog-container h1 {
-    font-size: 36px; }
-  .blog-container .lead {
-    font-weight: 600; }
-  .blog-container .published {
-    font-style: italic; }
-  @media screen and (max-width: 767px) {
-    .blog-container {
-      font-size: 18px;
-      line-height: 25px; }
-      .blog-container .lead {
-        font-size: 18px; }
-      .blog-container h1 {
-        font-size: 24px; }
-      .blog-container h2 {
-        font-size: 22px; }
-      .blog-container .jumbotron p {
-        font-size: 18px; } }
 
 /*# sourceMappingURL=bundled.css.map */
