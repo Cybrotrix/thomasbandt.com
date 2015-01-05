@@ -121,6 +121,8 @@ header {
   overflow: auto;
   word-wrap: normal;
   white-space: pre; }
+.post-detail .published {
+  margin-top: -10px; }
 .post-detail .comments {
   margin-top: 50px; }
 @media screen and (max-width: 767px) {
@@ -201,8 +203,7 @@ body {
       .blog-container h1 {
         font-size: 24px; }
       .blog-container h2 {
-        font-size: 22px;
-        line-height: 12px; }
+        font-size: 22px; }
       .blog-container .jumbotron p {
         font-size: 18px; } }
 
