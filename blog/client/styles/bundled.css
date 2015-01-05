@@ -128,7 +128,10 @@ body {
 .preview {
   margin-bottom: 50px; }
   .preview a {
-    color: #333333; }
+    color: #333333;
+    text-decoration: none; }
+    .preview a:hover {
+      text-decoration: underline; }
   .preview h2 {
     margin-bottom: 5px; }
   @media screen and (max-width: 767px) {
@@ -141,7 +144,10 @@ body {
   margin: 50px 0 50px;
   color: #888888; }
   .pager a {
-    color: #333333; }
+    color: #333333;
+    text-decoration: none; }
+    .pager a:hover {
+      text-decoration: underline; }
   .pager .pipe {
     display: inline-block;
     margin: 0 10px 0 10px; }
