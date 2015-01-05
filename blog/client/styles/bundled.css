@@ -125,6 +125,9 @@ header {
   .post-detail .comments {
     margin-top: 25px; } }
 
+.about img {
+  margin-bottom: 20px; }
+
 .archive a {
   color: #333333; }
 .archive .date {
@@ -157,6 +160,12 @@ header {
 body {
   background: rgba(0, 0, 0, 0.03); }
 
+.hidden-on-desktop {
+  display: block; }
+
+@media screen and (min-width: 567px) {
+  .hidden-on-desktop {
+    display: none; } }
 .blog-container {
   max-width: 720px;
   font-size: 20px;
@@ -181,6 +190,8 @@ body {
     font-weight: 600; }
   .blog-container .published {
     font-style: italic; }
+  .blog-container img {
+    max-width: 100%; }
   @media screen and (max-width: 767px) {
     .blog-container {
       font-size: 18px;
