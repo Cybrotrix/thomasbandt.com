@@ -1,11 +1,15 @@
 @import "_colors.scss";
 
 .preview {
+  margin-bottom: 50px;
+
   a {
     color: $fontColor;
   }
 
-  margin-bottom: 50px;
+  h2 {
+    margin-bottom: 5px;
+  }
 
   @media screen and (max-width: 767px) {
     margin-bottom: 25px;

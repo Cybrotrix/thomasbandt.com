@@ -79,6 +79,8 @@ header {
   margin-bottom: 50px; }
   .preview a {
     color: #333333; }
+  .preview h2 {
+    margin-bottom: 5px; }
   @media screen and (max-width: 767px) {
     .preview {
       margin-bottom: 25px; } }
@@ -184,8 +186,6 @@ body {
       color: black; }
   .blog-container h1 {
     font-size: 36px; }
-  .blog-container h2 {
-    line-height: 20px; }
   .blog-container .lead {
     font-weight: 600; }
   .blog-container .published {
