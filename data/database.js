@@ -4,7 +4,7 @@ var config = require("../config"),
 
 module.exports = {
     connect: connect
-}
+};
 
 function connect() {
     var deferred = q.defer();
