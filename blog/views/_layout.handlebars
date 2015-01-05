@@ -33,14 +33,13 @@
 <body>
     <div class="container blog-container">
         <header>
-            {{#if hideProfilePicture}}
-            {{else}}
             <img src="/blog/client/images/profile-picture.png"
                  srcset="/blog/client/images/profile-picture.png 1x,
                          /blog/client/images/profile-picture@2x.png 2x,
                          /blog/client/images/profile-picture@3x.png 3x"
+                 {{#if hideProfilePicture}}class="hidden-on-desktop"{{/if}}
                  alt="Thomas Bandt">
-            {{/if}}
+
             <nav class="header-content">
                 <div class="title">
                     <strong>Thomas Bandt <span class="hide-on-mobile">&dash;</span></strong>
