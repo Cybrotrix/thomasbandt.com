@@ -2,7 +2,7 @@
 
 .page-footer {
   hr {
-    border-bottom: solid 2px $foreColor;
+    border-bottom: solid 2px $lightGray;
     width: 30px;
     padding: 0;
     margin-bottom: 5px;
@@ -12,11 +12,11 @@
   font-style: italic;
   font-size: 14px;
   line-height: 20px;
-  color: $foreColor;
+  color: $lightGray;
 
   margin: 50px 0 50px;
 
   a {
-    color: $foreColor
+    color: $lightGray
   }
 }

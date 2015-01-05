@@ -4,7 +4,7 @@ header {
   position: relative;
   height: 200px;
   font-family: "Open Sans";
-  color: $foreColor;
+  color: $lightGray;
   line-height: 22px;
   margin-bottom: -15px;
 
@@ -25,7 +25,7 @@ header {
     }
 
     a {
-      color: $foreColor;
+      color: $lightGray;
       font-size: 16px;
       text-transform: uppercase;
       display: inline-block;
