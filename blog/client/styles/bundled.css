@@ -101,11 +101,6 @@ header {
     .pager .pipe {
       margin: 0 5px 0 5px; } }
 
-.post-detail a {
-  color: #333333;
-  text-decoration: underline; }
-.post-detail img {
-  max-width: 100%; }
 .post-detail pre {
   border: none;
   border-radius: 0;
@@ -132,8 +127,6 @@ header {
 .about img {
   margin-bottom: 20px; }
 
-.archive a {
-  color: #333333; }
 .archive .date {
   font-style: italic;
   font-size: 14px; }
@@ -170,6 +163,12 @@ body {
 @media screen and (min-width: 567px) {
   .hidden-on-desktop {
     display: none; } }
+.content a {
+  color: #333333;
+  text-decoration: underline; }
+.content img {
+  max-width: 100%; }
+
 .blog-container {
   max-width: 720px;
   font-size: 20px;
@@ -192,8 +191,6 @@ body {
     font-weight: 600; }
   .blog-container .published {
     font-style: italic; }
-  .blog-container img {
-    max-width: 100%; }
   @media screen and (max-width: 767px) {
     .blog-container {
       font-size: 18px;

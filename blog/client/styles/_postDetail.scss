@@ -1,15 +1,6 @@
 @import "_colors.scss";
 
 .post-detail {
-  a {
-    color: $fontColor;
-    text-decoration: underline;
-  }
-
-  img {
-    max-width: 100%;
-  }
-
   pre {
     border: none;
     border-radius: 0;
