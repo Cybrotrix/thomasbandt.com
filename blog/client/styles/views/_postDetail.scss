@@ -11,21 +11,49 @@
     display: block;
     border-radius: 0;
     padding: 15px;
-    font-size: 16px;
+    font-size: 15px;
+    font-weight: 100;
     overflow: scroll;
-    color: rgb(241, 241, 241);
-    background-color: rgb(26, 26, 26);
+    color: $darkGray;//rgb(241, 241, 241);
+    background-color: rgba(26, 26, 26, 0.075);
+    border-left: solid 1px $darkGray;
     overflow: auto;
     word-wrap: normal;
     white-space: pre;
   }
 
   .published {
-    margin-top: -10px;
   }
 
   .comments {
     margin-top: 50px;
+  }
+
+  .lead {
+    margin: 15px 0 10px 0;
+  }
+
+  h1 {
+
+    font-size: 40px;
+  }
+
+  h2 {
+    margin-top: 30px;
+    font-size: 22px;
+
+    &:first-of-type {
+      margin-top: 10px;
+    }
+  }
+
+  h3 {
+    font-size: 20px;
+    margin-top: 30px;
+
+    &:first-of-type {
+      margin-top: 0;
+    }
   }
 
   @media screen and (max-width: 767px) {
