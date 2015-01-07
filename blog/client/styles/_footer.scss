@@ -1,11 +1,11 @@
 @import "_colors.scss";
 
 .page-footer {
-  hr {
-    border-bottom: solid 2px $lightGray;
+  img {
+    display: inline-block;
     width: 30px;
-    padding: 0;
     margin-bottom: 5px;
+    opacity: 0.8;
   }
 
   text-align: center;

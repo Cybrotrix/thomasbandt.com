@@ -14,7 +14,7 @@
     font-size: 15px;
     font-weight: 100;
     overflow: scroll;
-    color: $darkGray;//rgb(241, 241, 241);
+    color: $darkGray;
     background-color: rgba(26, 26, 26, 0.075);
     border-left: solid 1px $darkGray;
     overflow: auto;
@@ -34,7 +34,6 @@
   }
 
   h1 {
-
     font-size: 40px;
   }
 
@@ -57,6 +56,18 @@
   }
 
   @media screen and (max-width: 767px) {
+    .lead {
+      font-size: 18px;
+    }
+
+    h1 {
+      font-size: 28px;
+    }
+
+    .lead {
+      margin: 10px 0 10px 0;
+    }
+
     .comments {
       margin-top: 25px;
     }

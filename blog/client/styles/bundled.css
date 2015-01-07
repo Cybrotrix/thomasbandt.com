@@ -5,11 +5,11 @@
   line-height: 20px;
   color: #888888;
   margin: 50px 0 50px; }
-  .page-footer hr {
-    border-bottom: solid 2px #888888;
+  .page-footer img {
+    display: inline-block;
     width: 30px;
-    padding: 0;
-    margin-bottom: 5px; }
+    margin-bottom: 5px;
+    opacity: 0.8; }
   .page-footer a {
     color: #888888; }
 
@@ -48,7 +48,8 @@ header {
   header img {
     position: absolute;
     top: 50px;
-    right: 0; }
+    right: 0;
+    width: 100px !important; }
   @media screen and (max-width: 567px) {
     header {
       width: 100%;
@@ -193,6 +194,12 @@ body {
   .post-detail h3:first-of-type {
     margin-top: 0; }
 @media screen and (max-width: 767px) {
+  .post-detail .lead {
+    font-size: 18px; }
+  .post-detail h1 {
+    font-size: 28px; }
+  .post-detail .lead {
+    margin: 10px 0 10px 0; }
   .post-detail .comments {
     margin-top: 25px; } }
 
