@@ -96,9 +96,10 @@ body {
   max-width: 720px;
   font-size: 20px;
   line-height: 28px;
-  font-family: 'PT Serif', Georgia, Cambria, 'Times New Roman', Times, serif;
-  -webkit-font-smoothing: antialiased;
-  color: black; }
+  font-family: 'PT Serif', Georgia, Cambria, 'Times New Roman', Times, serif; }
+  .blog-container .content {
+    -webkit-font-smoothing: antialiased;
+    color: black; }
   .blog-container .jumbotron {
     padding: 25px 25px 10px 25px; }
     .blog-container .jumbotron a {
