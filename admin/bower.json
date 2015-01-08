@@ -30,5 +30,8 @@
     "angular-moment": "~0.8.2",
     "moment": "~2.8.4",
     "sugarjs": "~1.4.1"
+  },
+  "resolutions": {
+    "bootstrap": "~3.3.1"
   }
 }
