@@ -27,12 +27,12 @@ function connect() {
 }
 
 mongoose.connection.on("disconnected", function () {
-    console.log("Disconnected from " + connectionString);
+    console.log("Disconnected.");
 });
 
 process.on("SIGINT", function() {
     mongoose.connection.close(function () {
-        console.log("Disconnected from " + connectionString + " through app termination");
+        console.log("Disconnected through app termination.");
         process.exit(0);
     });
 });
