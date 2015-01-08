@@ -32,16 +32,16 @@ function configureLogging() {
 
     if (process.env.DEBUG === "true") {
         transport = new winston.transports.MongoDB({
-            db: config.database.databaseName,
-            username: config.database.userName,
-            password: config.database.password
+            db: config.test.database.databaseName,
+            username: config.test.database.userName,
+            password: config.test.database.password
         });
     }
     else {
         transport = new winston.transports.MongoDB({
-            db: config.test.database.databaseName,
-            username: config.test.database.userName,
-            password: config.test.database.password
+            db: config.database.databaseName,
+            username: config.database.userName,
+            password: config.database.password
         });
     }
 
