@@ -1,9 +1,9 @@
 {
   "admin": {
-	"credentialsPath": "/Users/Thomas/Development/blog.thomasbandt.com/config/credentials.debug.json"
+	"credentialsPath": "/Users/Thomas/Development/thomasbandt.com/config/credentials.debug.json"
   },
   "assets": {
-	"uploadFolder": "/Users/Thomas/Development/blog.thomasbandt.com/upload/",
+	"uploadFolder": "/Users/Thomas/Development/thomasbandt.com/upload/",
 	"webPath": "http://localhost:7000/upload/"
   },
   "blog": {
@@ -15,15 +15,15 @@
 	"sitePort": 7000
   },
   "database": {
-	"connectionString": "mongodb://127.0.0.1:27017/blog-thomasbandt-com",
-	"databaseName": "blog-thomasbandt-com",
+	"connectionString": "mongodb://127.0.0.1:27017/thomasbandt-com",
+	"databaseName": "thomasbandt-com",
 	"userName": null,
 	"password": null
   },
   "test": {
 	"database": {
-	  "connectionString": "mongodb://127.0.0.1:27017/blog-thomasbandt-com-tests",
-	  "databaseName": "blog-thomasbandt-com-tests",
+	  "connectionString": "mongodb://127.0.0.1:27017/thomasbandt-com-tests",
+	  "databaseName": "thomasbandt-com-tests",
 	  "userName": null,
 	  "password": null
 	}
