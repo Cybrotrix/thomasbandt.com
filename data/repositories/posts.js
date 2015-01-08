@@ -1,5 +1,5 @@
 var q = require("q"),
-    BlogPost = require("../models/BlogPost");
+    BlogPost = require("../models/blogPost");
 
 module.exports = {
     add: addPost,
