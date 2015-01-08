@@ -20,7 +20,7 @@
 	"userName": null,
 	"password": null
   },
-  "debug": {
+  "test": {
 	"database": {
 	  "connectionString": "mongodb://127.0.0.1:27017/blog-thomasbandt-com-tests",
 	  "databaseName": "blog-thomasbandt-com-tests",

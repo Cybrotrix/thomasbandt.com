@@ -10,7 +10,7 @@ function connect() {
     var deferred = q.defer();
 
     var connectionString = process.env.DEBUG === "true" ?
-        config.debug.database.connectionString :
+        config.test.database.connectionString :
         config.database.connectionString;
 
     mongoose.connect(connectionString);

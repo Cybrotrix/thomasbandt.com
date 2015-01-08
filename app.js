@@ -39,9 +39,9 @@ function configureLogging() {
     }
     else {
         transport = new winston.transports.MongoDB({
-            db: config.debug.database.databaseName,
-            username: config.debug.database.userName,
-            password: config.debug.database.password
+            db: config.test.database.databaseName,
+            username: config.test.database.userName,
+            password: config.test.database.password
         });
     }
 
@@ -113,7 +113,7 @@ function configureSession(app) {
 
     var connectionString = process.env.DEBUG !== "true" ?
         config.database.connectionString :
-        config.debug.database.connectionString;
+        config.test.database.connectionString;
 
     var sessionStore = new MongoStore({ url: connectionString }, function() {
         configureCookieParser(app);
