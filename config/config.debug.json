@@ -7,7 +7,7 @@
 	"webPath": "http://localhost:7000/upload/"
   },
   "blog": {
-	"name": "Thomas Bandt",
+	"name": "Thomas Bandt ‐ Developer & Entrepreneur of Passion.",
 	"description": "The personal Blog of Thomas Bandt.",
 	"postsPerPage": 3,
 	"postsInFeed": 10,
