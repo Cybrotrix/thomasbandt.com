@@ -1,3 +1,3 @@
-# blog.thomasbandt.com
+# thomasbandt.com
 
-The source of my personal blog.
+The source of my [personal website](https://thomasbandt.com).
