@@ -111,9 +111,9 @@ function configureSession(app) {
     var session = require("express-session");
     var MongoStore = require('connect-mongo')(session);
 
-    var connectionString = process.env.DEBUG !== "true" ?
-        config.database.connectionString :
-        config.test.database.connectionString;
+    var connectionString = process.env.DEBUG === "true" ?
+        config.test.database.connectionString :
+            config.database.connectionString;
 
     var sessionStore = new MongoStore({ url: connectionString }, function() {
         configureCookieParser(app);
