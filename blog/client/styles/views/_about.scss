@@ -1,5 +1,9 @@
 .about {
   img {
     margin-bottom: 20px;
+
+    @media screen and (max-width: 567px) {
+      display: none;
+    }
   }
 }

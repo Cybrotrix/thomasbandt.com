@@ -208,6 +208,9 @@ body {
 
 .about img {
   margin-bottom: 20px; }
+  @media screen and (max-width: 567px) {
+    .about img {
+      display: none; } }
 
 .archive .date {
   font-style: italic;
