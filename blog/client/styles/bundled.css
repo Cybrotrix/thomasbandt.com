@@ -180,6 +180,16 @@ body {
   overflow: auto;
   word-wrap: normal;
   white-space: pre; }
+.post-detail ol, .post-detail ul {
+  background-color: rgba(26, 26, 26, 0.075);
+  border-left: solid 1px #333333;
+  padding: 15px; }
+.post-detail li {
+  margin-left: 25px;
+  margin-bottom: 10px;
+  list-style-type: square; }
+  .post-detail li:last-of-type {
+    margin-bottom: 0; }
 .post-detail .comments {
   margin-top: 50px; }
 .post-detail .lead {
