@@ -95,7 +95,7 @@ body {
 .blog-container {
   max-width: 720px;
   font-size: 20px;
-  line-height: 28px;
+  line-height: 30px;
   font-family: 'PT Serif', Georgia, Cambria, 'Times New Roman', Times, serif; }
   .blog-container .content {
     -webkit-font-smoothing: antialiased;
@@ -189,8 +189,8 @@ body {
 .post-detail h2 {
   margin-top: 30px;
   font-size: 22px; }
-  .post-detail h2:first-of-type {
-    margin-top: 10px; }
+.post-detail .published + h2 {
+  margin-top: 10px; }
 .post-detail h3 {
   font-size: 20px;
   margin-top: 30px; }

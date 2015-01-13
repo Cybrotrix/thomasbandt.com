@@ -40,10 +40,10 @@
   h2 {
     margin-top: 30px;
     font-size: 22px;
+  }
 
-    &:first-of-type {
-      margin-top: 10px;
-    }
+  .published + h2 {
+    margin-top: 10px;
   }
 
   h3 {
