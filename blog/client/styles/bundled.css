@@ -183,7 +183,8 @@ body {
 .post-detail ol, .post-detail ul {
   background-color: rgba(26, 26, 26, 0.075);
   border-left: solid 1px #333333;
-  padding: 15px; }
+  padding: 15px;
+  margin-bottom: 20px; }
 .post-detail li {
   margin-left: 25px;
   margin-bottom: 10px;
