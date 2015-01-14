@@ -1,23 +1,18 @@
 {
   "name": "blog-thomasbandt-com",
-  "version": "0.9.0",
+  "version": "1.0.0",
   "description": "The personal Blog of Thomas Bandt.",
   "main": "app.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/aspnetde/blog.thomasbandt.com.git"
+    "url": "https://github.com/aspnetde/thomasbandt.com.git"
   },
-  "keywords": [
-    "Node.js",
-    "MongoDB",
-    "Blog"
-  ],
   "author": "Thomas Bandt",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/aspnetde/blog.thomasbandt.com/issues"
+    "url": "https://github.com/aspnetde/thomasbandt.com/issues"
   },
-  "homepage": "https://github.com/aspnetde/blog.thomasbandt.com",
+  "homepage": "https://github.com/aspnetde/thomasbandt.com",
   "dependencies": {
     "bcrypt": "^0.8.0",
     "body-parser": "^1.9.2",
