@@ -191,6 +191,8 @@ body {
   list-style-type: square; }
   .post-detail li:last-of-type {
     margin-bottom: 0; }
+.post-detail .comments {
+  margin-top: 50px; }
 .post-detail .lead {
   margin: 15px 0 10px 0; }
 .post-detail h1 {
