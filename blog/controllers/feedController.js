@@ -20,7 +20,7 @@ function init(app) {
             posts.forEach(function(post) {
                 feed.item({
                     title: post.title,
-                    description: post.abstract,
+                    description: post.contentHtml,
                     date: post.date,
                     url: config.blog.siteRootUrl + routeUtils.postLink(post.slug)
                 });
