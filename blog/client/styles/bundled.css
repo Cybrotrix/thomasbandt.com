@@ -193,6 +193,9 @@ body {
     margin-bottom: 0; }
 .post-detail .lead {
   margin: 15px 0 10px 0; }
+.post-detail .closer {
+  margin-top: 50px;
+  text-align: center; }
 .post-detail h1 {
   font-size: 40px; }
 .post-detail h2 {

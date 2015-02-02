@@ -2,7 +2,10 @@
     <h1>{{post.title}}</h1>
     <p class="lead">{{post.abstract}}</p>
     <footer class="published"><p>Published on {{post.dateFormatted}}.</p></footer>
-    {{{post.contentHtml}}}  
+    {{{post.contentHtml}}}
+    <div class="jumbotron closer">
+        <p><em>What do you think? <a href="{{routes.blog.contact}}">Drop me a line</a> and let me know!</em></p>
+    </div>
 </article>
 
 {{#section "pageTitle"}}{{post.title}}{{/section}}
