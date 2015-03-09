@@ -206,8 +206,6 @@ body {
 .post-detail h3 {
   font-size: 20px;
   margin-top: 30px; }
-  .post-detail h3:first-of-type {
-    margin-top: 0; }
 @media screen and (max-width: 767px) {
   .post-detail .lead {
     font-size: 18px; }
