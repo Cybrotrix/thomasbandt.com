@@ -126,6 +126,7 @@ function configurePublicDirectories(app, express) {
     app.use("/admin/client", express.static(__dirname + "/admin/client"));
     app.use("/blog/client", express.static(__dirname + "/blog/client"));
     app.use("/robots.txt", express.static(__dirname + "/robots.txt"));
+    app.use("/keybase.txt", express.static(__dirname + "/keybase.txt"));
 }
 
 function configureCookieParser(app) {
