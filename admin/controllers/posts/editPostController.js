@@ -13,7 +13,7 @@ function init(app) {
             post.title = post.title.replace(/'/g, "\\'");
             post.abstract = post.abstract.replace(/'/g, "\\'");
             post.content = post.content.replace(/'/g, "\\'");            
-            console.log(post.title);
+            
             app.renderAdminView(response, "editPost", {
                 post: post
             });
