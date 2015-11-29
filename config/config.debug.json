@@ -1,9 +1,9 @@
 {
   "admin": {
-	"credentialsPath": "/Users/Thomas/Development/thomasbandt.com/config/credentials.debug.json"
+	"credentialsPath": "/Users/thomas/Development/Kunden/ThomasBandt/thomasbandt.com/www/config/credentials.debug.json"
   },
   "assets": {
-	"uploadFolder": "/Users/Thomas/Development/thomasbandt.com/upload/",
+	"uploadFolder": "/Users/thomas/Development/Kunden/ThomasBandt/thomasbandt.com/www/upload/",
 	"webPath": "http://localhost:7000/upload/"
   },
   "blog": {
