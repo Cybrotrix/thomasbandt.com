@@ -9,6 +9,11 @@ module.exports = {
 function init(app) {
     app.get(routes.admin.editPost, function(request, response) {
         data.posts.findOneById(request.params.id).then(function(post) {
+            // Some escaping, so ng-init doesn't break
+            post.title = post.title.replace(/'/g, "\\'");
+            post.abstract = post.abstract.replace(/'/g, "\\'");
+            post.content = post.content.replace(/'/g, "\\'");            
+            console.log(post.title);
             app.renderAdminView(response, "editPost", {
                 post: post
             });
