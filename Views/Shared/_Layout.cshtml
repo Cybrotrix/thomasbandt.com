@@ -1,23 +1,87 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - WebApplication</title>
-
-    <environment names="Development">
-        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
-        <link rel="stylesheet" href="~/css/site.css" />
-    </environment>
-    <environment names="Staging,Production">
-        <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.6/css/bootstrap.min.css"
-              asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
-              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
-        <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
-    </environment>
+    <title>@ViewData["Title"]</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    @RenderSection("metaTags", required: false)
+    <link rel="apple-touch-icon" sizes="57x57" href="/blog/client/images/favicons/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/blog/client/images/favicons/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/blog/client/images/favicons/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/blog/client/images/favicons/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/blog/client/images/favicons/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/blog/client/images/favicons/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/blog/client/images/favicons/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/blog/client/images/favicons/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/blog/client/images/favicons/apple-touch-icon-180x180.png">
+    <meta name="apple-mobile-web-app-title" content="Thomas Bandt">
+    <link rel="shortcut icon" href="/blog/client/images/favicons/favicon.ico">
+    <link rel="icon" type="image/png" href="/blog/client/images/favicons/favicon-192x192.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="/blog/client/images/favicons/favicon-160x160.png" sizes="160x160">
+    <link rel="icon" type="image/png" href="/blog/client/images/favicons/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="/blog/client/images/favicons/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="/blog/client/images/favicons/favicon-32x32.png" sizes="32x32">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-TileImage" content="/blog/client/images/favicons/mstile-144x144.png">
+    <meta name="msapplication-config" content="/blog/client/images/favicons/browserconfig.xml">
+    <meta name="application-name" content="Thomas Bandt">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700|PT+Serif' rel='stylesheet' type='text/css'>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/blog/client/libraries/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/blog/client/styles/bundled.css" rel="stylesheet">
+    <meta name="google-site-verification" content="M3wbVWxqz4moQM2YrDGSjooMol04iox4e-VktU1gN6E">
+    @RenderSection("pageStyles", required: false)
 </head>
 <body>
-    @RenderBody()
-    @RenderSection("scripts", required: false)
+    <div class="container blog-container">
+        <header>
+            <img src="/blog/client/images/profile-picture@2x.png"
+                 srcset="/blog/client/images/profile-picture.png 1x,
+                         /blog/client/images/profile-picture@2x.png 2x,
+                         /blog/client/images/profile-picture@3x.png 3x"
+                 {{#if hideProfilePicture}}class="hidden-on-desktop"{{/if}}
+                 alt="Thomas Bandt">
+
+            <nav class="header-content">
+                <div class="title">
+                    <strong>Thomas Bandt <span class="hide-on-mobile">&dash;</span></strong>
+                    <span class="subtitle">Developer &amp; Entrepreneur of Passion.</span>
+                </div>
+                <br>
+                <a href="{{routes.blog.home}}" {{{activeMenuItem routes.blog.home activeRoute}}}>Home</a>
+                <a href="{{routes.blog.about}}" {{{activeMenuItem routes.blog.about activeRoute}}}>About</a>
+                <a href="{{routes.blog.contact}}" {{{activeMenuItem routes.blog.contact activeRoute}}}>Contact</a>
+                <a href="{{routes.blog.archives}}" {{{activeMenuItem routes.blog.archives activeRoute}}}>Archives</a>
+                <a href="{{routes.blog.feed}}" target="_blank" onclick="trackOutboundLink(this.href)"><span class="hide-on-mobile">Feed </span><i class="fa fa-rss"></i></a>
+            </nav>
+        </header>
+
+        <div class="content">
+        @RenderBody()
+        </div>
+
+        <footer class="page-footer">
+            <img src="/blog/client/images/spacer@2x.png"
+                 srcset="/blog/client/images/spacer.png 1x,
+                         /blog/client/images/spacer@2x.png 2x,
+                         /blog/client/images/spacer@3x.png 3x"
+                 alt=""><br>
+            &copy; 1999 &dash; {{currentYear}}<br><a href="{{routes.blog.about}}">Thomas Bandt, Munich</a>
+        </footer>
+    </div>
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('set', 'anonymizeIp', true);
+        ga('create', 'UA-58418408-1', 'auto');
+		ga('require', 'displayfeatures');
+        ga('send', 'pageview');
+
+        var trackOutboundLink = function(url) {
+            ga('send', 'event', 'outbound', 'click', url, {});
+        }
+    </script>
 </body>
 </html>

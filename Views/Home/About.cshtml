@@ -1,4 +1,33 @@
 @{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Hi there.";
 }
-About
+<article class="about">
+    <h1>Hi there.</h1>
+
+    <p class="lead">I am a passionate web and mobile developer and an entrepreneur
+        who loves to work on exciting products and to build high-quality software.</p>
+
+    <img src="/blog/client/images/about.jpg"
+         srcset="/blog/client/images/about.jpg 1x,
+                 /blog/client/images/about@2x.jpg 2x,
+                 /blog/client/images/about@3x.jpg 3x"
+         alt="Thomas Bandt">
+
+    <p>I launched my first website in 1999, turned my hobby into career
+        as a media designer later on and ultimately came to fulfillment
+        as a developer. I really enjoy designing software systems and
+        writing elegant code while still having a weakness for great UI &amp; UX.</p>
+
+    <p>I am also interested in the other side of the coin, running
+        <a href="http://www.69grad.de" target="_blank" title="69° | Entwicklung für Xamarin, ASP.NET, TypeScript in München" onclick="trackOutboundLink(this.href)">
+        my own company</a> since 2007, founding a mobile app startup in 2012,
+        studying business administration and always looking
+        for the next exciting business idea.</p>
+
+    <p>Today I am leveraging my more than 15 years of experience as a
+        developer and my lessons learned as an entrepreneur to help my
+        clients build successful products.</p>
+
+    <p>Don’t hesitate to <a href="{{routes.blog.contact}}">contact me</a> if you’re interested in working
+        together or to just grab a coffee or a beer!</p>
+</article>
