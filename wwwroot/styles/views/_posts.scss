@@ -1,0 +1,55 @@
+@import "../colors";
+
+.preview {
+  margin-bottom: 50px;
+
+  a {
+    color: $darkGray;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  h2 {
+    margin-bottom: 5px;
+  }
+
+  @media screen and (max-width: 767px) {
+    margin-bottom: 25px;
+  }
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+.pager {
+  margin: 50px 0 50px;
+  color: $lightGray;
+
+  a {
+    color: $darkGray;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .pipe {
+    display: inline-block;
+    margin: 0 10px 0 10px;
+  }
+
+  @media screen and (max-width: 320px) {
+    a {
+      font-size: 16px;
+    }
+
+    .pipe {
+      margin: 0 5px 0 5px;
+    }
+  }
+}

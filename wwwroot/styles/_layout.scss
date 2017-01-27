@@ -1,0 +1,95 @@
+@import "_colors.scss";
+
+body {
+  background: rgba(0, 0, 0, 0.03);
+}
+
+.hidden-on-desktop {
+  display: block;
+}
+
+@media screen and (min-width: 567px) {
+  .hidden-on-desktop {
+    display: none;
+  }
+}
+
+.content {
+  a {
+    color: $darkGray;
+    text-decoration: underline;
+  }
+
+  img {
+    min-width: 100%;
+    max-width: 100%;
+  }
+}
+
+.blog-container {
+  max-width: 720px;
+
+  font-size: 20px;
+  line-height: 30px;
+  font-family: 'PT Serif', Georgia, Cambria, 'Times New Roman', Times, serif;
+
+  .content {
+    -webkit-font-smoothing: antialiased;
+    color: black;
+  }
+
+  .jumbotron {
+    padding: 25px 25px 10px 25px;
+
+    a {
+      text-decoration: underline;
+      color: $darkGray;
+    }
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: "Open Sans";
+    font-weight: 600;
+
+    &:a {
+      color: black;
+    }
+  }
+
+  h1 {
+    font-size: 36px;
+  }
+
+  h2 {
+    font-size: 27px;
+  }
+
+  .lead {
+    font-weight: 600;
+  }
+
+  .published {
+    font-style: italic;
+  }
+
+  @media screen and (max-width: 767px) {
+    .lead {
+      font-size: 18px;
+    }
+
+    h1 {
+      font-size: 24px;
+    }
+
+    h2 {
+      font-size: 22px;
+    }
+
+    font-size: 18px;
+    line-height: 25px;
+
+    .jumbotron p {
+      font-size: 18px;
+    }
+  }
+}

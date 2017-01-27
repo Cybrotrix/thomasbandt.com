@@ -1,0 +1,82 @@
+@import "../colors";
+
+.post-detail {
+  pre {
+    border: none;
+    border-radius: 0;
+    padding: 0;
+  }
+
+  code {
+    display: block;
+    border-radius: 0;
+    padding: 15px;
+    font-size: 15px;
+    font-weight: 100;
+    overflow: scroll;
+    color: $darkGray;
+    background-color: rgba(26, 26, 26, 0.075);
+    border-left: solid 1px $darkGray;
+    overflow: auto;
+    word-wrap: normal;
+    white-space: pre;
+  }
+
+  ol, ul {
+    background-color: rgba(26, 26, 26, 0.075);
+    border-left: solid 1px $darkGray;
+    padding: 15px;
+    margin-bottom: 20px;
+  }
+
+  li {
+    margin-left: 25px;
+    margin-bottom: 10px;
+    list-style-type: square;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+
+  .lead {
+    margin: 15px 0 10px 0;
+  }
+
+  .closer {
+    margin-top: 50px;
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 40px;
+  }
+
+  h2 {
+    margin-top: 30px;
+    font-size: 22px;
+  }
+
+  .published + h2 {
+    margin-top: 10px;
+  }
+
+  h3 {
+    font-size: 20px;
+    margin-top: 30px;
+  }
+
+  @media screen and (max-width: 767px) {
+    .lead {
+      font-size: 18px;
+    }
+
+    h1 {
+      font-size: 28px;
+    }
+
+    .lead {
+      margin: 10px 0 10px 0;
+    }
+  }
+}

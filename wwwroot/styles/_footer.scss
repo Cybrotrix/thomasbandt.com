@@ -1,0 +1,22 @@
+@import "_colors.scss";
+
+.page-footer {
+  img {
+    display: inline-block;
+    width: 30px;
+    margin-bottom: 5px;
+    opacity: 0.8;
+  }
+
+  text-align: center;
+  font-style: italic;
+  font-size: 14px;
+  line-height: 20px;
+  color: $lightGray;
+
+  margin: 50px 0 50px;
+
+  a {
+    color: $lightGray;
+  }
+}
