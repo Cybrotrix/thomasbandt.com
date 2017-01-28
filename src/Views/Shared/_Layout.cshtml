@@ -47,11 +47,11 @@
                     <span class="subtitle">Developer &amp; Entrepreneur of Passion.</span>
                 </div>
                 <br>
-                <a href="{{routes.blog.home}}" {{{activeMenuItem routes.blog.home activeRoute}}}>Home</a>
-                <a href="{{routes.blog.about}}" {{{activeMenuItem routes.blog.about activeRoute}}}>About</a>
-                <a href="{{routes.blog.contact}}" {{{activeMenuItem routes.blog.contact activeRoute}}}>Contact</a>
-                <a href="{{routes.blog.archives}}" {{{activeMenuItem routes.blog.archives activeRoute}}}>Archives</a>
-                <a href="{{routes.blog.feed}}" target="_blank" onclick="trackOutboundLink(this.href)"><span class="hide-on-mobile">Feed </span><i class="fa fa-rss"></i></a>
+                <a asp-controller="Home" asp-action="Home" {{{activeMenuItem routes.blog.home activeRoute}}}>Home</a>
+                <a asp-controller="About" asp-action="About" {{{activeMenuItem routes.blog.about activeRoute}}}>About</a>
+                <a asp-controller="Contact" asp-action="Contact" {{{activeMenuItem routes.blog.contact activeRoute}}}>Contact</a>
+                <a asp-controller="Archives" asp-action="Archives" {{{activeMenuItem routes.blog.archives activeRoute}}}>Archives</a>
+                <a asp-controller="Feed" asp-action="Feed" target="_blank" onclick="trackOutboundLink(this.href)"><span class="hide-on-mobile">Feed </span><i class="fa fa-rss"></i></a>
             </nav>
         </header>
 
@@ -65,7 +65,7 @@
                          /images/spacer@2x.png 2x,
                          /images/spacer@3x.png 3x"
                  alt=""><br>
-            &copy; 1999 &dash; @DateTime.Now.Year<br><a href="{{routes.blog.about}}">Thomas Bandt, Munich</a>
+            &copy; 1999 &dash; @DateTime.Now.Year<br><a asp-controller="About" asp-action="About">Thomas Bandt, Munich</a>
         </footer>
     </div>
     <script>
