@@ -9,5 +9,11 @@ namespace Blog.Controllers
         {
             return View();
         }
+
+        [Route("/error/404")]
+        public IActionResult PageNotFound()
+        {
+            return View();
+        }
     }
 }
