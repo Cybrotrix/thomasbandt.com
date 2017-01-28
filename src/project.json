@@ -94,11 +94,14 @@
       "**/*.cshtml",
       "appsettings.json",
       "web.config"
+    ],
+    "exclude": [
+      "wwwroot/styles/do-not-delete.txt"
     ]
   },
 
   "scripts": {
-    "prepublish": [ "npm install", "bower install", "gulp clean", "gulp min" ],
+    "prepublish": [ "npm install", "bower install", "gulp build" ],
     "postpublish": [ "dotnet publish-iis --publish-folder %publish:OutputPath% --framework %publish:FullTargetFramework%" ]
   },
 
