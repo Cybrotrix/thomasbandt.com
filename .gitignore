@@ -234,4 +234,7 @@ _Pvt_Extensions
 .fake/
 
 # Bower
-wwwroot/libraries
+src/wwwroot/libraries
+
+# Rider
+.idea/
