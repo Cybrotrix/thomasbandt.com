@@ -238,3 +238,6 @@ src/wwwroot/libraries
 
 # Rider
 .idea/
+
+# VS Code
+src/.vscode
