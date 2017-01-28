@@ -2,10 +2,10 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace WebApplication.Controllers
 {
-    public class HomeController : Controller
+    public class AboutController : Controller
     {
-        [Route("")]
-        public IActionResult Home()
+        [Route("/about")]
+        public IActionResult About()
         {
             return View();
         }
