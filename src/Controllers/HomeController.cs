@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace WebApplication.Controllers
+namespace Blog.Controllers
 {
     public class HomeController : Controller
     {
