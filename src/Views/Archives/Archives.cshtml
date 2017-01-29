@@ -1,4 +1,29 @@
+@model IOrderedEnumerable<IGrouping<int, Post>>
 @{
     ViewData["Title"] = "Archives";
 }
-Archives
+<div class="archive">
+    <h1>Archives</h1>
+
+    <div class="jumbotron">
+        <p><em>Note:</em> This archive contains all of my articles published on this site. However,
+            between the years 2004 and 2014 I have written a lot of stuff (most of it in German language), which can be
+            found <a href="http://blog.thomasbandt.de/39/de/blog.html" target="_blank">here</a>.</p>
+    </div>
+
+    @foreach (var year in Model)
+    {
+        <h2>@year.Key</h2>
+        <ul>
+            @foreach (var post in year.OrderByDescending(p => p.PublishingDate))
+            {
+            <li><a href="{{postLink this.slug}}">@post.Title</a></li>
+            }
+        </ul>
+    }
+</div>
+
+@section metaTags
+{
+<meta name="description" content="{{blog.description}}">
+}
