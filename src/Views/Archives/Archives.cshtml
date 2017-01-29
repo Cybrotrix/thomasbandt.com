@@ -17,7 +17,7 @@
         <ul>
             @foreach (var post in year.OrderByDescending(p => p.PublishingDate))
             {
-            <li><a href="{{postLink this.slug}}">@post.Title</a></li>
+            <li><postLink post=@post>@post.Title</postLink></li>
             }
         </ul>
     }
