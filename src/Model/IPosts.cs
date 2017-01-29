@@ -1,4 +1,4 @@
-﻿namespace Blog.Posts
+﻿namespace Blog.Model
 {
     public interface IPosts
     {

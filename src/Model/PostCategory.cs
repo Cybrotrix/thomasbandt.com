@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Blog.Posts
+namespace Blog.Model
 {
     [Flags]
     public enum PostCategory
