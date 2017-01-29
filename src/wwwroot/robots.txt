@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /styles
+Disallow: /libraries
+Disallow: /imprint
+Disallow: /privacy
+Allow: /
