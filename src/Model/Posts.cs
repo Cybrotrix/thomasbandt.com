@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace Blog.Model
 {
@@ -205,6 +206,15 @@ namespace Blog.Model
                     Category = PostCategory.Xamarin
                 }
             };
+        }
+
+        public IOrderedEnumerable<IGrouping<int, Post>> Archive()
+        {
+            return All()
+                .Where(p => p.IsPublished)
+                .OrderByDescending(p => p.PublishingDate)
+                .GroupBy(p => p.PublishingDate.Year)
+                .OrderByDescending(g => g.Key);
         }
     }
 }

@@ -15,7 +15,7 @@
     {
         <h2>@year.Key</h2>
         <ul>
-            @foreach (var post in year.OrderByDescending(p => p.PublishingDate))
+            @foreach (var post in year)
             {
             <li><postLink post=@post>@post.Title</postLink></li>
             }
