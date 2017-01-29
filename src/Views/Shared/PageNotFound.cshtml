@@ -1,5 +1,7 @@
 @{
     ViewData["Title"] = "Page not found";
+
+    Context.Response.StatusCode = 404;
 }
 <article class="page-not-found">
     <div class="jumbotron">

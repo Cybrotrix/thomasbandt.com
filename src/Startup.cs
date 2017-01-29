@@ -34,7 +34,7 @@ namespace Blog
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
 
-            app.UseStatusCodePagesWithReExecute("/error/{0}");
+            app.UseStatusCodePagesWithReExecute("/posts/{0}");
 
             app.UseStaticFiles();
 
