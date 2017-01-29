@@ -5,9 +5,11 @@ namespace Blog.Model
 {
     public class Posts : IPosts
     {
-        public Post[] All()
+        private static readonly Post[] _posts;
+
+        static Posts()
         {
-            return new []
+            _posts = new []
             {
                 new Post
                 {
@@ -208,13 +210,23 @@ namespace Blog.Model
             };
         }
 
+        public Post[] All()
+        {
+            return _posts;
+        }
+
         public IOrderedEnumerable<IGrouping<int, Post>> Archive()
         {
-            return All()
+            return _posts
                 .Where(p => p.IsPublished)
                 .OrderByDescending(p => p.PublishingDate)
                 .GroupBy(p => p.PublishingDate.Year)
                 .OrderByDescending(g => g.Key);
+        }
+
+        public Post SingleOrDefault(string slug)
+        {
+            return _posts.SingleOrDefault(p => p.Slug.Equals(slug, StringComparison.OrdinalIgnoreCase));
         }
     }
 }
