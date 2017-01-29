@@ -5,7 +5,7 @@ var rename = require("gulp-rename");
 var sass = require("gulp-sass");
 
 gulp.task("styles", function() {
-    return gulp.src("./Client/Styles/Bundled.scss")
+    return gulp.src("./Styles/Bundled.scss")
         .pipe(sass())
         .on("error", function(e) {
             console.log(e);
@@ -18,5 +18,5 @@ gulp.task("styles", function() {
 });
 
 gulp.task("default", ["styles"], function() {
-    gulp.watch("./Client/Styles/**/*.scss", ["styles"]);
+    gulp.watch("./Styles/**/*.scss", ["styles"]);
 });
