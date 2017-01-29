@@ -13,9 +13,6 @@ namespace Blog.Controllers
         }
 
         [Route("/archives")]
-        public IActionResult Archives()
-        {
-            return View(_posts.Archive());
-        }
+        public IActionResult Archives() => View(_posts.Archive());
     }
 }

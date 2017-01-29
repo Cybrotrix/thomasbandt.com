@@ -14,10 +14,7 @@ namespace Blog.Controllers
         }
 
         [Route("")]
-        public IActionResult List()
-        {
-            return View();
-        }
+        public IActionResult List() => View();
 
         [Route("/posts/404")]
         public IActionResult Detail()

@@ -5,21 +5,12 @@ namespace Blog.Controllers
     public class ContactController : Controller
     {
         [Route("/contact")]
-        public IActionResult Contact()
-        {
-            return View();
-        }
+        public IActionResult Contact() => View();
 
         [Route("/imprint")]
-        public IActionResult Imprint()
-        {
-            return View();
-        }
+        public IActionResult Imprint() => View();
 
         [Route("/privacy")]
-        public IActionResult Privacy()
-        {
-            return View();
-        }
+        public IActionResult Privacy() => View();
     }
 }

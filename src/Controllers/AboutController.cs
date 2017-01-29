@@ -5,9 +5,6 @@ namespace Blog.Controllers
     public class AboutController : Controller
     {
         [Route("/about")]
-        public IActionResult About()
-        {
-            return View();
-        }
+        public IActionResult About() => View();
     }
 }
