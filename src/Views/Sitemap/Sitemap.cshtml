@@ -1,0 +1,15 @@
+@model Post[]
+@{
+    Layout = null;
+    Context.Response.ContentType = "application/xml";
+}<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url><loc>https://thomasbandt.com/about</loc></url>
+    <url><loc>https://thomasbandt.com/contact</loc></url>
+    <url><loc>https://thomasbandt.com/</loc></url>
+    <url><loc>https://thomasbandt.com/archives</loc></url>
+    @foreach (Post post in Model)
+    {
+    <url><loc>https://thomasbandt.com/@post.Slug</loc></url>
+    }
+</urlset>
