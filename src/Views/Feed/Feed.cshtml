@@ -19,6 +19,10 @@
                 @Html.Raw($"<link>https://thomasbandt.com/{post.Slug}</link>")
                 <guid isPermaLink="true">https://thomasbandt.com/@post.Slug</guid>
                 <pubDate>@post.PublishingDate.ToString("r")</pubDate>
+                @if (post.Category != PostCategory.Any)
+                {
+                    <category>@post.Category</category>
+                }
             </item>
         }
     </channel>

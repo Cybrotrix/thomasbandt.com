@@ -1,8 +1,5 @@
-﻿using System;
-
-namespace Blog.Model
+﻿namespace Blog.Model
 {
-    [Flags]
     public enum PostCategory
     {
         Any = 0,
