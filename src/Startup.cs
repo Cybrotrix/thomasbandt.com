@@ -34,12 +34,13 @@ namespace Blog
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
 
-            app.UseDeveloperExceptionPage();
+            if (env.IsDevelopment())
+            {
+                app.UseDeveloperExceptionPage();
+            }
 
             app.UseStatusCodePagesWithReExecute("/posts/{0}");
-
             app.UseStaticFiles();
-
             app.UseMvc();
         }
     }
