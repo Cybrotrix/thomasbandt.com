@@ -5,6 +5,8 @@ namespace Blog.Model
 {
     public class Posts : IPosts
     {
+        private const int PageSize = 10;
+
         private static readonly Post[] _posts;
 
         static Posts()
@@ -227,6 +229,26 @@ namespace Blog.Model
         public Post SingleOrDefault(string slug)
         {
             return _posts.SingleOrDefault(p => p.Slug.Equals(slug, StringComparison.OrdinalIgnoreCase));
+        }
+
+        public PostCollection Paged(int page)
+        {
+            var publishedPosts = _posts
+                .Where(p => p.IsPublished)
+                .OrderByDescending(p => p.PublishingDate)
+                .ToArray();
+
+            var postsForPage = publishedPosts
+                .Skip((page - 1) * PageSize)
+                .Take(PageSize);
+
+            return new PostCollection(postsForPage)
+            {
+                PreviousPage = page - 1,
+                NextPage = page + 1,
+                HasPreviousPage = page > 1,
+                HasNextPage = publishedPosts.Length > page * PageSize
+            };
         }
     }
 }

@@ -7,5 +7,6 @@ namespace Blog.Model
         Post[] All();
         IOrderedEnumerable<IGrouping<int, Post>> Archive();
         Post SingleOrDefault(string slug);
+        PostCollection Paged(int page);
     }
 }

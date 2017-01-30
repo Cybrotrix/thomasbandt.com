@@ -1,4 +1,39 @@
+@model PostCollection
 @{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Thomas Bandt ‐ Developer & Entrepreneur of Passion.";
 }
-Hello World
+@foreach (var post in Model)
+{
+    <article class="preview">
+        <h2><postLink post=@post>@post.Title</postLink></h2>
+        <p>@post.Abstract</p>
+    </article>
+}
+@if (Model.HasNextPage || Model.HasPreviousPage)
+{
+    <div class="pager">
+        @if (Model.HasPreviousPage)
+        {
+            if (Model.PreviousPage < 2)
+            {
+                <a href="/">&laquo; Newer Articles</a>
+            }
+            else
+            {
+                <a asp-controller="Posts" asp-action="List" asp-route-page="@Model.PreviousPage">&laquo; Newer Articles</a>
+            }
+        }
+        @if (Model.HasPreviousPage && Model.HasNextPage)
+        {
+            <span class="pipe">|</span>
+        }
+        @if (Model.HasNextPage)
+        {
+            <a asp-controller="Posts" asp-action="List" asp-route-page="@Model.NextPage">Older Articles &raquo;</a>
+        }
+    </div>
+}
+@section metaTags
+{
+    <meta name="description" content="The personal Blog of Thomas Bandt ‐ Developer and Entrepreneur of Passion.">
+}
