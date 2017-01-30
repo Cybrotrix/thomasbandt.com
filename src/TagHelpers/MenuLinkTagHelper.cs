@@ -1,4 +1,5 @@
 ﻿using System;
+using Blog.Controllers;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Mvc.Routing;
@@ -11,6 +12,7 @@ namespace Blog.TagHelpers
     public class MenuLinkTagHelper : TagHelper
     {
         private readonly IUrlHelperFactory _urlHelperFactory;
+        private readonly string _postsControllerName;
 
         public string Title { get; set; }
         public string Controller { get; set; }
@@ -22,12 +24,23 @@ namespace Blog.TagHelpers
         public MenuLinkTagHelper(IUrlHelperFactory urlHelperFactory)
         {
             _urlHelperFactory = urlHelperFactory;
+
+            _postsControllerName = nameof(PostsController)
+                .Replace("Controller", string.Empty);
         }
 
         public override void Process(TagHelperContext context, TagHelperOutput output)
         {
-            IUrlHelper urlHelper = _urlHelperFactory.GetUrlHelper(Context);
-            string href = urlHelper.Action(Action, Controller);
+            string href;
+            if (Controller.Equals(_postsControllerName, StringComparison.OrdinalIgnoreCase))
+            {
+                href = "/";
+            }
+            else
+            {
+                IUrlHelper urlHelper = _urlHelperFactory.GetUrlHelper(Context);
+                href = urlHelper.Action(Action, Controller);
+            }
 
             output.TagName = "a";
             output.TagMode = TagMode.StartTagAndEndTag;
