@@ -15,10 +15,7 @@ namespace Blog.Controllers
 
         [Route("")]
         [Route("/latest/{page}")]
-        public IActionResult List(int? page)
-        {
-            return View(_posts.Paged(page ?? 1));
-        }
+        public IActionResult List(int? page) => View(_posts.Paged(page ?? 1));
 
         [Route("/posts/404")]
         public IActionResult Detail()
