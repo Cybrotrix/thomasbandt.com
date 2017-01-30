@@ -212,31 +212,30 @@ namespace Blog.Model
             };
         }
 
-        public Post[] All()
-        {
-            return _posts;
-        }
-
-        public IOrderedEnumerable<IGrouping<int, Post>> Archive()
+        public Post[] Published()
         {
             return _posts
                 .Where(p => p.IsPublished)
                 .OrderByDescending(p => p.PublishingDate)
+                .ToArray();
+        }
+
+        public IOrderedEnumerable<IGrouping<int, Post>> Archive()
+        {
+            return Published()
                 .GroupBy(p => p.PublishingDate.Year)
                 .OrderByDescending(g => g.Key);
         }
 
         public Post SingleOrDefault(string slug)
         {
-            return _posts.SingleOrDefault(p => p.Slug.Equals(slug, StringComparison.OrdinalIgnoreCase));
+            return Published()
+                .SingleOrDefault(p => p.Slug.Equals(slug, StringComparison.OrdinalIgnoreCase));
         }
 
         public PostCollection Paged(int page)
         {
-            var publishedPosts = _posts
-                .Where(p => p.IsPublished)
-                .OrderByDescending(p => p.PublishingDate)
-                .ToArray();
+            Post[] publishedPosts = Published();
 
             var postsForPage = publishedPosts
                 .Skip((page - 1) * PageSize)
