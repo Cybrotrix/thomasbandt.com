@@ -1,7 +1,18 @@
 @model Post
 @{
-    ViewData["Title"] = "Detail";
+    ViewData["Title"] = @Model.Title;
 }
+<article class="post-detail">
+    <h1>@Model.Title</h1>
+    <p class="lead">@Model.Abstract</p>
+    <footer class="published"><p>Published on @Model.PublishingDate.ToString("D")</p></footer>
+    @Html.Raw(Model.GetHtmlContent())
+    <div class="jumbotron closer">
+        <p><em>What do you think? <a asp-controller="Contact" asp-action="Contact">Drop me a line</a> and let me know!</em></p>
+    </div>
+</article>
 
-@Model.Title
-
+@section metaTags
+{
+    <meta name="description" content="@Model.Abstract">
+}
