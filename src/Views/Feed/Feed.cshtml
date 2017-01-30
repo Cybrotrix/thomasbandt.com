@@ -1,0 +1,25 @@
+@model PostCollection
+@{
+    Layout = null;
+    Context.Response.ContentType = "application/atom+xml";
+}
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title><![CDATA[Thomas Bandt ‐ Developer & Entrepreneur of Passion.]]></title>
+        <description><![CDATA[Thomas Bandt ‐ Developer & Entrepreneur of Passion.]]></description>
+        <link>https://thomasbandt.com</link>
+        <lastBuildDate>@DateTime.Now.ToString("r")</lastBuildDate>
+        <atom:link href="https://thomasbandt.com/feed" rel="self" type="application/atom+xml"/>
+        @foreach(Post post in Model)
+        {
+            <item>
+                <title><![CDATA[@Html.Raw(post.Title)]]></title>
+                <description><![CDATA[@post.Abstract]]></description>
+                @Html.Raw($"<link>https://thomasbandt.com/{post.Slug}</link>")
+                <guid isPermaLink="true">https://thomasbandt.com/@post.Slug</guid>
+                <pubDate>@post.PublishingDate.ToString("r")</pubDate>
+            </item>
+        }
+    </channel>
+</rss>
