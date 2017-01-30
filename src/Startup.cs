@@ -34,6 +34,8 @@ namespace Blog
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
 
+            app.UseDeveloperExceptionPage();
+
             app.UseStatusCodePagesWithReExecute("/posts/{0}");
 
             app.UseStaticFiles();
