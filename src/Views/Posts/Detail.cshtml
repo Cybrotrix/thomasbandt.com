@@ -6,7 +6,7 @@
     <h1>@Model.Title</h1>
     <p class="lead">@Model.Abstract</p>
     <footer class="published"><p>Published on @Model.PublishingDate.ToString("D")</p></footer>
-    @Html.Raw(Model.GetHtmlContent())
+    @Html.Raw(Model.HtmlContent)
     <div class="jumbotron closer">
         <p><em>What do you think? <a asp-controller="Contact" asp-action="Contact">Drop me a line</a> and let me know!</em></p>
     </div>
