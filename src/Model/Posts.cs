@@ -127,7 +127,7 @@ namespace Blog.Model
                     Id = 14,
                     Title = "Join Me At Developer Open Space 2015 in Leipzig",
                     Abstract = "I'm not a guy you are likely to meet at a classical tech conference. I don't like to waste my time with marketing bullshit and presentations of unprepared speakers. But I do like to meet like-minded people, good conversations, and some Schnitzel and beer.",
-                    Slug = "",
+                    Slug = "join-me-at-developer-open-space-2015-in-leipzig",
                     PublishingDate = new DateTime(2015, 9, 28)
                 },
                 new Post
