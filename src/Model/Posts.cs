@@ -208,6 +208,15 @@ namespace Blog.Model
                     Slug = "back-to-sender-some-thoughts-on-the-macbook-pro-13-2016",
                     PublishingDate = new DateTime(2016, 12, 5),
                     Category = PostCategory.Xamarin
+                },
+                new Post
+                {
+                    Id = 24,
+                    Title = "Certificate And Public Key Pinning With Xamarin",
+                    Abstract = "Are you securing the communication between your app and its backend with HTTPS (SSL/TLS)? Fantastic. But how do you make sure the other side is authentic? Read on on how to do this with Xamarin for iOS and Android.",
+                    Slug = "certificate-and-public-key-pinning-with-xamarin",
+                    PublishingDate = new DateTime(2017, 1, 31),
+                    Category = PostCategory.Xamarin
                 }
             };
         }
