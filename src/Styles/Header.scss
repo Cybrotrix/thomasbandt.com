@@ -1,9 +1,10 @@
 @import "Colors.scss";
+@import "Fonts.scss";
 
 header {
   position: relative;
   height: 200px;
-  font-family: "Open Sans";
+  font-family: $sansSerif;
   color: $lightGray;
   line-height: 22px;
   margin-bottom: -15px;

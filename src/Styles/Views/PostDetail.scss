@@ -15,7 +15,7 @@
     font-weight: 100;
     overflow: scroll;
     color: $darkGray;
-    background-color: rgba(26, 26, 26, 0.075);
+    background-color: rgba(26, 26, 26, 0.035);
     border-left: solid 1px $darkGray;
     overflow: auto;
     word-wrap: normal;
@@ -23,7 +23,7 @@
   }
 
   ol, ul {
-    background-color: rgba(26, 26, 26, 0.075);
+    background-color: rgba(26, 26, 26, 0.035);
     border-left: solid 1px $darkGray;
     padding: 15px;
     margin-bottom: 20px;

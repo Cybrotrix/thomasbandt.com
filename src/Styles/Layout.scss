@@ -1,9 +1,10 @@
 @import "Colors.scss";
+@import "Fonts.scss";
 
 body {
   background: rgba(0, 0, 0, 0.03);
 }
-
+ 
 .hidden-on-desktop {
   display: block;
 }
@@ -31,7 +32,7 @@ body {
 
   font-size: 20px;
   line-height: 30px;
-  font-family: 'PT Serif', Georgia, Cambria, 'Times New Roman', Times, serif;
+  font-family: $serif;
 
   .content {
     -webkit-font-smoothing: antialiased;
@@ -48,8 +49,8 @@ body {
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: "Open Sans";
-    font-weight: 600;
+    font-family: $serif;
+    font-weight: bold;
 
     &:a {
       color: black;
