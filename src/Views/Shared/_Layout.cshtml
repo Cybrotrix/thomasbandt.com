@@ -50,7 +50,11 @@
                 <menuLink title="About" controller="About" action="About" />
                 <menuLink title="Contact" controller="Contact" action="Contact" />
                 <menuLink title="Archives" controller="Archives" action="Archives" />
-                <a asp-controller="Feed" asp-action="Feed" target="_blank" onclick="trackOutboundLink(this.href)"><span class="hide-on-mobile">Feed </span><i class="fa fa-rss"></i></a>
+                <a asp-controller="Feed" asp-action="Feed" target="_blank" onclick="trackOutboundLink(this.href)"><span class="hide-on-mobile">Feed </span>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -2 24 24" width="14.5" height="14.5" style="fill: rgb(136, 136, 136);">
+                        <path d="M20,2H4C2.9,2,2,2.9,2,4v16c0,1.1,0.9,2,2,2h16c1.1,0,2-0.9,2-2V4C22,2.9,21.1,2,20,2z M6.5,19C5.672,19,5,18.328,5,17.5 S5.672,16,6.5,16S8,16.672,8,17.5S7.328,19,6.5,19z M13.735,19H11.65c0.14-0.479,0.239-0.976,0.239-1.5 c0-2.972-2.417-5.389-5.389-5.389c-0.12,0-0.241,0.003-0.36,0.012C5.745,12.149,5.366,12.227,5,12.334v-2.061 c0.33-0.068,0.664-0.123,1.009-0.145c0.162-0.01,0.326-0.016,0.491-0.016c4.074,0,7.389,3.314,7.389,7.389 C13.889,18.014,13.835,18.515,13.735,19z M18.901,19H16.88c0.071-0.491,0.12-0.989,0.12-1.5C17,11.71,12.29,7,6.5,7 C5.989,7,5.491,7.049,5,7.12V5.099C5.493,5.04,5.991,5,6.5,5C13.393,5,19,10.607,19,17.5C19,18.009,18.96,18.507,18.901,19z"/>
+                    </svg>
+                </a>
             </nav>
         </header>
 
