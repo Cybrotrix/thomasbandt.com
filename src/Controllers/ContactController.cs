@@ -9,8 +9,5 @@ namespace Blog.Controllers
 
         [Route("/imprint")]
         public IActionResult Imprint() => View();
-
-        [Route("/privacy")]
-        public IActionResult Privacy() => View();
     }
 }
