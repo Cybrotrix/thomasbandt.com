@@ -222,7 +222,7 @@ namespace Blog.Model
                 {
                     Id = 25,
                     Title = "Moving From Node.js To ASP.NET Core",
-                    Abstract = "In late 2014 I made the decision to give Node.js a try by migrating my personal blog software from ASP.NET Web Forms to Node.js. Fast forward two years and I am back in my beloved .NET environment but still developing on macOS and able to host on Linux.",
+                    Abstract = "In late 2014 I made the decision to leave ASP.NET behind and give Node.js a try. Fast forward two years and I am back in my beloved .NET environment but still developing on macOS and able to host on Linux.",
                     Slug = "moving-from-nodejs-to-aspnet-core",
                     PublishingDate = new DateTime(2017, 4, 2)
                 }
