@@ -1,13 +1,12 @@
 @import "../Colors";
 
 .post-detail {
-  pre {
-    border: none;
-    border-radius: 0;
-    padding: 0;
+  p > code {
+    color: $darkGray;
+    background-color: rgba(26, 26, 26, 0.035);
   }
 
-  code {
+  pre {
     display: block;
     border-radius: 0;
     padding: 15px;
