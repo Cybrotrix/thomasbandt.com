@@ -225,6 +225,14 @@ namespace Blog.Model
                     Abstract = "In late 2014 I made the decision to leave ASP.NET behind and give Node.js a try. Fast forward two years and I am back in my beloved .NET environment but still developing on macOS and able to host on Linux.",
                     Slug = "moving-from-nodejs-to-aspnet-core",
                     PublishingDate = new DateTime(2017, 4, 2)
+                },
+                new Post
+                {
+                    Id = 26,
+                    Title = "Powerful Scripting With F#",
+                    Abstract = "There are plenty of options available when it comes to automating  processes with (more or less) simple scripts, even PowerShell on Mac and Linux nowadays. But there's an alternative right at your fingertips: F# Scripts.",
+                    Slug = "powerful-scripting-with-fsharp",
+                    PublishingDate = new DateTime(2017, 5, 14)
                 }
             };
         }
