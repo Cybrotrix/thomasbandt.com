@@ -14,8 +14,13 @@
     font-weight: 100;
     overflow: scroll;
     color: $darkGray;
+    border: 0px;
     background-color: rgba(26, 26, 26, 0.035);
     border-left: solid 1px $darkGray;
+  }
+
+  pre > code {
+    overflow: scroll;
     overflow: auto;
     word-wrap: normal;
     white-space: pre;
