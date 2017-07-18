@@ -41,7 +41,7 @@
   </ItemGroup>
 
   <Target Name="PrepublishScript" BeforeTargets="PrepareForPublish">
-    <Exec Command="npm cache clean" />
+    <Exec Command="npm rebuild node-sass" />
     <Exec Command="npm install" />
     <Exec Command="gulp styles" />
   </Target>
