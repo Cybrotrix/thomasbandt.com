@@ -177,9 +177,9 @@ namespace Blog.Model
                 {
                     Id = 20,
                     Title = "I am Hiring A Xamarin Developer: Make Apps Great Again!",
-                    Abstract = "I am looking for our sixth team member who will work with us on a large iOS app and other cross-platform apps for both iOS and Android. Location: Munich,  working 100% remote is possible. Interested? Read on.",
+                    Abstract = "I am looking for our seventh team member who will work with us on a large cross-platform app for both iOS and Android among others. Location: Munich,  working 100% remote is possible. Interested? Read on.",
                     Slug = "im-hiring-a-xamarin-developer-make-apps-great-again",
-                    PublishingDate = new DateTime(2016, 4, 19),
+                    PublishingDate = new DateTime(2017, 7, 18),
                     Category = PostCategory.Xamarin
                 },
                 new Post
